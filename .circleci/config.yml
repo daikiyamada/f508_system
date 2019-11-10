@@ -25,6 +25,6 @@ jobs:
                 cd project
                 ls
                 scp -P 22 -r html $USER_NAME_AWS@$HOST_NAME2:/home/$USER_NAME_AWS/
-               echo $PASSWORD_AWS | ssh -t -t -p 22 $USER_NAME_AWS@$HOST_NAME2 sudo -S cp -r -f /home/$USER_NAME_AWS/html /var/www/html
+               echo $PASSWORD_AWS | ssh -t -t -p 22 $USER_NAME_AWS@$HOST_NAME2 sudo -S cp -r -f /home/$USER_NAME_AWS/html /var/www
 
             fi  
