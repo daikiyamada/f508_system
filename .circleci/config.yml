@@ -23,8 +23,6 @@ jobs:
                 set -ex
                 cd  ..
                 ls
-                cd project
-                ls
-                scp -P 22 -r f508_system $USER_NAME_AWS@$HOST_NAME2:/home/$USER_NAME_AWS/
-                
+                scp -P 22 -r project $USER_NAME_AWS@$HOST_NAME2:/home/$USER_NAME_AWS/
+               
             fi  
