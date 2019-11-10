@@ -90,10 +90,10 @@ const weeks = ['日', '月', '火', '水', '木', '金', '土']
 
             document.querySelector('#prev').addEventListener('click', moveCalendar)
             document.querySelector('#next').addEventListener('click', moveCalendar)
-            // document.addEventListener("click", function (e) {
-            //     if (e.target.classList.contains("calendar_td")) {
-            //         alert('クリックした日付は' + e.target.dataset.date + 'です')
-            //     }
-            // })
+            document.addEventListener("click", function (e) {
+          　     if (e.target.classList.contains("calendar_td")) {
+                     alert('クリックした日付は' + e.target.dataset.date + 'です')
+                 }
+             })
 
             showCalendar(year, month)
