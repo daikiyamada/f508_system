@@ -1,0 +1,29 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/php:7.1-browsers
+ 
+    steps:
+      - checkout
+ 
+      - add_ssh_keys:
+          fingerprints:
+            - "47:b4:05:d3:67:98:b7:34:04:48:7f:07:27:3d:0d:a7"
+ 
+      - run:
+          name: Start ssh-keyscan
+          command: |
+            ssh-keyscan -p 22 ${HOST_NAME2} >> ~/.ssh/known_hosts
+      - deploy:  
+          name: Start master deploy  
+          production:
+          command: |  
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then  
+                set -ex
+                cd  ..
+                ls
+                scp -P 22 -r project $USER_NAME_AWS@$HOST_NAME2:/home/$USER_NAME_AWS/
+               echo $PASSWORD_AWS | ssh -t -t -p 22 $USER_NAME_AWS@$HOST_NAME2 sudo -S cp -r -f /home/$USER_NAME_AWS/project /var/www/html
+
+            fi  
