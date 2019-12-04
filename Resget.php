@@ -17,7 +17,7 @@
 </ul>
 <h1 id =news_head>お知らせ</h1>
 <p id=news>受け取った名前 </p>
-こんにちは、<?php print ($_GET["name"]); ?>さん！
+こんにちは、<?php print $_GET('name'); ?>さん！
 <div style="text-align: right;">最終更新日：2019年12月4日</div>
 
 </body>
