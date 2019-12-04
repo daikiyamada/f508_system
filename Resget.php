@@ -15,6 +15,7 @@
 <li id="menu2" ><a href="http://shinolab.tech">篠宮研究室HP</a></li>
 <li id="menu3"><a href="http://teraylab.net/">寺島研究室HP</a></li>
 </ul>
+<?php $name; ?>
 <h1 id =news_head>お知らせ</h1>
 <p id=news>受け取った名前 </p>
 こんにちは、<?php print$_GET['name']; ?>さん！
