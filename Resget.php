@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml="" lang="ja" lalng="ja" xml:lang="ja">
+<html lang="ja">
 <head>
   <title>研究室管理システム</title>
 </head>
@@ -15,8 +15,7 @@
 </ul>
 <h1 id =news_head>お知らせ</h1>
 <p id=news>受け取った名前 </p>
-こんにちは<?php　print $_GET['name']; ?>
-<?php print "daiki-yamada"; ?>
+こんにちは<?php　print $_GET['name']; ?>さん
 
 <div style="text-align: right;">最終更新日：2019年12月4日</div>
 
