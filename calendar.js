@@ -2,6 +2,7 @@ const weeks = ['日', '月', '火', '水', '木', '金', '土']
 const date = new Date()
 let year = date.getFullYear()
 let month = date.getMonth() + 1
+let ty = date.getFullYear()
 let tm = date.getMonth() + 1
 const config = {
     show: 1,
@@ -78,6 +79,7 @@ function moveCalendar(e) {
     }
 
     if (e.target.id === 'now') {
+        year = ty
         month = tm
 
     }
