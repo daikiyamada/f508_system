@@ -92,6 +92,51 @@ li#detail{
 	font-size:12pt;
 }
 
+
+/*============================================
+use calender
+============================================*/
+
+#calendar {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+section {
+	margin: 10px;
+}
+
+h1#calendar1 {
+	color:#0000ff;
+	margin-left: 370px;
+	margin-bottom: 10px;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+td {
+	font-size: 30px;
+	border: 1px solid rgb(0, 0, 0);
+	padding: 20px;
+	/* text-align: left; */
+	height: 10px;
+}
+
+td:first-child {
+	color: red;
+}
+
+td:last-child {
+	color: royalblue;
+}
+
+td.is-disabled {
+	color: rgb(255, 255, 255);
+}
+
 /*============================================
 サブメニュー（左カラム）
 ============================================*/
