@@ -18,10 +18,24 @@
         <li id="menu3"><a href="http://teraylab.net/">寺島研究室HP</a></li>
     </ul>
     <h1 id="calendar1">F508予約カレンダー</h1>
-        <button id="prev" type="button">前の月</button>
-        <button id="now" type="button">今月</button>
-        <button id="next" type="button">次の月</button>
-        <div id="calendar"></div>
-        <script type="text/javascript" src="calendar.js"></script>
+    <div style="text-align: center;">
+    <button id="prev" type="button">前の月</button>
+    <button id="now" type="button">今月</button>
+    <button id="next" type="button">次の月</button>
+    <div id="calendar"></div>
+    <script type="text/javascript" src="calendar.js"></script>
+    </div>
+<div style="text-align: right;">
+    <script type="text/javascript" style="text-align: right;">
+        <!--
+        var modified = new Date(document.lastModified);
+        var yy = modified.getFullYear();
+        var mm = modified.getMonth() + 1;
+        var dd = modified.getDate();
+        document.write('最終更新日:' + yy + '年' + mm + '月' + dd + '日');
+        // 
+        -->
+    </script>
+</div>
 </body>
 </html>
