@@ -18,14 +18,9 @@
         <li id="menu3"><a href="http://teraylab.net/">寺島研究室HP</a></li>
     </ul>
     <h1 id="calendar1">F508予約カレンダー</h1>
-    <div style="text-align: center;">
-    <button id="prev" type="button">前の月</button>
-    <button id="now" type="button">今月</button>
-    <button id="next" type="button">次の月</button>
-    <div id="calendar"></div>
-    <script type="text/javascript" src="calendar.js"></script>
-    </div>
-    <form>
+    <form action="receivename.php" method="POST">
+        <p>名前:<input type="text" name="namae"></p>
+        <p><input type="submit" value="送信"></p>
         <p>
             りんごは好きですか？
             <input type="radio" name="apple" value="1" checked>はい
@@ -47,6 +42,13 @@
             </select>
         </p>
     </form>
+    <div style="text-align: center;">
+    <button id="prev" type="button">前の月</button>
+    <button id="now" type="button">今月</button>
+    <button id="next" type="button">次の月</button>
+    <div id="calendar"></div>
+    <script type="text/javascript" src="calendar.js"></script>
+    </div>
     <div style="text-align: right;">
         <script type="text/javascript" style="text-align: right;">
             <!--
