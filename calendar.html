@@ -32,7 +32,10 @@
             <input type="radio" name="pear" value="2">いいえ
         </p>
         <p>
-            <input type="checkbox" name="grape" value="1">ぶどうも好きです。
+            <label>
+                <input type="checkbox" name="grape" value="1">
+                ぶどうも好きです。
+            </label>
         </p>
         <p>
             オレンジは好きですか？
@@ -51,13 +54,13 @@
     </div>
     <div style="text-align: right;">
         <script type="text/javascript" style="text-align: right;">
-            <!--
             var modified = new Date(document.lastModified);
             var yy = modified.getFullYear();
             var mm = modified.getMonth() + 1;
             var dd = modified.getDate();
-            document.write('最終更新日:' + yy + '年' + mm + '月' + dd + '日'); 
-            -->
+            // < !--
+            document.write('最終更新日:' + yy + '年' + mm + '月' + dd + '日');
+            // -->
         </script>
     </div>
 </body>
