@@ -17,6 +17,10 @@
 <p id=news>受け取った名前 </p>
 <p><?php echo "こんにちは".$_GET["name"]."さん"; ?></p>
 <p><?php echo "あなたのパスワードは".$_POST["password"]."です。"; ?></p>
+<?php setcookie('memo','daikiyamada',time()+60*60*24);
+print "Reserved the coockie"
+require_once "index.php";
+?>
 
 <div style="text-align: right;">最終更新日：2019年12月5日</div>
 

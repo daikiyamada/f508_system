@@ -17,24 +17,10 @@
 </ul>
 <h1 id =news_head>お知らせ</h1>
 <p id=news>システム構築中 </p>
-<?php header('Location: http://dyamada-home-server.mydns.jp/index.html');
+<?php
+print $_COOKIE['memo'];
 ?>
-<!--名前を入力してください。
-氏名：
-<input type="text" name = "name" />
-パスワード：
-<input type="text" name = "password" />
-<input type="submit" value="送信"/>
-</form>
-
-<form action="Respost.php" method="POST">
-氏名：
-<input type="text" name = "name" />
-パスワード：
-<input type="text" name = "password" />
-<input type="submit" value="送信"/>
-</form>-->
-<div style="text-align: right;">最終更新日：2019年12月17日 17:15</div>
+<div style="text-align: right;">最終更新日：2019年12月17日 </div>
 
 </body>
 </html>
