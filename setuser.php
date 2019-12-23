@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="ja">
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml="" lang="ja" lalng="ja" xml:lang="ja">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <head>
   <title>研究室管理システム</title>
 </head>
@@ -14,14 +16,12 @@
 <li id="menu3"><a href="http://teraylab.net/">寺島研究室HP</a></li>
 </ul>
 <h1 id =news_head>お知らせ</h1>
-<p id=news>受け取った名前 </p>
-<p><?php echo "こんにちは".$_GET["name"]."さん"; ?></p>
-<p><?php echo "あなたのパスワードは".$_GET["password"]."です。"; ?></p>
+<p id=news>システム構築中 </p>
+<?php setcookie('user_name',$_POST['user'],time()+(60*60));
+print 'cookieを保存しました';
+?>
 
-
-
-
-<div style="text-align: right;">最終更新日：2019年12月17日</div>
+<div style="text-align: right;">最終更新日：2019年12月17日 </div>
 
 </body>
 </html>

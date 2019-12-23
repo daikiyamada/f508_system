@@ -17,24 +17,15 @@
 </ul>
 <h1 id =news_head>お知らせ</h1>
 <p id=news>システム構築中 </p>
-名前を入力してください(GET版)。
-<form action="Resget.php" method="GET">
-氏名：
-<input type="text" name = "name" />
-パスワード：
-<input type="text" name = "password" />
-<input type="submit" value="送信"/>
+<?php
+$val = (isset($_COOKIE["user_name"])) ? $_COOKIE["user_name"]:"名前を見つけられません。ユーザデータの入力をお願いします。"
+?>
+<form method="POST" action = "setuser.php">
+  ユーザ名：
+  <input type="text" name="user" size="50" value="<?php es($val);?>"/>
+  <input type ="submit" value="送信"/>
 </form>
-
-名前を入力してください（POST版）
-<form action="Respost.php" method="POST">
-氏名：
-<input type="text" name = "name" />
-パスワード：
-<input type="text" name = "password" />
-<input type="submit" value="送信"/>
-</form>
-<div style="text-align: right;">最終更新日：2019年12月17日 17:15</div>
+<div style="text-align: right;">最終更新日：2019年12月17日 </div>
 
 </body>
 </html>
