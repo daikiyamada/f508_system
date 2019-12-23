@@ -20,9 +20,10 @@
 <?php
 $val = (isset($_COOKIE["user_name"])) ? $_COOKIE["user_name"]:"名前を見つけられません。ユーザデータの入力をお願いします。"
 ?>
+<br>
 <form method="POST" action = "setuser.php">
   ユーザ名：
-  <input type="text" name="user" size="50" value="<?php es($val);?>"/>
+  <input type="text" name="user" size="50"/>
   <input type ="submit" value="送信"/>
 </form>
 <div style="text-align: right;">最終更新日：2019年12月17日 </div>
