@@ -19,7 +19,6 @@
 <p id=news>システム構築中 </p>
 <?php setcookie('memo','daikiyamada',time()+60*60*24);
 print "Reserved the coockie"
-require_once "index.php";
 ?>
 <div style="text-align: right;">最終更新日：2019年12月17日 </div>
 
