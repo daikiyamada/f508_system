@@ -17,29 +17,14 @@
 </ul>
 <h1 id =news_head>お知らせ</h1>
 <p id=news>システム構築中 </p>
-<?php session_start(); ?>
 <?php
-print $val = (isset($_SESSION["user_name"])) ? $_SESSION["user_name"]:""
+session_start();
+$_SESSION=array();
+if(isset($_COOKIE[session_name()])){
+  setcookie(session_name(),'',time()-3600,'/');
+}
+session_destroy();
 ?>
-<?php
-print $val = (isset($_COOKIE["user_name"])) ? $_COOKIE["user_name"]:""
-?>
-<br>
-<form method="POST" action = "setuser.php">
-  ユーザ名（クッキー保存説明用）：
-  <input type="text" name="user" size="50"/>
-  <input type ="submit" value="送信"/>
-</form>
-<form method="POST" action = "session_start.php">
-  ユーザ名（セッション用）：
-  <input type="text" name="user" size="50"/>
-  <input type ="submit" value="送信"/>
-</form>
-<form method="POST" action = "session_start.php">
-  ユーザ名（セッション切断あり用）：
-  <input type="text" name="user" size="50"/>
-  <input type ="submit" value="送信"/>
-</form>
 <div style="text-align: right;">最終更新日：2019年12月23日 </div>
 
 </body>
