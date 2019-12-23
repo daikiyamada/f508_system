@@ -19,12 +19,10 @@
 <p id=news>システム構築中 </p>
 <?php session_start(); ?>
 <?php
-print "セッション名："
 print $val = (isset($_SESSION["user_name"])) ? $_SESSION["user_name"]:""
 ?>
 <br>
 <?php
-print "クッキー名"
 print $val = (isset($_COOKIE["user_name"])) ? $_COOKIE["user_name"]:""
 ?>
 <br>
