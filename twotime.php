@@ -35,7 +35,7 @@ print $val = (isset($_COOKIE["user_name"])) ? $_COOKIE["user_name"]:""
   <input type="text" name="user" size="50"/>
   <input type ="submit" value="送信"/>
 </form>
-<form method="POST" action = "session_start.php">
+<form method="POST" action = "session_start2.php">
   ユーザ名（セッション切断あり用）：
   <input type="text" name="user" size="50"/>
   <input type ="submit" value="送信"/>
