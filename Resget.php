@@ -18,7 +18,10 @@
 <p><?php echo "こんにちは".$_GET["name"]."さん"; ?></p>
 <p><?php echo "あなたのパスワードは".$_GET["password"]."です。"; ?></p>
 
-<div style="text-align: right;">最終更新日：2019年12月5日</div>
+
+
+
+<div style="text-align: right;">最終更新日：2019年12月17日</div>
 
 </body>
 </html>
