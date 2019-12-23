@@ -17,7 +17,7 @@
 </ul>
 <h1 id =news_head>お知らせ</h1>
 <p id=news>システム構築中 </p>
-<?php setcookie('user_name',$_POST['user'],time()+(60*60));
+<?php setcookie('user_name',$_POST['user'],time()+(60));
 print 'cookieを保存しました';
 ?>
 
