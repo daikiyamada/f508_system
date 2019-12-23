@@ -10,12 +10,13 @@ body {
 h1#title1{
 	color:#0000ff;
 	margin-left:370px;
-	margin-bottom: 10px
+	margin-bottom: 10px;
+	
 }
 hr#cp_hr04 {
 	border-width: 3px;
 	border-style: double;
-	border-color: #black;
+	border-color: black;
 }
 /*============================================
 メインメニュー
@@ -26,7 +27,7 @@ ul#menu{
 	text-decoration:none; 			/*リンクの下線を無くす*/
 	font-family:Arial, Helvetica, sans-serif;	/*フォントの種類*/
 	list-style:none;
-	paddin:0px;
+	padding:0px;
 }
 /*ボタン01～05にはそれぞれ異なる背景画像を指定する*/
 li#menu0{
@@ -48,7 +49,7 @@ li#menu1 {
 	border: 2px solid #fff;
 	box-shadow: 0 0 0 2px #FFCC66;
 	color: #0a8915;
-	margin 0;
+	margin: 0;
 		float:left;
 /*background-image:url("images/bg_menu01.jpg");	/*背景画像*/
 }
@@ -90,6 +91,55 @@ h1#list{
 }
 li#detail{
 	font-size:12pt;
+}
+
+
+/*============================================
+use calender
+============================================*/
+
+#calendar {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+section {
+	margin: 10px;
+}
+
+h1#calendar1 {
+	color:#0000ff;
+	margin-left: 370px;
+	margin-bottom: 10px;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+td {
+	font-size: 30px;
+	border: 1px solid rgb(0, 0, 0);
+	padding: 20px;
+	/* text-align: left; */
+	height: 10px;
+}
+
+td:first-child {
+	color: red;
+}
+
+td:last-child {
+	color: royalblue;
+}
+
+td.is-disabled {
+	color: rgb(255, 255, 255);
+}
+
+label, input[type='checkbox'] {
+	cursor: pointer;
 }
 
 /*============================================
