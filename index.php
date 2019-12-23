@@ -17,10 +17,6 @@
 </ul>
 <h1 id =news_head>お知らせ</h1>
 <p id=news>システム構築中 </p>
-<?php setcookie('memo','daikiyamada',time()+60*60*24);
-print "Reserved the coockie"
-require_once "index.php";
-?>
 <?php
 print $_COOKIE['memo'];
 ?>

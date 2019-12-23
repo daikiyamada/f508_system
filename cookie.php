@@ -21,9 +21,6 @@
 print "Reserved the coockie"
 require_once "index.php";
 ?>
-<?php
-print $_COOKIE['memo'];
-?>
 <div style="text-align: right;">最終更新日：2019年12月17日 </div>
 
 </body>
