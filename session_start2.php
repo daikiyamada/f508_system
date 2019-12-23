@@ -24,7 +24,7 @@ print 'セッション情報を保存しました';
 print '最後に登録ボタンを押してください';
 ?>
 <form action="destroy.php">
-<input type="button" value="登録"/>
+<input type="submit" value="登録"/>
 </form>
 <div style="text-align: right;">最終更新日：2019年12月23日 </div>
 
