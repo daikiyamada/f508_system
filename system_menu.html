@@ -7,29 +7,16 @@
 </head>
   <link rel="stylesheet" type="text/css" href="Homepage.css" />
 <body>
-<h1 id="title1">研究室管理システム</h1>
+<h1 id="title1">F508予約システムメニュー</h1>
 <hr id="cp_hr04" />
 <ul id="menu">
-<li id="menu0"><a> メニュー</a></li>
+<li id ="menu0">メニュー</a></li>
 <li id="menu1"><a href="index.html"> トップページ</a></li>
+<li id="menu2" ><a href="setuser.php">ユーザ登録・削除</a></li>
 <li id="menu3"><a href="calendar.html">予約状況確認</a></li>
 </ul>
 <h1 id =news_head>お知らせ</h1>
-<!--データベースへの接続処理を行う-->
-<?php
-function connect(){
-  $dsn = 'mysql:dbname=f508system; host=localhost; charset=utf8';
-  $usr = 'root';
-  $passwd='Daiki_06890516';
-
-  try{
-    $db=new PDO($dsn,$usr,$passwd);
-  } catch(PDOException $e){
-    exit("接続失敗です。:{$e->getMessage()}");
-  }
-  return $db;
-}
- ?>
+少しずつ構築中
 <script type="text/javascript" style="text-align: right;">
 <!--
   var modified = new Date(document.lastModified);
@@ -39,6 +26,7 @@ function connect(){
   document.write('最終更新日:' + yy + '年' + mm + '月' + dd + '日');
   //
 -->
-
+</script>
+</div>
 </body>
 </html>
