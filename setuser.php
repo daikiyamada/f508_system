@@ -18,10 +18,9 @@
 <!--データベースへの接続処理を行う-->
 <?php
 function connect(){
-  $dsn = 'mysql:dbname=f508system; host=localhost; charset=utf8';
+  $dsn = 'mysql:dbname=f508system; host=ec2-user; charset=utf8';
   $usr = 'root';
   $passwd='Daiki_06890516';
-
   try{
     $db=new PDO($dsn,$usr,$passwd);
     print 'DBへの接続が成功しました。';
