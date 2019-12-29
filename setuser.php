@@ -18,7 +18,6 @@
 <!--データベースへの接続処理を行う-->
 <?php
   print'DBへの接続テスト';
-/*function connect(){
   $dsn = 'mysql:dbname=f508system; host=ec2-user; charset=utf8';
   $usr = 'root';
   $passwd='Daiki_06890516';
@@ -28,9 +27,8 @@
   } catch(PDOException $e){
     exit("接続失敗です。:{$e->getMessage()}");
     require('index.html');
-  };
-  return $db;
-}*/
+  }
+}
  ?>
  <br>
 <script type="text/javascript" style="text-align: right;">
