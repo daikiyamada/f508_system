@@ -14,7 +14,13 @@
 <li id="menu1"><a href="index.html"> トップページ</a></li>
 <li id="menu3"><a href="calendar.html">予約状況確認</a></li>
 </ul>
-<h1 id =news_head>お知らせ</h1>
+登録・削除するユーザ情報の入力をしてください。
+<form action="setuser.php" method="POST">
+  学籍番号：<input type="text" name = "ID"/>
+  氏名：<input type = "text" name ="name"/>
+  パスワード（16文字以下）：<input type="text" name="pw"/>
+  <input type="submit" value="登録"> <input type="submit" value="削除"/>
+</form>
  <br>
 <script type="text/javascript" style="text-align: right;">
 <!--
