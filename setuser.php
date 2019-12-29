@@ -17,11 +17,11 @@
 <h1 id =news_head>お知らせ</h1>
 <!--データベースへの接続処理を行う-->
 <?php
-function connect(){
+  print'DBへの接続テスト';
+/*function connect(){
   $dsn = 'mysql:dbname=f508system; host=ec2-user; charset=utf8';
   $usr = 'root';
   $passwd='Daiki_06890516';
-  print'DBへの接続テスト';
   try{
     $db=new PDO($dsn,$usr,$passwd);
     print 'DBへの接続が成功しました。';
@@ -30,7 +30,7 @@ function connect(){
     require('index.html');
   };
   return $db;
-}
+}*/
  ?>
  <br>
 <script type="text/javascript" style="text-align: right;">
