@@ -24,6 +24,7 @@ function connect(){
 
   try{
     $db=new PDO($dsn,$usr,$passwd);
+    print '接続成功';
   } catch(PDOException $e){
     exit("接続失敗です。:{$e->getMessage()}");
   }
