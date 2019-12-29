@@ -21,13 +21,14 @@ function connect(){
   $dsn = 'mysql:dbname=f508system; host=ec2-user; charset=utf8';
   $usr = 'root';
   $passwd='Daiki_06890516';
+  print'DBへの接続テスト';
   try{
     $db=new PDO($dsn,$usr,$passwd);
     print 'DBへの接続が成功しました。';
   } catch(PDOException $e){
     exit("接続失敗です。:{$e->getMessage()}");
     require('index.html');
-  }
+  };
   return $db;
 }
  ?>
