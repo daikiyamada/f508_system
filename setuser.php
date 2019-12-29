@@ -24,13 +24,15 @@ function connect(){
 
   try{
     $db=new PDO($dsn,$usr,$passwd);
-    print '接続成功';
+    print 'DBへの接続が成功しました。';
   } catch(PDOException $e){
     exit("接続失敗です。:{$e->getMessage()}");
+    require('index.html');
   }
   return $db;
 }
  ?>
+ <br>
 <script type="text/javascript" style="text-align: right;">
 <!--
   var modified = new Date(document.lastModified);
