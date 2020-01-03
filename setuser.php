@@ -15,7 +15,7 @@
 <li id="menu3"><a href="calendar.html">予約状況確認</a></li>
 </ul>
 <h1 id =news_head>お知らせ</h1>
- <br>
+<?php require_once 'Manager.php' ?>
 <script type="text/javascript" style="text-align: right;">
 <!--
   var modified = new Date(document.lastModified);
