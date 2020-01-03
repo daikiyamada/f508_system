@@ -15,7 +15,7 @@
 <li id="menu3"><a href="calendar.html">予約状況確認</a></li>
 </ul>
 <h1 id =news_head>お知らせ</h1>
-<?php require_once 'Manager.php';
+<?php //require_once 'Manager.php';
 try{
   //データベースに接続してPDOオブジェクトを作成
   $db=connect();
