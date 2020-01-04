@@ -1,6 +1,6 @@
 <?php
 function connect(){
-  $dsn = "mysql:dbname=student;host=localhost";
+  $dsn = 'mysql:dbname=student;host=localhost';
   $usr = "root";
   $pass = "daiki06890516";
   try{
