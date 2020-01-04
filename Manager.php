@@ -1,6 +1,6 @@
 <?php
 function connect(){
-  $dsn = 'mysql:dbname=test; host=localhost; charset=utf8mb4';
+  $dsn = 'mysql:dbname=student;host=localhost';
   $usr = 'root';
   try{
     $db = new PDO($dsn, $usr,$passwd);
