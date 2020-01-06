@@ -21,12 +21,12 @@ try{
   //データベースに接続してPDOオブジェクトを作成
   $db=connect();
   print '成功';
-  //$sql = 'INSERT INTO f508system(ID,Name,pw) VALUES(:ID,:Name,:pw)';
+  $sql = 'INSERT INTO f508system(ID,Name,pw) VALUES(:ID,:Name,:pw)';
   //プリペアドステートメントを生成
-  //$stt = $db ->prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
+  $stt = $db ->prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
   //プリペアドステートメントを実行
-  //$stt->execute(array(':ID'=>$_POST['ID'],':Name'=>$_POST['Name'],':pw'=> $_POST['pw']));
-  //$db = NULL;
+  $stt->execute(array(':ID'=>$_POST['ID'],':Name'=>$_POST['Name'],':pw'=> $_POST['pw']));
+  $db = NULL;
 }catch (PDOException $e){
   exit("エラーが発生しました:{$e->getMessage()}");
 }
