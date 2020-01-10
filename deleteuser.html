@@ -7,17 +7,21 @@
 </head>
   <link rel="stylesheet" type="text/css" href="Homepage.css" />
 <body>
-<h1 id="title1">F508予約システムメニュー</h1>
+<h1 id="title1">研究室管理システム</h1>
 <hr id="cp_hr04" />
 <ul id="menu">
-<li id ="menu0">メニュー</a></li>
+<li id="menu0"><a> メニュー</a></li>
 <li id="menu1"><a href="index.html"> トップページ</a></li>
-<li id="menu2" ><a href="setuser.html">ユーザ登録</a></li>
-<li id="menu3"><a href="deleteuser.html">ユーザ削除</a></li>
-<li id ="menu1"><a href="modifyuser.html">ユーザ変更</a></li>
 <li id="menu3"><a href="calendar.html">予約状況確認</a></li>
 </ul>
-<h1 id =news_head>お知らせ</h1>
+削除するユーザ情報の入力をしてください。
+<form action="setuser.php" method="POST">
+  学籍番号：<input type="text" name = "ID"/> <br/>
+  氏名：<input type = "text" name ="Name"/> <br/>
+  パスワード（16文字以下）：<input type="text" name="pw"/><br/>
+  <input type="submit" value="削除">
+</form>
+</br>
 <script type="text/javascript" style="text-align: right;">
 <!--
   var modified = new Date(document.lastModified);
@@ -27,7 +31,6 @@
   document.write('最終更新日:' + yy + '年' + mm + '月' + dd + '日');
   //
 -->
-</script>
-</div>
+
 </body>
 </html>
