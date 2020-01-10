@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <?xml version="1.0" encoding="utf-8"?>
+<?php
+require_once 'Manager.php'; //データベースへの接続
+require_once 'Escape.php';
+ ?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml="" lang="ja" lalng="ja" xml:lang="ja">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <head>
@@ -7,29 +11,45 @@
 </head>
   <link rel="stylesheet" type="text/css" href="Homepage.css" />
 <body>
-<h1 id="title1">F508予約システムメニュー</h1>
+<h1 id="title1">研究室管理システム</h1>
 <hr id="cp_hr04" />
 <ul id="menu">
 <li id="menu0"><a> メニュー</a></li>
 <li id="menu1"><a href="index.html"> トップページ</a></li>
 <li id="menu3"><a href="calendar.html">予約状況確認</a></li>
 </ul>
-登録するユーザ情報の入力をしてください。
-<form action="setuser.php" method="POST">
-  学籍番号：<input type="text" name = "ID"/> <br/>
-  氏名：<input type = "text" name ="Name"/> <br/>
-  パスワード（16文字以下）：<input type="text" name="pw"/><br/>
-  <input type="submit" value="登録">
-</form>
-<br />
+<table border = "1">
+  <tr>
+    <th>学籍番号</th><th>氏名</th><th>パスワード</th>
+  </tr>
+  <?php
+  try{
+    $db = connect();
+    $stt = $db->prepare('SELECT * FROM f508system');
+    $stt->execute();
+    while($row = $stt -> fetch(PDO::FETCH_ASSOC)){
+  ?>
+  <tr>
+    <td><?php es($row['ID']); ?></td>
+    <td><?php es($row['Name']);?></td>
+    <td><?php es($row['pw']);?></td>
+  </tr>
+<?php
+}
+$db = NULL;
+}catch(PDOException $e){
+  die("エラー発生:{$e->getMessage}");
+}
+?>
+</table>
+<script type="text/javascript" style="text-align: right;">
 <!--
-  <script type="text/javascript" style="text-align: right;">
   var modified = new Date(document.lastModified);
   var yy = modified.getFullYear();
   var mm= modified.getMonth() + 1;
   var dd = modified.getDate();
   document.write('最終更新日:' + yy + '年' + mm + '月' + dd + '日');
-</script>
+  //
 -->
 
 </body>
