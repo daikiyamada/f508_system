@@ -20,7 +20,7 @@ require_once 'Escape.php';
 </ul>
 <table border = "1">
   <tr>
-    <th>学籍番号</th><th>氏名</th><th>パスワード</th>
+    <th>学籍番号</th><th>氏名</th><th>削除ボタン</th>
   </tr>
   <?php
   try{
@@ -32,7 +32,13 @@ require_once 'Escape.php';
   <tr>
     <td><?php es($row['ID']); ?></td>
     <td><?php es($row['Name']);?></td>
-    <td><?php es($row['pw']);?></td>
+    <td><form action="deleteuser.php" method="POST">
+      <input type="hidden" name = "ID" value=<?php es($row['ID'];?>>
+      <input type="hidden" name = "Name" value=<?php es($row['Name'];?>>
+      <input type="hidden" name = "pw" value=<?php es($row['pw']?>>
+      <input type="submit" value="削除">
+    </form>
+  </td>
   </tr>
 <?php
 }
