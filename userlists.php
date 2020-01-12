@@ -33,7 +33,7 @@ require_once 'Escape.php';
   ?>
   <tr>
     <td>
-      <input type="submit" name="ID" value = "<?php print es($row['ID']);?>"/>
+      <input type="submit" name="ID" value = "<?php $row['ID'];?>"/>
     </td>
     <td>
       <?php print es($row['Name']);?>
