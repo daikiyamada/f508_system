@@ -18,6 +18,8 @@ require_once 'Escape.php';
 <li id="menu1"><a href="index.html"> トップページ</a></li>
 <li id="menu3"><a href="calendar.html">予約状況確認</a></li>
 </ul>
+<form method="POST" action="Refresh.php">
+  <input type="submit" value="更新"/>
 <table border = "1">
   <tr>
     <th>学籍番号</th><th>氏名</th>
@@ -30,8 +32,12 @@ require_once 'Escape.php';
     while($row = $stt -> fetch(PDO::FETCH_ASSOC)){
   ?>
   <tr>
-    <td><?php es($row['ID']); ?></td>
-    <td><?php es($row['Name']);?></td>
+    <td>
+      <input type="submit" name="ID" value = "<?php print es($row['ID']);?>"/>
+    </td>
+    <td>
+      <?php print es($row['Name']);?>
+    </td>
   </tr>
 <?php
 }
@@ -41,6 +47,8 @@ $db = NULL;
 }
 ?>
 </table>
+<input type = "hidden" name = "ct" value="<?php print($ct);?>"/>
+</form>
 <script type="text/javascript" style="text-align: right;">
 <!--
   var modified = new Date(document.lastModified);
