@@ -14,33 +14,23 @@
 <li id="menu1"><a href="index.html"> トップページ</a></li>
 <li id="menu3"><a href="calendar.html">予約状況確認</a></li>
 </ul>
-<h1 id =news_head>お知らせ</h1>
-<?php
-require_once 'Manager.php';
-try{
-  //データベースに接続してPDOオブジェクトを作成
-  $db=connect();
-  print '成功';
-  $sql = 'INSERT INTO f508system(ID,Name,pw) VALUES(:ID,:Name,:pw)';
-  //プリペアドステートメントを生成
-  $stt = $db ->prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
-  //プリペアドステートメントを実行
-  $stt->execute(array(':ID'=>$_POST['ID'],':Name'=>$_POST['Name'],':pw'=> $_POST['pw']));
-  $db = NULL;
-}catch (PDOException $e){
-  exit("エラーが発生しました:{$e->getMessage()}");
-}
-//処理完了後、登録ページを再表示
-header('Location: http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/system_menu.html')
-?>
+削除するユーザ情報の入力をしてください。
+<form action="deleteuser.php" method="POST">
+  学籍番号：<input type="text" name = "ID"/> <br/>
+  氏名：<input type = "text" name ="Name"/> <br/>
+  パスワード（16文字以下）：<input type="text" name="pw"/><br/>
+  <input type="submit" value="削除">
+</form>
+</br>
 <script type="text/javascript" style="text-align: right;">
-/*
+<!--
   var modified = new Date(document.lastModified);
   var yy = modified.getFullYear();
   var mm= modified.getMonth() + 1;
   var dd = modified.getDate();
   document.write('最終更新日:' + yy + '年' + mm + '月' + dd + '日');
-*/
-</script>
+  //
+-->
+
 </body>
 </html>
