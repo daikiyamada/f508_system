@@ -2,7 +2,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?php
 require_once 'Manager.php'; //データベースへの接続
-require_once 'Escape.php';
+require_once 'Escape.php'; //エスケープ処理を行うソースファイルの読み込み
  ?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml="" lang="ja" lalng="ja" xml:lang="ja">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -29,11 +29,13 @@ require_once 'Escape.php';
     $db = connect();
     $stt = $db->prepare('SELECT * FROM f508system');
     $stt->execute();
+    $ct = 0;
     while($row = $stt -> fetch(PDO::FETCH_ASSOC)){
+      $ct++;
   ?>
   <tr>
     <td>
-      <input type="submit" name="ID" value = "<?php $row['ID'];?>"/>
+      <input type="submit" name="ID<?php print($ct);?>" value = "<?php print es($row['ID']);?>"/>
     </td>
     <td>
       <?php print es($row['Name']);?>
