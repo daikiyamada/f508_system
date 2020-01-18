@@ -18,7 +18,7 @@ require_once 'Escape.php'; //エスケープ処理を行うソースファイル
 <li id="menu1"><a href="index.html"> トップページ</a></li>
 <li id="menu3"><a href="calendar.html">予約状況確認</a></li>
 </ul>
-<form method="POST" action="Refresh.php">
+<form method="POST" action="delete.php">
 <table border = "1">
   <tr>
     <th>削除ボタン</th><th>学籍番号</th><th>氏名</th>
