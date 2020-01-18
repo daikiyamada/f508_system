@@ -30,13 +30,11 @@ require_once 'Manager.php';
   }catch (PDOException $e){
     exit("エラーが発生しました:{$e->getMessage()}");
   }
- $check = "<script>window.confirm('登録完了しました。登録を継続しますか？')</script>"
-  if($check){
-    header('Location: http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/setuser.html');
-  }
-  else{
-    header('Location: http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/system_menu.html');
-  }
+  print "<script>
+  var rt = window.confirm('登録完了しました。登録を継続しますか？')
+  if(rt) location.href="setuser.php";
+  else location.href="system_menu.html";
+  </script>"
 //処理完了後、登録ページを再表示
 ?>
 <script type="text/javascript" style="text-align: right;">
