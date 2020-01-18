@@ -28,7 +28,7 @@ try{
   //プリペアドステートメントを実行
   $stt->execute(array(':ID'=>$_POST['ID'],':Name'=>$_POST['Name'],':pw'=> $_POST['pw']));
   $db = NULL;
-  print "<script> alert('登録完了しました')</script>";
+  print "<script> window.confirm('登録完了しました')</script>";
 }catch (PDOException $e){
   exit("エラーが発生しました:{$e->getMessage()}");
 }
