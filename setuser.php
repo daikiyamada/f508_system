@@ -18,22 +18,29 @@
 <h1 id =news_head>お知らせ</h1>
 <?php
 require_once 'Manager.php';
-try{
-  //データベースに接続してPDOオブジェクトを作成
-  $db=connect();
-  print '成功';
-  $sql = 'INSERT INTO f508system(ID,Name,pw) VALUES(:ID,:Name,:pw)';
-  //プリペアドステートメントを生成
-  $stt = $db ->prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
-  //プリペアドステートメントを実行
-  $stt->execute(array(':ID'=>$_POST['ID'],':Name'=>$_POST['Name'],':pw'=> $_POST['pw']));
-  $db = NULL;
-  print "<script> window.confirm('登録完了しました')</script>";
-}catch (PDOException $e){
-  exit("エラーが発生しました:{$e->getMessage()}");
+$check="<script> window.confirm('【登録内容】\n 学籍番号：$_POST['ID']\n 氏名：$_POST['Name']\n パスワード：$_POST['pw']\n この内容で登録しますか？')</script>";
+if($check==true){
+  try{
+    //データベースに接続してPDOオブジェクトを作成
+    $db=connect();
+    $sql = 'INSERT INTO f508system(ID,Name,pw) VALUES(:ID,:Name,:pw)';
+    //プリペアドステートメントを生成
+    $stt = $db ->prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
+    //プリペアドステートメントを実行
+    $stt->execute(array(':ID'=>$_POST['ID'],':Name'=>$_POST['Name'],':pw'=> $_POST['pw']));
+    $db = NULL;
+  }catch (PDOException $e){
+    exit("エラーが発生しました:{$e->getMessage()}");
+  }
+  $check = "<script>alert('登録完了しました')</script>"
+  if($check){
+    header('Location: http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/system_menu.html');
+  }
+}
+else{
+  header('Location: http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/setuser.html');
 }
 //処理完了後、登録ページを再表示
-//header('Location: http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/system_menu.html')
 ?>
 <script type="text/javascript" style="text-align: right;">
 <!--
