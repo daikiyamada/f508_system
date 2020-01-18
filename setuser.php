@@ -33,9 +33,10 @@ require_once 'Manager.php';
 ?>
 <script type ="text/javascript">
 var rt = window.confirm('登録完了しました。登録を継続しますか？');
-if(rt) location.href="setuser.php";
+if(rt) location.href="setuser.html";
 else location.href="system_menu.html";
 </script>
+
 <script type="text/javascript" style="text-align: right;">
 <!--
   var modified = new Date(document.lastModified);
