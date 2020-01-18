@@ -14,5 +14,6 @@ function connect(){
 function popup(){
  $test_alert = "<script type='text/javascript'>alert('こんにちは！侍エンジニア塾です。');</script>";
  echo $test_alert;
+ return $test_alert;
 }
  ?>
