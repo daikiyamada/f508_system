@@ -21,7 +21,7 @@ require_once 'Escape.php'; //エスケープ処理を行うソースファイル
 <form method="POST" action="Refresh.php">
 <table border = "1">
   <tr>
-    <th>学籍番号</th><th>氏名</th>
+    <th>削除ボタン</th><th>学籍番号</th><th>氏名</th>
   </tr>
   <?php
   try{
@@ -34,7 +34,7 @@ require_once 'Escape.php'; //エスケープ処理を行うソースファイル
   ?>
   <tr>
     <td>
-      <input type="submit" name="ID<?php print($ct);?>" "削除"/>
+      <input type="submit" name="ID<?php print($ct);?>" value="削除"/>
     </td>
     <td>
       <?php print es($row['ID']);?>
