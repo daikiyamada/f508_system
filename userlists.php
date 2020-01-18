@@ -19,7 +19,7 @@ require_once 'Escape.php'; //エスケープ処理を行うソースファイル
 <li id="menu3"><a href="calendar.html">予約状況確認</a></li>
 </ul>
 <form method="POST" action="Refresh.php">
-  <input type="submit" value="更新"/>
+  <input type = "submit" value="選択したユーザを削除する"/>
 <table border = "1">
   <tr>
     <th>学籍番号</th><th>氏名</th>
@@ -35,7 +35,10 @@ require_once 'Escape.php'; //エスケープ処理を行うソースファイル
   ?>
   <tr>
     <td>
-      <input type="submit" name="ID<?php print($ct);?>" value = "<?php print es($row['ID']);?>"/>
+      <input type="button" name="ID<?php print($ct);?>" value="<?php print es($row['ID'])?>"/>
+    </td>
+    <td>
+      <?php print es($row['ID']);?>
     </td>
     <td>
       <?php print es($row['Name']);?>
