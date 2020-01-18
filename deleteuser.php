@@ -18,7 +18,7 @@ require_once 'Escape.php'; //エスケープ処理を行うソースファイル
 <li id="menu1"><a href="index.html"> トップページ</a></li>
 <li id="menu3"><a href="calendar.html">予約状況確認</a></li>
 </ul>
-<form>
+<form method="POST" action="delete.php">
 <table border = "1">
   <tr>
     <th>削除ボタン</th><th>学籍番号</th><th>氏名</th>
@@ -34,7 +34,7 @@ require_once 'Escape.php'; //エスケープ処理を行うソースファイル
   ?>
   <tr>
     <td>
-      <input type="submit" name="ID" value="<?php print($row['ID'])?>" method = "POST" action ="popup()"/>
+      <input type="submit" name="ID" value="<?php print($row['ID'])?>"/>
     </td>
     <td>
       <?php print es($row['ID']);?>
@@ -48,12 +48,6 @@ require_once 'Escape.php'; //エスケープ処理を行うソースファイル
 $db = NULL;
 }catch(PDOException $e){
   die("エラー発生:{$e->getMessage}");
-}
-
-function popup(){
- $test_alert = "<script type='text/javascript'>alert('こんにちは！侍エンジニア塾です。');</script>";
- echo $test_alert;
- return $test_alert;
 }
 ?>
 </table>
