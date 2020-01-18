@@ -34,7 +34,7 @@ require_once 'Escape.php'; //エスケープ処理を行うソースファイル
   ?>
   <tr>
     <td>
-      <input type="radio" name="ID" value="<?php print($row['ID'])?>" action="delete.php" method ="POST"/>
+      <input type="radio" name="ID" value="<?php print($row['ID'])?>" onclick="return popup()"/>
     </td>
     <td>
       <?php print es($row['ID']);?>
