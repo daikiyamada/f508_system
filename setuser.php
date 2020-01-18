@@ -27,16 +27,15 @@ require_once 'Manager.php';
     //プリペアドステートメントを実行
     $stt->execute(array(':ID'=>$_POST['ID'],':Name'=>$_POST['Name'],':pw'=> $_POST['pw']));
     $db = NULL;
-    <script type ="text/javascript">
-    var rt = window.confirm('登録完了しました。登録を継続しますか？');
-    if(rt) location.href="setuser.php";
-    else location.href="system_menu.html";
-    </script>
   }catch (PDOException $e){
     exit("エラーが発生しました:{$e->getMessage()}");
   }
-
 //処理完了後、登録ページを再表示
+<script type ="text/javascript">
+var rt = window.confirm('登録完了しました。登録を継続しますか？');
+if(rt) location.href="setuser.php";
+else location.href="system_menu.html";
+</script>
 ?>
 <script type="text/javascript" style="text-align: right;">
 <!--
