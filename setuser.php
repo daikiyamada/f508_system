@@ -28,6 +28,7 @@ try{
   //プリペアドステートメントを実行
   $stt->execute(array(':ID'=>$_POST['ID'],':Name'=>$_POST['Name'],':pw'=> $_POST['pw']));
   $db = NULL;
+  print "<script> alert('登録完了しました')</script>";
 }catch (PDOException $e){
   exit("エラーが発生しました:{$e->getMessage()}");
 }
@@ -41,6 +42,8 @@ header('Location: http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'
   var mm= modified.getMonth() + 1;
   var dd = modified.getDate();
   document.write('最終更新日:' + yy + '年' + mm + '月' + dd + '日');
+
+
   //
 -->
 
