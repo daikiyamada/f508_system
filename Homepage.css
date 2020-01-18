@@ -2,7 +2,7 @@
 全般的なスタイル
 ============================================*/
 body {
-	background-color:gainsboro;	/*ページ全体の背景色*/		/*IE6以下でセンタリングするための対策*/
+	background-color:lightgray;	/*ページ全体の背景色*/		/*IE6以下でセンタリングするための対策*/
 }
 /*============================================
 ヘッダ
@@ -10,6 +10,9 @@ body {
 h1#title1{
 	color:blue;
 	text-align: left;
+}
+h1#title2{
+	align: right;
 }
 hr#cp_hr04 {
 	border-width: 3px;
