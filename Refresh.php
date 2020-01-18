@@ -1,7 +1,7 @@
 <?php require_once 'Manager.php';
 try{
   $db = connect();
-  $sql = 'DELETE FROM f508system WHERE ID=:ID'; //SQL文の作成
+  $sql = "DELETE FROM f508system WHERE ID=:ID"; //SQL文の作成
   $stt = $db->prepare($sql));
   /*for($i=1;$i<=$_POST['ct'];$i++){
     $stt -> execute(array(':ID' =>$_POST['ID'.$i]));
