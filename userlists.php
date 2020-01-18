@@ -35,7 +35,7 @@ require_once 'Escape.php'; //エスケープ処理を行うソースファイル
   ?>
   <tr>
     <td>
-      <input type="radio" name="ID<?php print($ct);?>" value="<?php print es($row['ID'])?>"/>
+      <input type="radio" name="ID<?php print($ct);?>"/>
     </td>
     <td>
       <?php print es($row['ID']);?>
