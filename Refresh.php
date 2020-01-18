@@ -4,7 +4,7 @@ try{
   $sql = "DELETE FROM f508system WHERE ID=:ID"; //SQL文の作成
   $stt = $db->prepare($sql);
   $stt -> execute(array(':ID' =>$_POST['ID']));
-
+  print $_POST['ID'];
 }catch(PDOException $e){
   die("エラーが発生: {$e ->getMEssage()}");
 }
