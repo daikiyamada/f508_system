@@ -18,11 +18,6 @@
 <h1 id =news_head>お知らせ</h1>
 <?php
 require_once 'Manager.php';
-var id = $_POST['ID'];
-var name = $_POST['Name'];
-var pw = $_POST['pw'];
-$check="<script> window.confirm('【登録内容】\n 学籍番号：id \n 氏名：name\n パスワード：pw\n この内容で登録しますか？');</script>";
-if($check==true){
   try{
     //データベースに接続してPDOオブジェクトを作成
     $db=connect();
@@ -35,14 +30,13 @@ if($check==true){
   }catch (PDOException $e){
     exit("エラーが発生しました:{$e->getMessage()}");
   }
-  $check = "<script>alert('登録完了しました')</script>"
+ $check = "<script>alert('登録完了しました。登録を継続しますか？')</script>"
   if($check){
+    header('Location: http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/setuser.html');
+  }
+  else{
     header('Location: http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/system_menu.html');
   }
-}
-else{
-  header('Location: http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/setuser.html');
-}
 //処理完了後、登録ページを再表示
 ?>
 <script type="text/javascript" style="text-align: right;">
