@@ -18,7 +18,10 @@
 <h1 id =news_head>お知らせ</h1>
 <?php
 require_once 'Manager.php';
-$check="<script> window.confirm('【登録内容】\n 学籍番号：$_POST['ID']\n 氏名：$_POST['Name']\n パスワード：$_POST['pw']\n この内容で登録しますか？')</script>";
+var id = $_POST['ID'];
+var name = $_POST['Name'];
+var pw = $_POST['pw'];
+$check="<script> window.confirm('【登録内容】\n 学籍番号：id \n 氏名：name\n パスワード：pw\n この内容で登録しますか？');</script>";
 if($check==true){
   try{
     //データベースに接続してPDOオブジェクトを作成
