@@ -11,12 +11,13 @@ require_once 'Escape.php'; //エスケープ処理を行うソースファイル
 </head>
   <link rel="stylesheet" type="text/css" href="Homepage.css" />
 <body>
-<h1 id="title1">研究室管理システム</h1>
-<hr id="cp_hr04" />
+  <div id="back1">
+    <hr id="line1"/>
+    <h1 id="title1">ユーザ削除</h1>
+  </div>
 <ul id="menu">
-<li id="menu0"><a> メニュー</a></li>
-<li id="menu1"><a href="index.html"> トップページ</a></li>
-<li id="menu3"><a href="calendar.html">予約状況確認</a></li>
+<li><a href="index.html">Home</a></li>
+<li><a href="calendar.html">F508管理システム</a></li>
 </ul>
 <form method="POST" action="delete.php">
 <table border = "1">
