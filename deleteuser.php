@@ -34,7 +34,7 @@ require_once 'Escape.php'; //エスケープ処理を行うソースファイル
   ?>
   <tr>
     <td>
-      <input type="submit" name="ID" value="<?php print($row['ID'])?>"/>
+      <input type="button" name="ID" value="<?php print($row['ID'])?>" onclick="delete.php" method ="POST"/>
     </td>
     <td>
       <?php print es($row['ID']);?>
