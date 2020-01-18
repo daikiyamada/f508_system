@@ -26,7 +26,7 @@ require_once 'Escape.php'; //エスケープ処理を行うソースファイル
 
 <table border = "1">
   <tr>
-    <th>削除ボタン</th><th>学籍番号</th><th>氏名</th>
+    <th>学籍番号</th><th>氏名</th>
   </tr>
   <?php
   try{
