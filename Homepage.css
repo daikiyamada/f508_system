@@ -8,15 +8,18 @@ body {
 ヘッダ
 ============================================*/
 hr#line1 {
-	margin-top: 0;
+	margin: none;
+	padding: none;
 	border-width: 10px;
 	border-style: solid;
 	border-color: red;
 }
 h1#title1{
 	color: white;
+	marign: none;
+	padding: none;
 	text-align: left;
-}	
+}
 /*============================================
 メインメニュー
 ============================================*/
