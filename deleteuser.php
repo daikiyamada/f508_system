@@ -34,7 +34,7 @@ require_once 'Escape.php'; //エスケープ処理を行うソースファイル
   ?>
   <tr>
     <td>
-      <input type="submit" name="ID" value="<?php print($row['ID'])?>" onsubmit=" return popup()"/>
+      <input type="submit" name="ID" value="<?php print($row['ID'])?>" method = "POST" action ="popup()"/>
     </td>
     <td>
       <?php print es($row['ID']);?>
@@ -48,6 +48,12 @@ require_once 'Escape.php'; //エスケープ処理を行うソースファイル
 $db = NULL;
 }catch(PDOException $e){
   die("エラー発生:{$e->getMessage}");
+}
+
+function popup(){
+ $test_alert = "<script type='text/javascript'>alert('こんにちは！侍エンジニア塾です。');</script>";
+ echo $test_alert;
+ return $test_alert;
 }
 ?>
 </table>
