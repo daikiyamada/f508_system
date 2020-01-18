@@ -18,15 +18,10 @@ require_once 'Escape.php'; //エスケープ処理を行うソースファイル
 <li id="menu1"><a href="index.html"> トップページ</a></li>
 <li id="menu3"><a href="calendar.html">予約状況確認</a></li>
 </ul>
-削除するユーザ情報の学籍番号を入力してください入力をしてください。
-<form action="delete.php" method="POST">
-  学籍番号：<input type="text" name = "ID"/> <br/>
-  <input type="submit" value="削除">
-</form>
-
+<form method="POST" action="delete.php">
 <table border = "1">
   <tr>
-    <th>学籍番号</th><th>氏名</th>
+    <th>削除ボタン</th><th>学籍番号</th><th>氏名</th>
   </tr>
   <?php
   try{
@@ -38,6 +33,9 @@ require_once 'Escape.php'; //エスケープ処理を行うソースファイル
       $ct++;
   ?>
   <tr>
+    <td>
+      <input type="submit" name="ID" value="<?php print($row['ID'])?>"/>
+    </td>
     <td>
       <?php print es($row['ID']);?>
     </td>
@@ -53,6 +51,8 @@ $db = NULL;
 }
 ?>
 </table>
+<input type = "hidden" name = "ct" value="<?php print($ct);?>"/>
+</form>
 <script type="text/javascript" style="text-align: right;">
 <!--
   var modified = new Date(document.lastModified);
