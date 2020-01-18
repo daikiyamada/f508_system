@@ -37,13 +37,12 @@ require_once 'Manager.php';
     exit("エラーが発生しました:{$e->getMessage()}");
   }
 ?>
-var rt = window.confirm('登録完了しました。登録を継続しますか？');
+rt = window.confirm('登録完了しました。登録を継続しますか？');
 if(rt) location.href="setuser.html";
 else location.href="system_menu.html";
 }
 else location.href = "setuser.html";
 </script>
-
 
 <script type="text/javascript" style="text-align: right;">
 <!--
