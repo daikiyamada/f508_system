@@ -32,7 +32,7 @@ require_once 'Manager.php';
   }
 ?>
 <script type="text/javascript">
-rt = window.confirm('登録完了しました\n登録を継続しますか？');
+var rt = window.confirm('登録完了しました\n登録を継続しますか？');
 if(rt) location.href="setuser.html";
 else location.href="system_menu.html";
 }
