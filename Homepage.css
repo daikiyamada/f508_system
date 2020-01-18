@@ -8,7 +8,7 @@ body {
 ヘッダ
 ============================================*/
 hr#line1 {
-	border-width: 15px;
+	border-width: 30px;
 	border-style: solid;
 	border-color: red;
 }
