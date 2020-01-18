@@ -18,7 +18,7 @@ require_once 'Escape.php'; //エスケープ処理を行うソースファイル
 <li id="menu1"><a href="index.html"> トップページ</a></li>
 <li id="menu3"><a href="calendar.html">予約状況確認</a></li>
 </ul>
-<form method="POST" action="delete.php">
+<form method="POST" action="popup()">
 <table border = "1">
   <tr>
     <th>削除ボタン</th><th>学籍番号</th><th>氏名</th>
@@ -34,7 +34,7 @@ require_once 'Escape.php'; //エスケープ処理を行うソースファイル
   ?>
   <tr>
     <td>
-      <input type="radio" name="ID" value="<?php print($row['ID'])?>" onchange="return popup()"/>
+      <input type="submit" name="ID" value="<?php print($row['ID'])?>"/>
     </td>
     <td>
       <?php print es($row['ID']);?>
