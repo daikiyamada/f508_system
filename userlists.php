@@ -35,7 +35,7 @@ require_once 'Escape.php'; //エスケープ処理を行うソースファイル
   <tr>
     <td>
       <input type="hidden" name="ID" value="<?php print($row['ID'])?>"/>
-      <input type = "submit"/>
+      <input type = "submit" "削除"/>
     </td>
     <td>
       <?php print es($row['ID']);?>
