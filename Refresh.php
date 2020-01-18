@@ -3,10 +3,8 @@ try{
   $db = connect();
   $sql = "DELETE FROM f508system WHERE ID=:ID"; //SQL文の作成
   $stt = $db->prepare($sql);
-  for($i=1;$i<=$_POST['ct'];$i++){
-    $stt -> execute(array(':ID' =>$_POST['ID'.$i]));
-    print($_POST['ID'.$i]);
-  }
+  $stt -> execute(array(':ID' =>$_POST['ID']));
+
 }catch(PDOException $e){
   die("エラーが発生: {$e ->getMEssage()}");
 }

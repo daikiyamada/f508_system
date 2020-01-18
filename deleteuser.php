@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <?xml version="1.0" encoding="utf-8"?>
+<?php
+require_once 'Manager.php'; //データベースへの接続
+require_once 'Escape.php'; //エスケープ処理を行うソースファイルの読み込み
+ ?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml="" lang="ja" lalng="ja" xml:lang="ja">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <head>
@@ -14,24 +18,41 @@
 <li id="menu1"><a href="index.html"> トップページ</a></li>
 <li id="menu3"><a href="calendar.html">予約状況確認</a></li>
 </ul>
-<h1 id =news_head>お知らせ</h1>
+削除するユーザ情報の学籍番号を入力してください入力をしてください。
+<form action="delete.php" method="POST">
+  学籍番号：<input type="text" name = "ID"/> <br/>
+  <input type="submit" value="削除">
+</form>
+
+<table border = "1">
+  <tr>
+    <th>削除ボタン</th><th>学籍番号</th><th>氏名</th>
+  </tr>
+  <?php
+  try{
+    $db = connect();
+    $stt = $db->prepare('SELECT * FROM f508system');
+    $stt->execute();
+    $ct = 0;
+    while($row = $stt -> fetch(PDO::FETCH_ASSOC)){
+      $ct++;
+  ?>
+  <tr>
+    <td>
+      <?php print es($row['ID']);?>
+    </td>
+    <td>
+      <?php print es($row['Name']);?>
+    </td>
+  </tr>
 <?php
-require_once 'Manager.php';
-try{
-  //データベースに接続してPDOオブジェクトを作成
-  $db=connect();
-  $sql = 'DELETE FROM f508system WHERE Name=:Name and ID=:ID and pw=:pw ';
-  //プリペアドステートメントを生成
-  $stt = $db ->prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
-  //プリペアドステートメントを実行
-  $stt->execute(array(':ID'=>$_POST['ID'],':Name'=>$_POST['Name'],':pw'=> $_POST['pw']));
-  $db = NULL;
-}catch (PDOException $e){
-  exit("エラーが発生しました:{$e->getMessage()}");
 }
-//処理完了後、登録ページを再表示
-header('Location: http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/system_menu.html')
+$db = NULL;
+}catch(PDOException $e){
+  die("エラー発生:{$e->getMessage}");
+}
 ?>
+</table>
 <script type="text/javascript" style="text-align: right;">
 <!--
   var modified = new Date(document.lastModified);
