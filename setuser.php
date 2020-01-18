@@ -16,12 +16,6 @@
 <li><a href="calendar.html">F508管理システム</a></li>
 </ul>
 <h1 id =news_head>お知らせ</h1>
-<script type ="text/javascript">
-var id = $_POST['ID'];
-var Name = $_POST['Name'];
-var pw = $_POST['pw'];
-var rt = window.confirm('以下の内容で登録しますか？\n 学籍番号：'+id+'\n　氏名：'+Name+'\n パスワード：'+pw);
-if(rt){
 <?php
 require_once 'Manager.php';
   try{
@@ -37,11 +31,11 @@ require_once 'Manager.php';
     exit("エラーが発生しました:{$e->getMessage()}");
   }
 ?>
-rt = window.confirm('登録完了しました。登録を継続しますか？');
+<script type="text/javascript">
+rt = window.confirm('登録完了しました\n登録を継続しますか？');
 if(rt) location.href="setuser.html";
 else location.href="system_menu.html";
 }
-else location.href = "setuser.html";
 </script>
 
 <script type="text/javascript" style="text-align: right;">
