@@ -22,7 +22,7 @@ require_once 'Escape.php'; //エスケープ処理を行うソースファイル
 <form method="POST" action="del.php">
 <table border = "1">
   <tr>
-    <th>削除ボタン</th><th>予約番号</th><th>日付・コマ</th><th>用途</th>
+    <th>削除ボタン</th><th>予約番号</th><th>ID</th><th>日付・コマ</th><th>用途</th>
   </tr>
   <?php
   try{
@@ -39,6 +39,9 @@ require_once 'Escape.php'; //エスケープ処理を行うソースファイル
     </td>
     <td>
       <?php print es($row['ReservationNumber']);?>
+    </td>
+    <td>
+      <?php print es($row['ID']);?>
     </td>
     <td>
       <?php print es($row['Date']);?>
