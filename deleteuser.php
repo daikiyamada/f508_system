@@ -20,8 +20,7 @@ require_once 'Manager.php';
 try{
   //データベースに接続してPDOオブジェクトを作成
   $db=connect();
-  print '成功';
-  $sql = 'INSERT INTO f508system(ID,Name,pw) VALUES(:ID,:Name,:pw)';
+  $sql = 'DELETE FROM f508system WHERE Name=:Name and ID=:ID and pw=:pw ';
   //プリペアドステートメントを生成
   $stt = $db ->prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
   //プリペアドステートメントを実行
@@ -34,13 +33,14 @@ try{
 header('Location: http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/system_menu.html')
 ?>
 <script type="text/javascript" style="text-align: right;">
-/*
+<!--
   var modified = new Date(document.lastModified);
   var yy = modified.getFullYear();
   var mm= modified.getMonth() + 1;
   var dd = modified.getDate();
   document.write('最終更新日:' + yy + '年' + mm + '月' + dd + '日');
-*/
-</script>
+  //
+-->
+
 </body>
 </html>
