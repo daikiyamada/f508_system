@@ -1,6 +1,6 @@
 <?php
 function connect(){
-  $dsn = 'mysql:dbname=reservation;dbhost=localhost';
+  $dsn = 'mysql:dbname=reservation;dbhost=54.250.152.98';
   $usr = 'reserve';
   $pass = "fuga";
   try{
