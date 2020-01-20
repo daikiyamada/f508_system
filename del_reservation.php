@@ -19,7 +19,7 @@ require_once 'Escape.php'; //エスケープ処理を行うソースファイル
 <li><a href="index.html">Home</a></li>
 <li><a href="calendar.html">F508管理システム</a></li>
 </ul>
-<form method="POST" action="delete.php">
+<form method="POST" action="del.php">
 <table border = "1">
   <tr>
     <th>削除ボタン</th><th>予約番号</th><th>日付・コマ</th>
