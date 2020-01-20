@@ -7,32 +7,35 @@
 </head>
   <link rel="stylesheet" type="text/css" href="Homepage.css" />
 <body>
-<h1 id="title1">研究室管理システム</h1>
-<hr id="cp_hr04" />
+  <div id="back1">
+    <hr id="line1"/>
+    <h1 id="title1">ユーザ登録</h1>
+  </div>
 <ul id="menu">
-<li id="menu0"><a> メニュー</a></li>
-<li id="menu1"><a href="index.html"> トップページ</a></li>
-<li id="menu3"><a href="calendar.html">予約状況確認</a></li>
+<li><a href="index.html">Home</a></li>
+<li><a href="calendar.html">F508管理システム</a></li>
 </ul>
 <h1 id =news_head>お知らせ</h1>
 <?php
 require_once 'Manager.php';
-try{
-  //データベースに接続してPDOオブジェクトを作成
-  $db=connect();
-  print '成功';
-  $sql = 'INSERT INTO f508system(ID,Name,pw) VALUES(:ID,:Name,:pw)';
-  //プリペアドステートメントを生成
-  $stt = $db ->prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
-  //プリペアドステートメントを実行
-  $stt->execute(array(':ID'=>$_POST['ID'],':Name'=>$_POST['Name'],':pw'=> $_POST['pw']));
-  $db = NULL;
-}catch (PDOException $e){
-  exit("エラーが発生しました:{$e->getMessage()}");
-}
-//処理完了後、登録ページを再表示
-header('Location: http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/system_menu.html')
+  try{
+    //データベースに接続してPDOオブジェクトを作成
+    $db=connect();
+    $sql = 'INSERT INTO f508system(ID,Name,pw) VALUES(:ID,:Name,:pw)';
+    //プリペアドステートメントを生成
+    $stt = $db ->prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
+    //プリペアドステートメントを実行
+    $stt->execute(array(':ID'=>$_POST['ID'],':Name'=>$_POST['Name'],':pw'=> $_POST['pw']));
+    $db = NULL;
+  }catch (PDOException $e){
+    exit("エラーが発生しました:{$e->getMessage()}");
+  }
 ?>
+<script>
+var rt = window.confirm('登録完了しました。登録を継続しますか？');
+if(rt) location.href="setuser.html";
+else location.href="system_menu.html";
+</script>
 <script type="text/javascript" style="text-align: right;">
 /*
   var modified = new Date(document.lastModified);
@@ -40,7 +43,12 @@ header('Location: http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'
   var mm= modified.getMonth() + 1;
   var dd = modified.getDate();
   document.write('最終更新日:' + yy + '年' + mm + '月' + dd + '日');
+<<<<<<< HEAD
 */
+=======
+  //
+-->
+>>>>>>> master
 </script>
 </body>
 </html>
