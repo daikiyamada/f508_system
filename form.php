@@ -20,7 +20,7 @@
 require_once 'Manager.php';
   try{
     //データベースに接続してPDOオブジェクトを作成
-    $db=connect2();
+    $db=connect_yoshida();
     $sql = 'INSERT INTO Reservation(Date,ID,purpose) VALUES(:Date,:ID,:purpose)';
     //プリペアドステートメントを生成
     $stt = $db ->prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));

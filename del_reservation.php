@@ -26,7 +26,7 @@ require_once 'Escape.php'; //エスケープ処理を行うソースファイル
   </tr>
   <?php
   try{
-    $db = connect2();
+    $db = connect_yoshida();
     $stt = $db->prepare('SELECT * FROM Reservation');
     $stt->execute();
     $ct = 0;
