@@ -1,4 +1,4 @@
-<?php require_once 'Manager.php';
+<?php require_once 'Manager2.php';
 try{
   $db = connect();
   $sql = "DELETE FROM Reservation WHERE =:ReservationNumber"; //SQL文の作成
