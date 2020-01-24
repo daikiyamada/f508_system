@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <?xml version="1.0" encoding="utf-8"?>
 <?php
-require 'Manager.php'; //データベースへの接続
-require_once 'Escape.php'; //エスケープ処理を行うソースファイルの読み込み
+require '/Manager.php'; //データベースへの接続
+require_once '/Escape.php'; //エスケープ処理を行うソースファイルの読み込み
  ?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml="" lang="ja" lalng="ja" xml:lang="ja">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <head>
   <title>研究室管理システム</title>
 </head>
-  <link rel="stylesheet" type="text/css" href="Homepage.css" />
+  <link rel="stylesheet" type="text/css" href="/Homepage.css" />
 <body>
   <div id="back1">
     <hr id="line1"/>
     <h1 id="title1">ユーザ削除</h1>
   </div>
 <ul id="menu">
-<li><a href="index.html">Home</a></li>
-<li><a href="calendar.html">F508管理システム</a></li>
+<li><a href="/index.html">Home</a></li>
+<li><a href="../calendar.html">F508管理システム</a></li>
 </ul>
 <form method="POST" action="delete.php">
 <table border = "1">
