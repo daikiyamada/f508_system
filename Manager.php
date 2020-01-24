@@ -10,7 +10,8 @@ function connect(){
   }
   return $db;
 }
-
+?>
+<?php
 function connect_yoshida(){
   $dsn = 'mysql:dbname=reservation;dbhost=54.250.152.98';
   $usr = 'reserve';
