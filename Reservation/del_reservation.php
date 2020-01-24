@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?xml version="1.0" encoding="utf-8"?>
 <?php
-require 'Manager2.php'; //データベースへの接続
+require_once 'Manager2.php'; //データベースへの接続
 require_once 'Escape.php'; //エスケープ処理を行うソースファイルの読み込み
  ?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml="" lang="ja" lalng="ja" xml:lang="ja">
