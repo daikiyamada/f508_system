@@ -1,5 +1,6 @@
+
 <?php
-function connect(){
+function connect_yoshida(){
   $dsn = 'mysql:dbname=reservation;dbhost=54.250.152.98';
   $usr = 'reserve';
   $pass = "fuga";
@@ -10,4 +11,5 @@ function connect(){
   }
   return $db;
 }
+
  ?>

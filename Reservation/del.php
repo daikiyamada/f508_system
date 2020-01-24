@@ -5,33 +5,33 @@
 <head>
   <title>研究室管理システム</title>
 </head>
-  <link rel="stylesheet" type="text/css" href="Homepage.css" />
+  <link rel="stylesheet" type="text/css" href="/Homepage.css" />
 <body>
   <div id="back1">
     <hr id="line1"/>
-    <h1 id="title1">ユーザ削除</h1>
+    <h1 id="title1">予約削除</h1>
   </div>
 <ul id="menu">
-<li><a href="index.html">Home</a></li>
+<li><a href="/index.html">Home</a></li>
 <li><a href="calendar.html">F508管理システム</a></li>
 </ul>
 <h1 id =news_head>お知らせ</h1>
 <?php
-require_once 'Manager.php';
+require_once 'Manager2.php';
 try{
   //データベースに接続してPDOオブジェクトを作成
-  $db=connect();
-  $sql = 'DELETE FROM f508system WHERE ID=:ID';
+  $db=connect_yoshida();
+  $sql = 'DELETE FROM Reservation WHERE ReservationNumber=:ReservationNumber';
   //プリペアドステートメントを生成
   $stt = $db ->prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
   //プリペアドステートメントを実行
-  $stt->execute(array(':ID'=>$_POST['ID']));
+  $stt->execute(array(':ReservationNumber'=>$_POST['ReservationNumber']));
   $db = NULL;
 }catch (PDOException $e){
   exit("エラーが発生しました:{$e->getMessage()}");
 }
 //処理完了後、登録ページを再表示
-header('Location: http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/deleteuser.php')
+header('Location: http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/del_reservation.php')
 ?>
 <script type="text/javascript" style="text-align: right;">
 <!--

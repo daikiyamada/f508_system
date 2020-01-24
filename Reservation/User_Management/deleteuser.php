@@ -9,15 +9,15 @@ require_once 'Escape.php'; //エスケープ処理を行うソースファイル
 <head>
   <title>研究室管理システム</title>
 </head>
-  <link rel="stylesheet" type="text/css" href="Homepage.css" />
+  <link rel="stylesheet" type="text/css" href="/Homepage.css" />
 <body>
   <div id="back1">
     <hr id="line1"/>
     <h1 id="title1">ユーザ削除</h1>
   </div>
 <ul id="menu">
-<li><a href="index.html">Home</a></li>
-<li><a href="calendar.html">F508管理システム</a></li>
+<li><a href="/index.html">Home</a></li>
+<li><a href="../calendar.html">F508管理システム</a></li>
 </ul>
 <form method="POST" action="delete.php">
 <table border = "1">
