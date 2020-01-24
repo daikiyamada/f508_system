@@ -9,7 +9,7 @@
 <body>
   <div id="back1">
     <hr id="line1"/>
-    <h1 id="title1">ユーザ登録</h1>
+    <h1 id="title1">予約画面</h1>
   </div>
 <ul id="menu">
 <li><a href="index.html">Home</a></li>
@@ -21,11 +21,11 @@ require_once 'Manager.php';
   try{
     //データベースに接続してPDOオブジェクトを作成
     $db=connect();
-    $sql = 'INSERT INTO f508system(ID,Name,pw) VALUES(:ID,:Name,:pw)';
+    $sql = 'INSERT INTO Reservation(Date,ID,purpose) VALUES(:Date,:ID,:purpose)';
     //プリペアドステートメントを生成
     $stt = $db ->prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
     //プリペアドステートメントを実行
-    $stt->execute(array(':ID'=>$_POST['ID'],':Name'=>$_POST['Name'],':pw'=> $_POST['pw']));
+    $stt->execute(array(':Date'=>$_POST['Date'],':ID'=>$_POST['ID'],':purpose'=> $_POST['purpose']));
     $db = NULL;
   }catch (PDOException $e){
     exit("エラーが発生しました:{$e->getMessage()}");
@@ -33,8 +33,8 @@ require_once 'Manager.php';
 ?>
 <script>
 var rt = window.confirm('登録完了しました。登録を継続しますか？');
-if(rt) location.href="setuser.html";
-else location.href="system_menu.html";
+if(rt) location.href="form.html";
+else location.href="index.html";
 </script>
 <script type="text/javascript" style="text-align: right;">
 /*
