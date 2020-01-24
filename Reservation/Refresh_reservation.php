@@ -1,6 +1,6 @@
 <?php require_once 'Manager2.php';
 try{
-  $db = connect();
+  $db = connect_yoshida();
   $sql = "DELETE FROM Reservation WHERE =:ReservationNumber"; //SQL文の作成
   $stt = $db->prepare($sql);
   $stt -> execute(array(':ReservationNumber' =>$_POST['ReservationNumber']));
