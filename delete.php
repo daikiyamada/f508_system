@@ -1,21 +1,4 @@
-<!DOCTYPE html>
-<?xml version="1.0" encoding="utf-8"?>
-<html xmlns="http://www.w3.org/1999/xhtml" xml="" lang="ja" lalng="ja" xml:lang="ja">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<head>
-  <title>研究室管理システム</title>
-</head>
-  <link rel="stylesheet" type="text/css" href="Homepage.css" />
-<body>
-  <div id="back1">
-    <hr id="line1"/>
-    <h1 id="title1">ユーザ削除</h1>
-  </div>
-<ul id="menu">
-<li><a href="index.html">Home</a></li>
-<li><a href="calendar.html">F508管理システム</a></li>
-</ul>
-<h1 id =news_head>お知らせ</h1>
+
 <?php
 require_once 'Manager.php';
 try{
@@ -33,15 +16,3 @@ try{
 //処理完了後、登録ページを再表示
 header('Location: http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/deleteuser.php')
 ?>
-<script type="text/javascript" style="text-align: right;">
-<!--
-  var modified = new Date(document.lastModified);
-  var yy = modified.getFullYear();
-  var mm= modified.getMonth() + 1;
-  var dd = modified.getDate();
-  document.write('最終更新日:' + yy + '年' + mm + '月' + dd + '日');
-  //
--->
-
-</body>
-</html>

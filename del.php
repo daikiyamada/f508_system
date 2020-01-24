@@ -20,7 +20,7 @@
 require_once 'Manager.php';
 try{
   //データベースに接続してPDOオブジェクトを作成
-  $db=connect();
+  $db=connect2();
   $sql = 'DELETE FROM Reservation WHERE ReservationNumber=:ReservationNumber';
   //プリペアドステートメントを生成
   $stt = $db ->prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
