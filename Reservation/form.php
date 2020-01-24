@@ -34,7 +34,7 @@ require_once 'Manager2.php';
 <script>
 var rt = window.confirm('登録完了しました。登録を継続しますか？');
 if(rt) location.href="form.html";
-else location.href="index.html";
+else location.href="../index.html";
 </script>
 <script type="text/javascript" style="text-align: right;">
 /*
