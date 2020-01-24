@@ -1,6 +1,6 @@
 
 <?php
-require_once '/Manager.php';
+require_once 'Manager.php';
 try{
   //データベースに接続してPDOオブジェクトを作成
   $db=connect();
