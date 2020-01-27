@@ -27,8 +27,7 @@ $day = substr($_GET["date"],6);
     try{
       $db = connect();
       $stt = $db->prepare('SELECT * FROM Reservation WHERE date = :date and class = :class');
-      for($i=0;i<7;i++){
-        print "aaa";
+      for($i=0;$i<7;$i++){
     //    $stt-> execute(array(':date'=>$_GET["date"], 'class'=>$i));
   ?>
   <tr>
