@@ -22,19 +22,54 @@ $day = substr($_GET["date"],6);
 </ul>
 <table id="table">
   <tr><th>コマ</th><th>空き状況</th><<th>代表者名</th><th>使用目的</th>/tr>
- <?php
+  <?php
   require_once 'Manager.php';
     try{
       $db = connect();
       $stt = $db->prepare('SELECT * FROM Reservation WHERE date = :date and class = :class');
-    //  for($i=1;i<7;i++){
-      //  $stt-> execute(array(':date'=>$_GET["date"], 'class'=>$i));
+      for($i=1;i<7;i++){
+        $stt-> execute(array(':date'=>$_GET["date"], 'class'=>$i));
   ?>
   <tr>
-    <td>コマ</td>
+    <td><?php print $i ?>コマ</td>
+    <td><?php
+    if($stt['ID']==NULL){
+      print "空き";
+    }
+    else{
+      print "予約済";
+    }
+    ?>
+  </td>
+  <td>
+    <?php
+    if($stt['ID']== NULL){
+      print " ";
+    }
+    else{
+      $stt2 = $db->prepare('SELECT * FROM f508system WHERE ID = :ID');
+      $stt2 -> execute(array('ID'=>$stt['ID']));
+      print $stt2['Name'];
+    }
+     ?>
+   </td>
+   <td>
+     <?php
+     if($stt['purpose']==NULL){
+       print " ";
+     }
+     else{
+       print $stt['purpose'];
+     }
+     ?>
+   </td>
  </tr>
  <?php
-}
+ }
+ $db = NULL;
+ }catch(PDOException $e){
+   die("エラー発生:{$e->getMessage}");
+ }
   ?>
 </table>
 </body>
