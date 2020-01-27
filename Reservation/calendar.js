@@ -102,7 +102,7 @@ document.querySelector('#next').addEventListener('click', moveCalendar)
 
 document.addEventListener("click", function (e) {
     if (e.target.classList.contains("calendar_td")) {
-      location.href="day_form.php?Year="++"&Month="+month+"&Day="+${dayCount}"
+       alert('クリックした日付は' + e.target.dataset.date + 'です')
     }
 })
 
