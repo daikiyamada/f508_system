@@ -14,55 +14,59 @@ $day = substr($_GET["date"],6);
   <body>
 <div id="back1">
   <hr id="line1"/>
-  <h1 id="title1">予約画面</h1>
+  <h1 id="title1"><?php print $year?>/<?php print $month?>/<?php print $day?>の予約状況</h1>
 </div>
 <ul id="menu">
 <li><a href="/index.html">Home</a></li>
 <li><a href="calendar.html">F508管理システム</a></li>
 </ul>
-<?php
-print $_GET["date"];
-?>
 <table id="table">
+  <tr><th>コマ</th><th>空き状況</th><<th>代表者名</th><th>使用目的</th>/tr>
+  <?php
+  require_once 'Manager.php';
+    try{
+      $db = connect();
+      $stt = $db->prepare('SELECT * FROM Reservation WHERE date = :date and class = :class');
+      for($i=1;i<7;i++){
+        $stt-> execute(array(':date'=>$_GET["date"], 'class'=>$i));
+  ?>
   <tr>
-    <th>時間</th>
-    <th>予約状況</th>
-  </tr>
-  <tr>
-    <td>0コマ(~9:00)</td>
-    <td> 予約ボタン・キャンセルボタン</td>
-  </tr>
-  <tr>
-    <td>1コマ(9:00~10:30)</td>
-    <td> 予約ボタン・キャンセルボタン</td>
-  </tr>
-  <tr>
-    <td>2コマ(10:45~12:15)</td>
-    <td> 予約ボタン・キャンセルボタン</td>
-  </tr>
-  <tr>
-    <td>昼休み(12:20~13:00)</td>
-    <td> 予約ボタン・キャンセルボタン</td>
-  <tr>
-    <td>3コマ(13:05~14:35)</td>
-    <td> 予約ボタン・キャンセルボタン</td>
-  </tr>
-  <tr>
-    <td>4コマ(14:50~16:20)</td>
-    <td> 予約ボタン・キャンセルボタン</td>
-  </tr>
-  <tr>
-    <td>5コマ(16:35~18:05)</td>
-    <td> 予約ボタン・キャンセルボタン</td>
-  </tr>
-  <tr>
-    <td>6コマ(18:20~19:50)</td>
-    <td> 予約ボタン・キャンセルボタン</td>
-  </tr>
-  <tr>
-    <td>放課後(20:00~21:00)</td>
-    <td> 予約ボタン・キャンセルボタン</td>
-  </tr>
+    <td><?php print $i ?>コマ</td>
+    <td><?php
+    if($stt['ID']==NULL){
+      print "空き";
+    }
+    else{
+      print "予約済";
+    }
+    ?>
+  </td>
+  <td>
+    <?php
+    if($stt['ID']== NULL){
+      print " ";
+    }
+    else{
+      $stt2 = $db->prepare('SELECT * FROM f508system WHERE ID = :ID');
+      $stt2 -> execute(array('ID'=>$stt['ID']));
+      print $stt2['Name'];
+    }
+     ?>
+   </td>
+   <td>
+     <?php
+     if($stt['purpose']==NULL){
+       print " ";
+     }
+     else{
+       print $stt['purpose'];
+     }
+     ?>
+   </td>
+ </tr>
+ <?php
+}
+  ?>
 </table>
 </body>
 </html>
