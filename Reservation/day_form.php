@@ -30,10 +30,10 @@ $day = substr($_GET["date"],6);
       for($i=0;$i<7;$i++){
         $stt-> execute(array(':date'=>$_GET["date"], 'class'=>$i));
         $now = $stt->fetchColumn(2);
+        $now_ID = $stt->fetchColumn(3);
   ?>
   <tr>
     <td><?php print $i; ?>コマ</td>
- </tr>
  <td><?php
   if($now==false){
     print "空き";
@@ -43,6 +43,19 @@ $day = substr($_GET["date"],6);
   }
   ?>
 </td>
+<td>
+   <?php
+   if($now== false){
+     print " ";
+   }
+   else{
+     $stt2 = $db->prepare('SELECT * FROM f508system WHERE ID = :ID');
+     $stt2 -> execute(array('ID'=>$now_ID));
+     print $stt2->fetchColumn(1);
+   }
+    ?>
+  </td>
+</tr>
  <?php
  }
  $db = NULL;
