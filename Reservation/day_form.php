@@ -27,11 +27,12 @@ $day = substr($_GET["date"],6);
     try{
       $db = connect();
       $stt = $db->prepare('SELECT * FROM Reservation WHERE date = :date and class = :class');
-      for($i=1;i<7;i++){
+      for($i=0;i<7;i++){
+        print "aaa";
     //    $stt-> execute(array(':date'=>$_GET["date"], 'class'=>$i));
   ?>
   <tr>
-    <td>コマ</td>
+    <td><?php print $i; ?>コマ</td>
  </tr>
  <?php
  }
