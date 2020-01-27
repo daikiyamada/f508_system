@@ -23,7 +23,7 @@ $day = substr($_GET["date"],6);
 <table>
   <tr><th>コマ</th><th>空き状況</th><th>代表者名</th><th>使用目的</th></tr>
   <?php
-  require_once 'Manager.php';
+  require 'Manager.php';
     try{
       $db = connect();
       $stt = $db->prepare('SELECT * FROM Reservation WHERE date = :date and class = :class');
@@ -49,13 +49,15 @@ $day = substr($_GET["date"],6);
      print "a";
    }
    else{
-     $stt2 = $db->prepare('SELECT * FROM f508system WHERE ID = :ID');
+     $db2 = connect();
+     $stt2 = $db2->prepare('SELECT * FROM f508system WHERE ID = :ID');
      $stt2 -> execute(array(':ID'=>$now_ID));
      if($stt2==false){ print "bW";}
      else{
      $name = $stt2->fetchColumn(1);
      print $name;
    }
+   $db2=NULL;
    }
     ?>
   </td>
