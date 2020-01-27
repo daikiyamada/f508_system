@@ -32,37 +32,6 @@ $day = substr($_GET["date"],6);
   ?>
   <tr>
     <td><?php print $i ?>コマ</td>
-    <td><?php
-    if($stt['ID']==NULL){
-      print "空き";
-    }
-    else{
-      print "予約済";
-    }
-    ?>
-  </td>
-  <td>
-    <?php
-    if($stt['ID']== NULL){
-      print " ";
-    }
-    else{
-      $stt2 = $db->prepare('SELECT * FROM f508system WHERE ID = :ID');
-      $stt2 -> execute(array('ID'=>$stt['ID']));
-      print $stt2['Name'];
-    }
-     ?>
-   </td>
-   <td>
-     <?php
-     if($stt['purpose']==NULL){
-       print " ";
-     }
-     else{
-       print $stt['purpose'];
-     }
-     ?>
-   </td>
  </tr>
  <?php
 }
