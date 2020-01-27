@@ -22,11 +22,11 @@ require_once 'Escape.php'; //エスケープ処理を行うソースファイル
 <form method="POST" action="del.php">
 <table border = "1">
   <tr>
-    <th>削除ボタン</th><th>予約番号</th><th>ID</th><th>日付・コマ</th><th>用途</th>
+    <th>削除ボタン</th><th>年</th><th>月</th><th>日</th><th>コマ</th><th>学籍番号</th><th>用途</th>
   </tr>
   <?php
   try{
-    $db = connect_yoshida();
+    $db = connect();
     $stt = $db->prepare('SELECT * FROM Reservation');
     $stt->execute();
     $ct = 0;
