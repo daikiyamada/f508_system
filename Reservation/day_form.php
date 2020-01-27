@@ -10,10 +10,16 @@ $day = substr($_GET["date"],6);
 <head>
   <title>F508管理システム</title>
 </head>
-  <link rel="stylesheet" type="text/css" href="day_reserve.css" />
-<body>
-<h1 id="title1"></h1>
-<hr id="cp_hr04" />
+  <link rel="stylesheet" type="text/css" href="/Homepage.css" />
+  <body>
+<div id="back1">
+  <hr id="line1"/>
+  <h1 id="title1">予約画面</h1>
+</div>
+<ul id="menu">
+<li><a href="/index.html">Home</a></li>
+<li><a href="calendar.html">F508管理システム</a></li>
+</ul>
 <?php
 print $_GET["date"];
 ?>
