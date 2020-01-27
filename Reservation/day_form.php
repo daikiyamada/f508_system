@@ -34,7 +34,7 @@ $day = substr($_GET["date"],6);
     <td><?php print $i; ?>コマ</td>
  </tr>
  <td><?php
-  if($stt['ID']==NULL){
+  if($stt['ID']==NULL||$stt==NULL){
     print "空き";
   }
   else{
