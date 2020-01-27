@@ -21,14 +21,14 @@ $day = substr($_GET["date"],6);
 <li><a href="calendar.html">F508管理システム</a></li>
 </ul>
 <table id="table">
-  <tr><th>コマ</th><th>空き状況</th><<th>代表者名</th><th>使用目的</th></tr>
+  <tr><th>コマ</th><th>空き状況</th><th>代表者名</th><th>使用目的</th></tr>
   <?php
   require_once 'Manager.php';
     try{
       $db = connect();
       $stt = $db->prepare('SELECT * FROM Reservation WHERE date = :date and class = :class');
       for($i=0;$i<7;$i++){
-    //    $stt-> execute(array(':date'=>$_GET["date"], 'class'=>$i));
+        $stt-> execute(array(':date'=>$_GET["date"], 'class'=>$i));
   ?>
   <tr>
     <td><?php print $i; ?>コマ</td>
