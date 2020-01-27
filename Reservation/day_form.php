@@ -46,7 +46,7 @@ $day = substr($_GET["date"],6);
 <td>
    <?php
    if($now== false){
-     print " ";
+     print "a";
    }
    else{
      $stt2 = $db->prepare('SELECT * FROM f508system WHERE ID = :ID');
