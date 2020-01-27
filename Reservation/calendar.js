@@ -63,7 +63,12 @@ function createCalendar(year, month) {
                 else{
                   var mm = String(month)
                 }
-                var dd = String(dayCount)
+                if(dayCount<10){
+                  var dd = String('0'+dayCount)
+                }
+                else{
+                  var dd = String(dayCount)
+                }
                 var date = yy+mm+dd
                 calendarHtml += `<td class="calendar_td" data-date=${date}>${dayCount}</td>`
                 dayCount++
