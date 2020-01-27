@@ -50,9 +50,9 @@ $day = substr($_GET["date"],6);
    }
    else{
      $stt2 = $db->prepare('SELECT * FROM f508system WHERE ID = :ID');
-     print $now_ID;
      $stt2 -> execute(array(':ID'=>$now_ID));
-     print $stt2->fetchColumn(1);
+     $name = $stt2->fetchColumn(1);
+     print $name;
    }
     ?>
   </td>
