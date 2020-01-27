@@ -2,17 +2,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml="" lang="ja" lalng="ja" xml:lang="ja">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<?php
+$year = substr($_GET["date"],0,4);
+$month = substr($_GET["date"],4,2);
+$day = substr($_GET["date"],6);
+ ?>
 <head>
-  <title>予約状況</title>
+  <title>F508管理システム</title>
 </head>
   <link rel="stylesheet" type="text/css" href="day_reserve.css" />
 <body>
 <h1 id="title1"></h1>
 <hr id="cp_hr04" />
 <?php
-print $_POST['Year'];
-print $_POST['Month'];
-print $_POST['Day'];
+print $_GET["date"];
 ?>
 <table id="table">
   <tr>
