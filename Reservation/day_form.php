@@ -20,7 +20,7 @@ $day = substr($_GET["date"],6);
 <li><a href="/index.html">Home</a></li>
 <li><a href="calendar.html">F508管理システム</a></li>
 </ul>
-<table id="table">
+<table>
   <tr><th>コマ</th><th>空き状況</th><th>代表者名</th><th>使用目的</th></tr>
   <?php
   require_once 'Manager.php';
@@ -33,6 +33,15 @@ $day = substr($_GET["date"],6);
   <tr>
     <td><?php print $i; ?>コマ</td>
  </tr>
+ <td><?php
+  if($stt['ID']==NULL){
+    print "空き";
+  }
+  else{
+    print "予約済";
+  }
+  ?>
+</td>
  <?php
  }
  $db = NULL;
