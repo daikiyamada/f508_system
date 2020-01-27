@@ -56,7 +56,8 @@ function createCalendar(year, month) {
                 calendarHtml += '<td class="is-disabled">' + num + '</td>'
                 dayCount++
             } else {
-                calendarHtml += `<td class="calendar_td" data-date="${year}/${month}/${dayCount}" data-day="${year}${month}${daycount}">${dayCount}</td>`
+                var date = year+month+dayCount
+                calendarHtml += `<td class="calendar_td" data-date="date">${dayCount}</td>`
                 dayCount++
             }
         }
