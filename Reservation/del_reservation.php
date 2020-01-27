@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?xml version="1.0" encoding="utf-8"?>
 <?php
-require_once 'Manager2.php'; //データベースへの接続
+require_once 'Manager.php'; //データベースへの接続
 require_once 'Escape.php'; //エスケープ処理を行うソースファイルの読み込み
  ?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml="" lang="ja" lalng="ja" xml:lang="ja">
@@ -35,16 +35,22 @@ require_once 'Escape.php'; //エスケープ処理を行うソースファイル
   ?>
   <tr>
     <td>
-      <input type="submit" name="ReservationNumber" value="<?php print($row['ReservationNumber'])?>"/>
+      <input type="submit" name="Number" value="<?php print($row['Year']+$row['Month']+$row['Day']+$row['time'])?>"/>
     </td>
     <td>
-      <?php print es($row['ReservationNumber']);?>
+      <?php print es($row['Year']);?>
+    </td>
+    <td>
+      <?php print es($row['Month']);?>
+    </td>
+    <td>
+      <?php print es($row['Day']);?>
+    </td>
+    <td>
+      <?php print es($row['time']);?>
     </td>
     <td>
       <?php print es($row['ID']);?>
-    </td>
-    <td>
-      <?php print es($row['Date']);?>
     </td>
     <td>
       <?php print es($row['purpose']);?>
