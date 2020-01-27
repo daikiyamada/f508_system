@@ -22,7 +22,7 @@ require_once 'Escape.php'; //エスケープ処理を行うソースファイル
 <form method="POST" action="del.php">
 <table border = "1">
   <tr>
-    <th>削除ボタン</th><th>年</th><th>月</th><th>日</th><th>コマ</th><th>学籍番号</th><th>用途</th>
+    <th>予約番号</th><th>日付</th><th>コマ</th><th>学籍番号</th><th>用途</th>
   </tr>
   <?php
   try{
@@ -35,19 +35,13 @@ require_once 'Escape.php'; //エスケープ処理を行うソースファイル
   ?>
   <tr>
     <td>
-      <input type="submit" name="Number" value="<?php print($row['Year']+$row['Month']+$row['Day']+$row['time'])?>"/>
+      <input type="submit" name="reserveID" value="<?php print($row['reserveID'])?>"/>
     </td>
     <td>
-      <?php print es($row['Year']);?>
+      <?php print es($row['date']);?>
     </td>
     <td>
-      <?php print es($row['Month']);?>
-    </td>
-    <td>
-      <?php print es($row['Day']);?>
-    </td>
-    <td>
-      <?php print es($row['time']);?>
+      <?php print es($row['class']);?>
     </td>
     <td>
       <?php print es($row['ID']);?>
