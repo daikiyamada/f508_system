@@ -57,7 +57,7 @@ function createCalendar(year, month) {
                 dayCount++
             } else {
                 var date = year+month+dayCount
-                calendarHtml += `<td class="calendar_td" data-date="date">${dayCount}</td>`
+                calendarHtml += `<td class="calendar_td" data-date=${date}>${dayCount}</td>`
                 dayCount++
             }
         }
