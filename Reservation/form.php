@@ -25,7 +25,7 @@ require_once 'Manager.php';
     //プリペアドステートメントを生成
     $stt = $db ->prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
     //プリペアドステートメントを実行
-    $stt->execute(array(':Year'=>$_POST['Year'],':Month'=>$_POST['Month'],':Day'=>$_POST['Day'],:'ID'=>$_POST['ID'],':purpose'=> $_POST['purpose'],':time'=>$_POST['time']));
+    //$stt->execute(array(':Year'=>$_POST['Year'],':Month'=>$_POST['Month'],':Day'=>$_POST['Day'],:'ID'=>$_POST['ID'],':purpose'=> $_POST['purpose'],':time'=>$_POST['time']));
     $db = NULL;
   }catch (PDOException $e){
     exit("エラーが発生しました:{$e->getMessage()}");
