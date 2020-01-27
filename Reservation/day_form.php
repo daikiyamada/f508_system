@@ -26,16 +26,16 @@ $day = substr($_GET["date"],6);
   require_once 'Manager.php';
     try{
       $db = connect();
-      $stt = $db->prepare('SELECT * FROM Reservation WHERE date = :date and class = :class');
-      for($i=1;i<7;i++){
-        $stt-> execute(array(':date'=>$_GET["date"], 'class'=>$i));
+    //  $stt = $db->prepare('SELECT * FROM Reservation WHERE date = :date and class = :class');
+    //  for($i=1;i<7;i++){
+    //    $stt-> execute(array(':date'=>$_GET["date"], 'class'=>$i));
   ?>
   <tr>
-    <td><?php print $i ?>コマ</td>
-  
+    <td>コマ</td>
+
  </tr>
  <?php
- }
+// }
  $db = NULL;
  }catch(PDOException $e){
    die("エラー発生:{$e->getMessage}");
