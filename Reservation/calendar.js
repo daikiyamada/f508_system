@@ -102,11 +102,11 @@ document.querySelector('#next').addEventListener('click', moveCalendar)
 
 document.addEventListener("click", function (e) {
     if (e.target.classList.contains("calendar_td")) {
-        <form action="day_form.php" method="POST">
-        <input type = "hidden" name = "Year" value="${year}">
+        /*<form action="day_form.php" method="POST">
+        <input type = "hidden" name = "Year" value=calendar_td.>
         <input type = "hidden" name="Month" value="${month}">
         <input type = "hidden" name="Day" value="${dayCount}">
-        </form>
+        </form>*/
     }
 })
 
