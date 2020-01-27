@@ -7,8 +7,13 @@
 </head>
   <link rel="stylesheet" type="text/css" href="day_reserve.css" />
 <body>
-<h1 id="title1">予約状況(◯/◯)</h1>
+<h1 id="title1"></h1>
 <hr id="cp_hr04" />
+<?php
+print $_POST['Year'];
+print $_POST['Month'];
+print $_POST['Day'];
+?>
 <table id="table">
   <tr>
     <th>時間</th>
