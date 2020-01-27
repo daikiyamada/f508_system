@@ -51,10 +51,10 @@ $day = substr($_GET["date"],6);
    else{
      print $now_ID;
      $db2 = connect();
-     print $db2;
+     print"c";
      $stt2 = $db2->prepare('SELECT * FROM f508system WHERE ID = :ID');
      $stt2 -> execute(array(':ID'=>$now_ID));
-     print $stt2;
+     print"d";
      if($stt2==false){ print "bW";}
      else{
      $name = $stt2->fetchColumn(1);
