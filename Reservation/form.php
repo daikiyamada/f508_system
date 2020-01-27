@@ -25,7 +25,7 @@ require_once 'Manager.php';
     //プリペアドステートメントを生成
     $stt = $db ->prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
     //プリペアドステートメントを実行
-    //$stt->execute(array(':Year'=>$_POST['Year'],':Month'=>$_POST['Month'],':Day'=>$_POST['Day'],:'ID'=>$_POST['ID'],':purpose'=> $_POST['purpose'],':time'=>$_POST['time']));
+    $stt->execute(array(':Year'=>$_POST['Year'],':Month'=>$_POST['Month'],':Day'=>$_POST['Day'],':ID'=>$_POST['ID'],':purpose'=> $_POST['purpose'],':time'=>$_POST['time']));
     $db = NULL;
   }catch (PDOException $e){
     exit("エラーが発生しました:{$e->getMessage()}");
@@ -34,7 +34,7 @@ require_once 'Manager.php';
 <script>
 var rt = window.confirm('登録完了しました。登録を継続しますか？');
 if(rt) location.href="form.html";
-else location.href="index.html";
+else location.href="/index.html";
 </script>
 <script type="text/javascript" style="text-align: right;">
 /*
