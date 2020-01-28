@@ -1,9 +1,8 @@
-
 <?php
-function connect_yoshida(){
-  $dsn = 'mysql:dbname=reservation;dbost=54.250.152.98';
-  $usr = 'reserve';
-  $pass = "fuga";
+function connect(){
+  $dsn = 'mysql:dbname=student;dbhost=localhost';
+  $usr = 'root';
+  $pass = "daiki06890516";
   try{
     $db = new PDO($dsn, $usr,$pass);
   }catch(PDOException $e){
@@ -11,5 +10,4 @@ function connect_yoshida(){
   }
   return $db;
 }
-
- ?>
+?>

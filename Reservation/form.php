@@ -17,15 +17,15 @@
 </ul>
 <h1 id =news_head>お知らせ</h1>
 <?php
-require_once 'Manager2.php';
+require_once 'Manager.php';
   try{
     //データベースに接続してPDOオブジェクトを作成
-    $db=connect_yoshida();
-    $sql = 'INSERT INTO Reservation(Date,ID,purpose) VALUES(:Date,:ID,:purpose)';
+    $db=connect();
+    $sql = 'INSERT INTO Reservation(reserveID,date,class,ID,purpose) VALUES(:reserveID,:date,:class,:ID,:purpose)';
     //プリペアドステートメントを生成
     $stt = $db ->prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
     //プリペアドステートメントを実行
-    $stt->execute(array(':Date'=>$_POST['Date'],':ID'=>$_POST['ID'],':purpose'=> $_POST['purpose']));
+    $stt->execute(array(':reserveID'=>$_POST['reserveID'],':date'=>$_POST['date'],'class'=>$_POST['class'],':ID'=>$_POST['ID'],':purpose'=> $_POST['purpose']));
     $db = NULL;
   }catch (PDOException $e){
     exit("エラーが発生しました:{$e->getMessage()}");
@@ -34,7 +34,7 @@ require_once 'Manager2.php';
 <script>
 var rt = window.confirm('登録完了しました。登録を継続しますか？');
 if(rt) location.href="form.html";
-else location.href="../index.html";
+else location.href="/index.html";
 </script>
 <script type="text/javascript" style="text-align: right;">
 /*

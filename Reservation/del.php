@@ -17,15 +17,15 @@
 </ul>
 <h1 id =news_head>お知らせ</h1>
 <?php
-require_once 'Manager2.php';
+require_once 'Manager.php';
 try{
   //データベースに接続してPDOオブジェクトを作成
-  $db=connect_yoshida();
-  $sql = 'DELETE FROM Reservation WHERE ReservationNumber=:ReservationNumber';
+  $db=connect();
+  $sql = 'DELETE FROM Reservation WHERE reserveID = :reserveID';
   //プリペアドステートメントを生成
   $stt = $db ->prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
   //プリペアドステートメントを実行
-  $stt->execute(array(':ReservationNumber'=>$_POST['ReservationNumber']));
+  $stt->execute(array(':reserveID'=>$_POST['reserveID']));
   $db = NULL;
 }catch (PDOException $e){
   exit("エラーが発生しました:{$e->getMessage()}");

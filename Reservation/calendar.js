@@ -8,6 +8,7 @@ const config = {
     show: 1,
 }
 
+/**カレンダー表示*/
 function showCalendar(year, month) {
     for (i = 0; i < config.show; i++) {
         const calendarHtml = createCalendar(year, month)
@@ -55,7 +56,21 @@ function createCalendar(year, month) {
                 calendarHtml += '<td class="is-disabled">' + num + '</td>'
                 dayCount++
             } else {
-                calendarHtml += `<td class="calendar_td" data-date="${year}/${month}/${dayCount}">${dayCount}</td>`
+                var yy = String(year)
+                if(month<10){
+                  var mm = String('0'+month)
+                }
+                else{
+                  var mm = String(month)
+                }
+                if(dayCount<10){
+                  var dd = String('0'+dayCount)
+                }
+                else{
+                  var dd = String(dayCount)
+                }
+                var date = yy+mm+dd
+                calendarHtml += `<td class="calendar_td" data-date=${date}>${dayCount}</td>`
                 dayCount++
             }
         }
@@ -102,7 +117,7 @@ document.querySelector('#next').addEventListener('click', moveCalendar)
 
 document.addEventListener("click", function (e) {
     if (e.target.classList.contains("calendar_td")) {
-        alert('クリックした日付は' + e.target.dataset.date + 'です')
+       location.href="day_form.php?date="+e.target.dataset.date;
     }
 })
 

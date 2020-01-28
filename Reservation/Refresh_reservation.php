@@ -1,4 +1,4 @@
-<?php require_once 'Manager2.php';
+<?php require_once 'Manager.php';
 try{
   $db = connect_yoshida();
   $sql = "DELETE FROM Reservation WHERE =:ReservationNumber"; //SQL文の作成
