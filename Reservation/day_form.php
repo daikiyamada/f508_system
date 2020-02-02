@@ -73,7 +73,7 @@ $day = substr($_GET["date"],6);
     <?php
     if($now==false){?>
       <form method="POST" action="reserve_form.php">
-      <input type="hidden" name="reserveID" value=" ">
+      <input type="hidden" name="reserveID" value="0">
       <input type="hidden" name="date" value="<?php print $_GET['date']?>">
       <input type="hidden" name="class" value="<?php print $i?>">
       <input type="submit" value="登録"><br>
