@@ -21,7 +21,7 @@ $day = substr($_GET["date"],6);
 <li><a href="calendar.html">F508管理システム</a></li>
 </ul>
 <table>
-  <tr><th>コマ</th><th>空き状況</th><th>代表者名</th><th>使用目的</th></tr>
+  <tr><th>コマ</th><th>空き状況</th><th>代表者名</th><th>使用目的</th><th>予約フォーム</th></tr>
   <?php
   require 'Manager.php';
     try{
@@ -67,6 +67,25 @@ $day = substr($_GET["date"],6);
     else{
       print $now['purpose'];
     }
+    ?>
+  </td>
+  <td>
+    <?php
+    if($now==false){?>
+      <form method="POST" action="del.php">
+      <input type="hidden" name="Reservation" value="<?php print $_GET['date']?>">
+      <input type="hidden" name="class" value="<?php print $i?>">
+      学籍番号：<input type = "text" name="ID"><br>
+      用途：<input type = "text" name = "purpose"><br>
+      <input type="submit" name="登録"><br>
+    </form>
+<?php    }
+    else{?>
+      <form method="POST" action="del.php">
+      <input type="submit" name="Reservation" value="<?php print $_GET['date']?>">
+      <input type="hidden" name="class" value="<?php print $i?>">
+      <input type = "hidden" name="ID" value = "<?php print $_GET['ID']?>">
+  <?php  }
     ?>
   </td>
 </tr>
