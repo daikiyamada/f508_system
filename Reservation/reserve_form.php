@@ -25,6 +25,7 @@ $day = substr($_GET["date"],6);
 <form type = "POST" action="form.php">
   学籍番号：<input type = "text" name="ID"> <br>
   用途：<input type = "text" name="purpose"><br>
+  <input type="submit" value="予約">
 </form>
 </p>
 </body>
