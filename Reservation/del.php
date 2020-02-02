@@ -26,8 +26,8 @@ try{
   $stt = $db ->prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
   //プリペアドステートメントを実行
   print $_POST['date']
-  print $_POST['class']
-  print $_POST['ID']
+  //print $_POST['class']
+  //print $_POST['ID']
   $stt->execute(array(':date' => $_POST['date'],':class' => $_POST['class'], ':ID' => $_POST['ID']));
   $db = NULL;
 }catch (PDOException $e){
