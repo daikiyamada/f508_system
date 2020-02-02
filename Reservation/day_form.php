@@ -87,6 +87,7 @@ $day = substr($_GET["date"],6);
       <input type="hidden" name="date" value="<?php print $_GET['date']?>">
       <input type="hidden" name="class" value="<?php print $i?>">
       <input type = "hidden" name="ID" value = "<?php print $_GET['ID']?>">
+      </form
   <?php  }
     ?>
   </td>
