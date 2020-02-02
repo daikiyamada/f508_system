@@ -80,7 +80,7 @@ $day = substr($_GET["date"],6);
     </form>
 <?php    }
     else{?>
-      <form method="GET" action="del.php">
+      <form method="POST" action="del.php">
       <input type="submit" value="削除">
       <input type="hidden" name="date" value="<?php print $_GET['date']?>">
       <input type="hidden" name="class" value="<?php print $i?>">
