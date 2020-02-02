@@ -28,8 +28,6 @@ $day = substr($_POST["date"],6);
   <input type="hidden" name="class" value="<?php print $_POST['class']?>">
   学籍番号：<input type="text" name="ID"><br>
   用途：<input type="text" name="purpose"><br>
-  <?php print $_POST['date']
-  print $_POST['class']?>
   <input type="submit" value="予約">
 </form>
 </p>
