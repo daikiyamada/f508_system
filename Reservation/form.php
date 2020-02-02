@@ -31,11 +31,6 @@ require_once 'Manager.php';
     exit("エラーが発生しました:{$e->getMessage()}");
   }
 ?>
-<script>
-var rt = window.confirm('登録完了しました。登録を継続しますか？');
-if(rt) location.href="calendar.html";
-else location.href="/index.html";
-</script>
 <script type="text/javascript" style="text-align: right;">
 /*
   var modified = new Date(document.lastModified);
