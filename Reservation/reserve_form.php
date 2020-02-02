@@ -3,9 +3,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml="" lang="ja" lalng="ja" xml:lang="ja">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
-$year = substr($_GET["date"],0,4);
-$month = substr($_GET["date"],4,2);
-$day = substr($_GET["date"],6);
+$year = substr($_POST["date"],0,4);
+$month = substr($_POST["date"],4,2);
+$day = substr($_POST["date"],6);
  ?>
 <head>
   <title>F508管理システム</title>
