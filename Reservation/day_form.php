@@ -78,12 +78,12 @@ $day = substr($_GET["date"],6);
       <input type="hidden" name="class" value="<?php print $i?>">
       学籍番号：<input type = "text" name="ID"><br>
       用途：<input type = "text" name = "purpose"><br>
-      <input type="submit" name="登録"><br>
+      <input type="submit" value="登録"><br>
     </form>
 <?php    }
     else{?>
       <form method="POST" action="del.php">
-      <input type="submit" name="削除">
+      <input type="submit" value="削除">
       <input type="hidden" name="date" value="<?php print $_GET['date']?>">
       <input type="hidden" name="class" value="<?php print $i?>">
       <input type = "hidden" name="ID" value = "<?php print $_GET['ID']?>">
