@@ -28,7 +28,6 @@ $day = substr($_POST["date"],6);
   <input type="hidden" name="reserveID" value=" ">
   <input type="hidden" name="date" value="<?php print $_POST['date']?>">
   <input type="hidden" name="class" value="<?php print $_POST['class']?>">
-  <input type = "hidden" name="ID" value = "<?php print $_POST['ID']?>">
   <input type="submit" value="予約">
 </form>
 </p>
