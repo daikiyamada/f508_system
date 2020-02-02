@@ -25,6 +25,7 @@ $day = substr($_POST["date"],6);
 <form type = "POST" action="form.php">
   学籍番号：<input type = "text" name="ID"> <br>
   用途：<input type = "text" name="purpose"><br>
+  <input type="hidden" name="reserveID" value=" ">
   <input type="hidden" name="date" value="<?php print $_POST['date']?>">
   <input type="hidden" name="class" value="<?php print $_POST['class']?>">
   <input type = "hidden" name="ID" value = "<?php print $_POST['ID']?>">
