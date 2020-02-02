@@ -72,8 +72,9 @@ $day = substr($_GET["date"],6);
   <td>
     <?php
     if($now==false){?>
-      <form method="POST" action="del.php">
-      <input type="hidden" name="Reservation" value="<?php print $_GET['date']?>">
+      <form method="POST" action="form.php">
+      <input type="hidden" name="reserveID" value=" ">
+      <input type="hidden" name="date" value="<?php print $_GET['date']?>">
       <input type="hidden" name="class" value="<?php print $i?>">
       学籍番号：<input type = "text" name="ID"><br>
       用途：<input type = "text" name = "purpose"><br>
