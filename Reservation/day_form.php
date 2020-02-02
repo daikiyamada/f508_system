@@ -72,12 +72,10 @@ $day = substr($_GET["date"],6);
   <td>
     <?php
     if($now==false){?>
-      <form method="POST" action="form.php">
+      <form method="POST" action="reserve_form.php">
       <input type="hidden" name="reserveID" value=" ">
       <input type="hidden" name="date" value="<?php print $_GET['date']?>">
       <input type="hidden" name="class" value="<?php print $i?>">
-      学籍番号：<input type = "text" name="ID"><br>
-      用途：<input type = "text" name = "purpose"><br>
       <input type="submit" value="登録"><br>
     </form>
 <?php    }

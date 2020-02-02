@@ -83,7 +83,10 @@ use calender
 	display: flex;
 	flex-wrap: wrap;
 }
-
+p #reserve{
+	text-align: center;
+	font-size: 28pt;
+}
 section {
 	margin: 10px;
 }
@@ -122,7 +125,7 @@ td.is-disabled {
 label, input[type='checkbox'] {
 	cursor: pointer;
 }
-
+\
 /*============================================
 サブメニュー（左カラム）
 ============================================*/
