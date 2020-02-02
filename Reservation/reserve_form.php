@@ -22,7 +22,7 @@ $day = substr($_POST["date"],6);
 </ul>
 学籍番号と使用用途の入力お願いいたします。<br>
 <p id="reserve">
-<form type = "POST" action="form.php">
+<form type ="POST" action="form.php">
   <input type="hidden" name="reserveID" value="<?php print $_POST['reserveID']?>">
   <input type="hidden" name="date" value="<?php print $_POST['date']?>">
   <input type="hidden" name="class" value="<?php print $_POST['class']?>">
