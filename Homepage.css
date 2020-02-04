@@ -2,80 +2,62 @@
 全般的なスタイル
 ============================================*/
 body {
-	background-color:#BAD3FF;	/*ページ全体の背景色*/		/*IE6以下でセンタリングするための対策*/
+	background-color:lightgray;	/*ページ全体の背景色*/		/*IE6以下でセンタリングするための対策*/
 }
 /*============================================
 ヘッダ
 ============================================*/
-h1#title1{
-	color:#0000ff;
-	margin-left:370px;
-	margin-bottom: 10px;
+div#back1{
+	background-color: navy;
+	margin:0;
+	padding:0;
+	border: 0;
 }
-hr#cp_hr04 {
-	border-width: 3px;
-	border-style: double;
-	border-color: #black;
+hr#line1 {
+	margin: 0;
+	padding: 0;
+	border-width: 10px;
+	border-style: solid;
+	border-color: red;
+}
+h1#title1{
+	color: white;
+	margin: 0;
+	padding: 0;
+	text-align: left;
 }
 /*============================================
 メインメニュー
 ============================================*/
-ul#menu{
-	overflow:hidden;
-	display:block;				/*リンクをブロック表示にする*/
-	text-decoration:none; 			/*リンクの下線を無くす*/
-	font-family:Arial, Helvetica, sans-serif;	/*フォントの種類*/
+ul{
 	list-style:none;
-	paddin:0px;
-}
-/*ボタン01～05にはそれぞれ異なる背景画像を指定する*/
-li#menu0{
-	width:180px; height:38px;	/*背景画像に合わせたサイズ指定*/
-	background-color: #D6FF58;
-	text-align: center;
-	font-size: 18pt;
-	border: 2px solid #fff;
-	box-shadow: 0 0 0 2px #D6FF58;
-	color: #0a8915;
 	margin: 0;
-		float:left;
+	padding: 0;
+	overflow:hidden;
+	background-color: #1b2538;
+	display:block;				/*リンクをブロック表示にする*/
 }
-li#menu1 {
-	width:250px; height:38px;	/*背景画像に合わせたサイズ指定*/
-	background-color: #FFCC66;
+li {
+	float: left;
+	border-right: 1px solid #bbbbbb;
+}
+li:last-child {
+	border-right: none;
+}
+li a {
+	display: block;
+	color: white;
 	text-align: center;
-	font-size: 18pt;
-	border: 2px solid #fff;
-	box-shadow: 0 0 0 2px #FFCC66;
-	color: #0a8915;
-	margin 0;
-		float:left;
-/*background-image:url("images/bg_menu01.jpg");	/*背景画像*/
+	padding: 14px 16px;
+	text-decoration: none;
 }
-li#menu2 {
-	width:250px; height:38px;	/*背景画像に合わせたサイズ指定*/
-	font-size: 18pt;
-	text-align: center;
-	background-color: #cafbce;
-	border: 2px solid #fff;
-	box-shadow: 0 0 0 2px #cafbce;
-	color: #0a8915;
-	margin: 0;
-	float:left;
-	/*background-image:url("images/bg_menu02.jpg");	/*背景画像*/
+li a:hover:not(.active) {
+	background-color: #a9bce2;
 }
-li#menu3 {
-	width:250px; height:38px;	/*背景画像に合わせたサイズ指定*/
-	font-size: 18pt;
-	text-align: center;
-	background-color: #cafbce;
-	border: 2px solid #fff;
-	box-shadow: 0 0 0 2px #cafbce;
-	color: #0a8915;
-	margin: 0;
-	float:left;
-	/*background-image:url("images/bg_menu02.jpg");	/*背景画像*/
+.active {
+	background-color: #da3c41;
 }
+/*=============================================*/
 h1#news_head{
 	font-size:24pt;
 	text-align: center;
@@ -101,7 +83,10 @@ use calender
 	display: flex;
 	flex-wrap: wrap;
 }
-
+p #reserve{
+	text-align: center;
+	font-size: 28pt;
+}
 section {
 	margin: 10px;
 }
@@ -137,6 +122,10 @@ td.is-disabled {
 	color: rgb(255, 255, 255);
 }
 
+label, input[type='checkbox'] {
+	cursor: pointer;
+}
+\
 /*============================================
 サブメニュー（左カラム）
 ============================================*/
