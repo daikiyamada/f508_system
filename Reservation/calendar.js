@@ -1,9 +1,9 @@
 const weeks = ['日', '月', '火', '水', '木', '金', '土']
 const date = new Date()
-let year = date.getFullYear()
-let month = date.getMonth() + 1
-let ty = date.getFullYear()
-let tm = date.getMonth() + 1
+let year = date.getFullYear() //年を取得
+let month = date.getMonth() + 1 //月を取得（0～11）
+let ty = date.getFullYear() // 今年を取得
+let tm = date.getMonth() + 1 // 今月を取得
 const config = {
     show: 1,
 }
@@ -120,5 +120,11 @@ document.addEventListener("click", function (e) {
        location.href="day_form.php?date="+e.target.dataset.date;
     }
 })
+
+< ? php
+$year = substr($_GET["date"], 0, 4);
+$month = substr($_GET["date"], 4, 2);
+$day = substr($_GET["date"], 6); ?
+>
 
 showCalendar(year, month)
