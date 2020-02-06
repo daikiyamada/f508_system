@@ -4,7 +4,7 @@ try{
   //データベースに接続してPDOオブジェクトを作成
   $db=connect();
   $now = (string)date('Ymd');
-  $sql = 'DELETE FROM Reservation WHERE date = :date';
+  $sql = 'DELETE FROM Reservation WHERE date < :date';
   //プリペアドステートメントを生成
   $stt = $db ->prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
   //プリペアドステートメントを実行
