@@ -1,5 +1,5 @@
 <?php
-require_once 'Manager.php';
+require_once '/var/www/html/Reservation/Manager.php';
 try{
   //データベースに接続してPDOオブジェクトを作成
   $db=connect();
@@ -8,8 +8,6 @@ try{
   //プリペアドステートメントを生成
   $stt = $db ->prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
   //プリペアドステートメントを実行
-  print"成功";
-  print $now;
   $stt->execute(array(':date' => $now));
 
   $db = NULL;
@@ -19,6 +17,5 @@ try{
 //処理完了後、登録ページを再表示
 //header('Location: http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/calendar.html')
 ?>
-aaaa
 </body>
 </html>
