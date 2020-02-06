@@ -8,6 +8,7 @@ try{
   //プリペアドステートメントを生成
   $stt = $db ->prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
   //プリペアドステートメントを実行
+  print"成功";
 /*  for(int $i=0;$i<7;$i++){
     $stt->execute(array(':date' => $now, ':class' => $i));
 }*/
