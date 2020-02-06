@@ -8,9 +8,9 @@ try{
   //プリペアドステートメントを生成
   $stt = $db ->prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
   //プリペアドステートメントを実行
-  for(int $i=0;$i<7;$i++){
+/*  for(int $i=0;$i<7;$i++){
     $stt->execute(array(':date' => $now, ':class' => $i));
-}
+}*/
   $db = NULL;
 }catch (PDOException $e){
   exit("エラーが発生しました:{$e->getMessage()}");
