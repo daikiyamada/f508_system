@@ -121,10 +121,4 @@ document.addEventListener("click", function (e) {
     }
 })
 
-< ? php
-$year = substr($_GET["date"], 0, 4);
-$month = substr($_GET["date"], 4, 2);
-$day = substr($_GET["date"], 6); ?
->
-
 showCalendar(year, month)

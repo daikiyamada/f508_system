@@ -7,10 +7,37 @@
 
     function drawChart() {
         var jsonData = $.ajax({
-            url: "jsoncreate.php",
-            dataType: "json",
-            async: false
+            url: "json.php",
+            dataType: "json"
         }).responseText;
+
+    // $(document).ready(function () {
+    // //ファイルの読み込み
+    // $.ajax({
+    // url: 'jsoncreate.php',
+    // dataType: 'json'
+    // })
+    // .done(function (data) {
+    // data.forEach(function (item, index) {
+    // if(item.crowded === 'yes'){
+    // const idName = '#' + item.id;
+    // $(idName).find('.check').addClass('crowded');
+    // }
+    // });
+    // })
+    // .fail(function () {
+    // window.alert('読み込みエラー');
+    // });
+
+    // //クリックされたら空き席状況を表示
+    // $('.check').on('click', function() {
+    // if($(this).hasClass('crowded')) {
+    // $(this).text('残席わずか').addClass('red');
+    // } else {
+    // $(this).text('お席あります').addClass('green');
+    // }
+    // });
+    // });
     </script>
 </head>
 
