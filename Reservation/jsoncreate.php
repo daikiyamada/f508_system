@@ -5,11 +5,11 @@ require_once 'encode.php';
 
 // initialization for column
 $arryCol = array();
-array_push($arryCol, MakeColElement('reserveID', 'number'));
-array_push($arryCol, MakeColElement('date', 'number'));
-array_push($arryCol, MakeColElement('class', 'number'));
-array_push($arryCol, MakeColElement('ID', 'number'));
-array_push($arryCol, MakeColElement('purpose', 'number'));
+array_push($arryCol, MakeColElement('ReservationNumber', 'number'));
+array_push($arryCol, MakeColElement('Date', 'number'));
+// array_push($arryCol, MakeColElement('class', 'number'));
+array_push($arryCol, MakeColElement('ID', 'string'));
+array_push($arryCol, MakeColElement('purpose', 'string'));
 
 $arryRow = array();
 
@@ -23,7 +23,7 @@ try
 
     // loop till fetch all aquired values and store.
     while($row = $stt->fetch(PDO::FETCH_ASSOC)) {
-      array_push($arryRow, MakeRowElement($row['reserveID'], $row['date'], $row['class']));
+      array_push($arryRow, MakeRowElement($row['ReserveID'], $row['Date']));
     }
 
     // delete
