@@ -3,13 +3,11 @@ require_once 'Manager.php';
 try{
   //データベースに接続してPDOオブジェクトを作成
   $db=connect();
-  $now = date('Ymd');
-  print $now;
-  $sql = 'DELETE FROM Reservation WHERE date =:date';
+  $sql = 'DELETE FROM Reservation WHERE date < :date';
   //プリペアドステートメントを生成
   $stt = $db ->prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
   //プリペアドステートメントを実行
-  $stt->execute(':date' => $now);;
+  $stt->execute(':date' => String(date('Ymd')));
   $db = NULL;
 }catch (PDOException $e){
   exit("エラーが発生しました:{$e->getMessage()}");
