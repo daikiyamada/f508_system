@@ -5,11 +5,11 @@ try{
   $db=connect();
   $now = date('Ymd');
   print $now;
-  $sql = 'DELETE FROM Reservation WHERE date=:date and class = :class';
+  $sql = 'DELETE FROM Reservation WHERE date < $now';
   //プリペアドステートメントを生成
   $stt = $db ->prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
   //プリペアドステートメントを実行
-//  $stt->execute(array(':date' => $_POST['date'],':class' => $_POST['class'], ':ID' => $_POST['ID']));
+  $stt->execute();
   $db = NULL;
 }catch (PDOException $e){
   exit("エラーが発生しました:{$e->getMessage()}");
