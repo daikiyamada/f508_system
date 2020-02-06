@@ -4,11 +4,12 @@ try{
   //データベースに接続してPDOオブジェクトを作成
   $db=connect();
   $now = date('Ymd');
-  $sql = 'DELETE FROM Reservation WHERE date < :date';
+  $sql = 'DELETE FROM Reservation WHERE date = :date and class = :class';
   //プリペアドステートメントを生成
   $stt = $db ->prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
   //プリペアドステートメントを実行
-  $stt->execute(array(':date' => $now));
+  for(int $i=0;$i<7;$i++){
+    $stt->execute(array(':date' => $now, ':class' => $i));
 }
   $db = NULL;
 }catch (PDOException $e){
