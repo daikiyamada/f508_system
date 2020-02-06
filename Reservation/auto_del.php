@@ -3,7 +3,7 @@ require_once 'Manager.php';
 try{
   //データベースに接続してPDOオブジェクトを作成
   $db=connect();
-  $now = date('YYYYMMDD');
+  $now = date('Ymd');
   print $now;
   $sql = 'DELETE FROM Reservation WHERE date=:date and class = :class';
   //プリペアドステートメントを生成
