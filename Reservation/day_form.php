@@ -3,6 +3,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml="" lang="ja" lalng="ja" xml:lang="ja">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
+session_start();
+if(!$_SESSION['ID']){
+?>
+<script type ="text/javascript">
+window.alert("ログインしてください");
+location.href="/Reservation/login.php";
+</script>
+<?php
+}
+ ?>
+<?php
 $year = substr($_GET["date"],0,4);
 $month = substr($_GET["date"],4,2);
 $day = substr($_GET["date"],6);
