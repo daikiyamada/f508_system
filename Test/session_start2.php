@@ -17,7 +17,8 @@
 </ul>
 <h1 id =news_head>お知らせ</h1>
 <?php
-print $_SESSION;
+session_start();
+print $_SESSION['ID'];
 ?>
 <form action="destroy.php">
 <input type="submit" value="登録"/>
