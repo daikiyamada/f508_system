@@ -14,12 +14,6 @@
 <ul id="menu">
 <li><a href="/index.html">Home</a></li>
 </ul>
-<?php
-session_start();
-if($_SESSION['ID']){
-  header('Location: http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/calendar.php')
-}
- ?>
 <form id="login" action="login_pw.php" method="POST">
   学籍番号：<input type = "text" name = "ID"><br>
   パスワード：<input type="text" name="pw"><br>
