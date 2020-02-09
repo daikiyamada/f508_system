@@ -125,6 +125,9 @@ td.is-disabled {
 label, input[type='checkbox'] {
 	cursor: pointer;
 }
+form#login{
+	text-align:center;
+}
 \
 /*============================================
 サブメニュー（左カラム）
