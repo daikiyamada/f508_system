@@ -7,7 +7,8 @@
     $usr = $stt -> fetch();
     if($usr['pw']!=$_POST['pw']){
       $alert = "<script type='text/javascript'> alert('パスワードが間違っています。再度入力お願いします。')</script>";
-      header('Location: http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/login.php');
+      print $alert;
+      if($alert) header('Location: http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/login.php');
     }
     //ログイン認証の成功
     session_start();
@@ -15,7 +16,7 @@
     $_SESSION['ID'] = $_POST['ID'];
     $alert = "<script type='text/javascript'> alert('ログインしました')</script>";
     print $alert;
-    header('Location: http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/calendar.html');
+    if($alert) header('Location: http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/calendar.html');
     $db = NULL;
   }catch (PDOException $e){
     exit("エラーが発生しました:{$e->getMessage()}");
