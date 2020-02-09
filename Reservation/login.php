@@ -14,12 +14,11 @@
 <ul id="menu">
 <li><a href="/index.html">Home</a></li>
 </ul>
-<form id="login" action="login.php" method="POST">
-  学籍番号：<input type = "text" name = "ID" size="7">
-  パスワード：<input type="text" name="pw" size="16">
+<form id="login" action="login_pw.php" method="POST">
+  学籍番号：<input type = "text" name = "ID" size="7"><br>
+  パスワード：<input type="text" name="pw" size="16"><br>
   <input type="submit" value="ログイン">
 </form>
-<br />
 <!--
   <script type="text/javascript" style="text-align: right;">
   var modified = new Date(document.lastModified);
