@@ -16,7 +16,7 @@
     $_SESSION['ID'] = $_POST['ID'];
     $alert = "<script type='text/javascript'> alert('ログインしました')</script>";
     print $alert;
-    if($alert) header('Location: http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/calendar.html');
+    //header('Location: http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/calendar.html');
     $db = NULL;
   }catch (PDOException $e){
     exit("エラーが発生しました:{$e->getMessage()}");
