@@ -18,7 +18,7 @@
 <h1 id =news_head>お知らせ</h1>
 <p id=news>システム構築中 </p>
 <?php
-print $_SESSION['ID'];
+print $SESSION;
 ?>
 <form action="destroy.php">
 <input type="submit" value="登録"/>
