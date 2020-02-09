@@ -16,9 +16,8 @@
 <li id="menu3"><a href="http://teraylab.net/">寺島研究室HP</a></li>
 </ul>
 <h1 id =news_head>お知らせ</h1>
-<p id=news>システム構築中 </p>
 <?php
-print $SESSION;
+print $_SESSION;
 ?>
 <form action="destroy.php">
 <input type="submit" value="登録"/>
