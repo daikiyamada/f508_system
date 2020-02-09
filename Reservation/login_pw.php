@@ -6,9 +6,12 @@
     $stt -> execute(array(':ID' => $_POST['ID']));
     $usr = $stt -> fetch();
     if($usr['pw']!=$_POST['pw']){
-      $alert = "<script type='text/javascript'> alert('パスワードが間違っています。再度入力お願いします。')</script>";
-      print $alert;
-      if($alert)header('Location: http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/login.php');
+      ?>
+      <script type='text/javascript'>
+      window.alert('パスワード「が間違っています。再度入力お願いします');
+      location.href="/Reservation/login.php";
+      </script>
+      <?php
     }
     //ログイン認証の成功
     //session_start();
@@ -16,10 +19,9 @@
     //$_SESSION['ID'] = $_POST['ID'];
     ?>
     <script type='text/javascript'>
-    window.alert('ログインしました');
-    location.href = "/REservation/calendar.html";
+    window.alert('<?php print $usr['Name']?>さん、ログイン成功しました');
+    location.href = "/Reservation/calendar.html";
     </script>
-
     <?php
     $db = NULL;
   }catch (PDOException $e){
