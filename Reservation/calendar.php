@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
-session_start(['cookie_lifetime' => $300]);
+session_set_cookie_params(60 * 5);
+session_start();
 if(!$_SESSION['ID']){
 ?>
 <script type ="text/javascript">
