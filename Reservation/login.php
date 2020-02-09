@@ -15,8 +15,8 @@
 <li><a href="/index.html">Home</a></li>
 </ul>
 <form id="login" action="login_pw.php" method="POST">
-  学籍番号：<input type = "text" name = "ID" size="7"><br>
-  パスワード：<input type="text" name="pw" size="16"><br>
+  学籍番号：<input type = "text" name = "ID"><br>
+  パスワード：<input type="text" name="pw"><br>
   <input type="submit" value="ログイン">
 </form>
 <!--
