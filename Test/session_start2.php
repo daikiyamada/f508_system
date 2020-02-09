@@ -18,10 +18,7 @@
 <h1 id =news_head>お知らせ</h1>
 <p id=news>システム構築中 </p>
 <?php
-session_start();
-$_SESSION['user_name']=$_POST['user'];
-print 'セッション情報を保存しました';
-print '最後に登録ボタンを押してください';
+print $_SESSION['user_name'];
 ?>
 <form action="destroy.php">
 <input type="submit" value="登録"/>
