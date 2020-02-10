@@ -4,7 +4,6 @@
     $db = connect();
     $id = 'Manager';
     $pw = 'Shinomilab';
-    $usr = $stt -> fetch();
     if($_POST['pw']!=$pw){
       if($_POST['ID']!=$id){
       ?>
