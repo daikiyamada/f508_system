@@ -1,7 +1,7 @@
 <?php
 session_set_cookie_params(60 * 3);
 session_start();
-if(!$_SESSION['ID']){
+if(!$_SESSION['Manager']){
 ?>
 <script type ="text/javascript">
 window.alert("ログインしてください");
