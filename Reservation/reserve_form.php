@@ -33,14 +33,14 @@ $day = substr($_POST["date"],6);
 <li><a href="calendar.html">F508管理システム</a></li>
 <li><a href="logout.php">ログアウト</a></li>
 </ul>
-<?php print $_POST['Name']?>さん、使用用途の入力お願いいたします。<br>
+使用用途の入力お願いいたします。<br>
 <p id="reserve">
 <form method="POST" action="form.php">
   <input type="hidden" name="reserveID" value="<?php print $_POST['reserveID']?>">
   <input type="hidden" name="date" value="<?php print $_POST['date']?>">
   <input type="hidden" name="class" value="<?php print $_POST['class']?>">
   <input type="hidden" name="ID" value="<?php print $_SESSION['ID']?>">
-  用途：<input type="text" name="purpose"><br>
+  使用用途：<input type="text" name="purpose"><br>
   <input type="submit" value="予約">
 </form>
 </p>

@@ -1,8 +1,6 @@
 <?php
+session_start();
 $_SESSION=array();
-if (isset($_COOKIE["ID"])) {
-    setcookie("ID", '', time() - 1800, '/');
-}
 session_destroy();
 ?>
 <script type="text/javascript">
