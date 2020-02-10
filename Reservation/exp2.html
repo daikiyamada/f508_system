@@ -14,13 +14,13 @@ let tm = date.getMonth() + 1 // 今月を取得
 let cnt = new Array(31)
 
 let td = new Array(31)
-
+let dt = []
     $(document).ready(function () {
     //ファイルの読み込み
     $.ajax({
     url: 'jsoncreate.php',
     dataType: 'json',
-    data:dt
+    data: dt
     })
     
     .done(function (data) {
