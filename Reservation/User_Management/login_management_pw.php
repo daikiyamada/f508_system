@@ -6,16 +6,18 @@
     $id = 'Manager';
     $stt -> execute(array(':ID' => $id));
     $usr = $stt -> fetch();
-    if($usr['pw']!=$_POST['pw'] && $_POST['ID']!=$id){
+    if($usr['pw']!=$_POST['pw']){
+      if($_POST['ID']!=$id){
       ?>
       <script type='text/javascript'>
       window.alert('管理アカウントのみログイン可能です。再度入力お願いします');
       location.href="/Reservation/calendar.php";
       </script>
       <?php
+      }
     }
-    session_start();
     session_set_cookie_params(60 * 5);
+    session_start();
     session_regenerate_id(true); //セッションIDを振り直す
     $_SESSION['Manager'] = $_POST['ID'];
     ?>
