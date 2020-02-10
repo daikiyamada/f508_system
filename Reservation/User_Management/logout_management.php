@@ -1,7 +1,6 @@
 <?php
 session_start();
-unset($_SESSION['Maanger']);
-session_destroy();
+unset($_SESSION['Manager']);
 ?>
 <script type="text/javascript">
 window.alert("ログアウトしました");
