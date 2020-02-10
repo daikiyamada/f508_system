@@ -23,7 +23,7 @@ let td = new Array(31)
     url: 'jsoncreate.php',
     dataType: 'json'
     })
-    .done(function () {
+    .done(function (data) {
     data.forEach(function (Date, index) {
     if(item.Date.substr(6,1) === td[0]){
     cnt[0] += 1
