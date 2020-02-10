@@ -3,10 +3,10 @@
   try{
     $db = connect();
     $stt = $db->prepare('SELECT * FROM f508system WHERE ID=:ID');
-    $stt -> execute(array(':ID' => $_POST['ID']));
+    $id = 'Manager';
+    $stt -> execute(array(':ID' => $id));
     $usr = $stt -> fetch();
-    $id = "Manager";
-    if($usr['pw']!=$_POST['pw'] && $_POST['ID']!=$id){
+    if($usr['pw']!=$_POST['pw'] $_POST['ID']!=$id){
       ?>
       <script type='text/javascript'>
       window.alert('パスワードが間違っています。再度入力お願いします');
