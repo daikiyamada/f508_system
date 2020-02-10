@@ -1,5 +1,5 @@
 <?php
-session_set_cookie_params(60 * 3);
+session_set_cookie_params(60 * 5);
 session_start();
 if(!$_SESSION['Manager']){
 ?>

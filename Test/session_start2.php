@@ -19,6 +19,7 @@
 <?php
 session_start();
 print $_SESSION['ID'];
+print $_SESSION['Manager'];
 ?>
 <form action="destroy.php">
 <input type="submit" value="登録"/>

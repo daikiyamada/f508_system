@@ -14,7 +14,7 @@
       </script>
       <?php
     }
-    session_set_cookie_params(60 * 3);
+    session_set_cookie_params(60 * 5);
     session_start();
     session_regenerate_id(true); //セッションIDを振り直す
     $_SESSION['Manager'] = $_POST['ID'];
