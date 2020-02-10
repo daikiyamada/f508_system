@@ -25,7 +25,7 @@ location.href="/Reservation/login.php";
   </div>
     <ul id="menu">
         <li><a href="../index.html">Home</a></li>
-        <li><a href="User_Management/system_menu.html">ユーザ管理</a></li>
+        <li><a href="User_Management/login_management.php">ユーザ管理</a></li>
         <li><a href="http://shinolab.tech">篠宮研究室</a></li>
         <li><a href="http://teraylab.net/">寺島研究室</a></li>
     </ul>

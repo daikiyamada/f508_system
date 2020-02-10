@@ -32,6 +32,7 @@ require_once 'Escape.php'; //エスケープ処理を行うソースファイル
     $ct = 0;
     while($row = $stt -> fetch(PDO::FETCH_ASSOC)){
       $ct++;
+    if($row['ID']!="Manager"){
   ?>
   <tr>
     <td>
@@ -45,6 +46,7 @@ require_once 'Escape.php'; //エスケープ処理を行うソースファイル
     </td>
   </tr>
 <?php
+  }
 }
 $db = NULL;
 }catch(PDOException $e){
