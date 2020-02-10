@@ -68,7 +68,6 @@ $day = substr($_GET["date"],6);
      $name = $stt2->fetch();
      print $name['Name'];
    }
-   $db2=NULL;
    }
     ?>
   </td>
