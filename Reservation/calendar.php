@@ -28,6 +28,7 @@ location.href="/Reservation/login.php";
         <li><a href="User_Management/login_management.php">ユーザ管理</a></li>
         <li><a href="http://shinolab.tech">篠宮研究室</a></li>
         <li><a href="http://teraylab.net/">寺島研究室</a></li>
+        <li><a href="logout.php">ログアウト</a></li>
     </ul>
     <div style="text-align: center;">
     <button id="prev" type="button">前の月</button>

@@ -31,6 +31,7 @@ $day = substr($_GET["date"],6);
 <ul id="menu">
 <li><a href="/index.html">Home</a></li>
 <li><a href="calendar.html">F508管理システム</a></li>
+<li><a href="logout.php">ログアウト</a></li>
 </ul>
 <table>
   <tr><th>コマ</th><th>空き状況</th><th>代表者名</th><th>使用目的</th><th>予約フォーム</th></tr>
@@ -88,7 +89,6 @@ $day = substr($_GET["date"],6);
       <input type="hidden" name="reserveID" value="0">
       <input type="hidden" name="date" value="<?php print $_GET['date']?>">
       <input type="hidden" name="class" value="<?php print $i?>">
-      <input type="hidden" name="Name" value="<?php print $name['Name']?>">
       <input type="submit" value="登録"><br>
     </form>
 <?php    }
@@ -100,6 +100,7 @@ $day = substr($_GET["date"],6);
       <input type="hidden" name="date" value="<?php print $_GET['date']?>">
       <input type="hidden" name="class" value="<?php print $i?>">
       <input type = "hidden" name="ID" value = "<?php print $now['ID']?>">
+      <input type="hidden" name="Name" value="<?php print $name['Name']?>">
     </form>
   <?php } }
     ?>

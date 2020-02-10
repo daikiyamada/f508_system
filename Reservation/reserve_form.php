@@ -31,6 +31,7 @@ $day = substr($_POST["date"],6);
 <ul id="menu">
 <li><a href="/index.html">Home</a></li>
 <li><a href="calendar.html">F508管理システム</a></li>
+<li><a href="logout.php">ログアウト</a></li>
 </ul>
 <?php print $_POST['Name']?>さん、使用用途の入力お願いいたします。<br>
 <p id="reserve">
