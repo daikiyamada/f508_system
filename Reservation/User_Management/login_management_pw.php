@@ -2,13 +2,15 @@
   require_once 'Manager.php';
   try{
     $db = connect();
-    $stt = $db->prepare('SELECT * FROM f508system WHERE ID="Manager"');
+    $stt = $db->prepare('SELECT * FROM f508system WHERE ID=:ID');
+    $stt -> execute(array(':ID' => $_POST['ID']));
     $usr = $stt -> fetch();
-    if($usr['pw']!=$_POST['pw']){
+    $id = "Manager";
+    if($usr['pw']!=$_POST['pw'] && $_POST['ID']!=$id){
       ?>
       <script type='text/javascript'>
-      window.alert('パスワード「が間違っています。再度入力お願いします');
-      location.href="/Reservation/login.php";
+      window.alert('パスワードが間違っています。再度入力お願いします');
+      location.href="/Reservation/calendar.php";
       </script>
       <?php
     }

@@ -8,7 +8,7 @@
     if($usr['pw']!=$_POST['pw']){
       ?>
       <script type='text/javascript'>
-      window.alert('パスワード「が間違っています。再度入力お願いします');
+      window.alert('パスワードが間違っています。再度入力お願いします');
       location.href="/Reservation/login.php";
       </script>
       <?php
