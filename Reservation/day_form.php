@@ -89,6 +89,7 @@ $day = substr($_GET["date"],6);
       <input type="hidden" name="reserveID" value="0">
       <input type="hidden" name="date" value="<?php print $_GET['date']?>">
       <input type="hidden" name="class" value="<?php print $i?>">
+      <input type="hidden" name="Name" value="<?php print $name['Name']?>">
       <input type="submit" value="登録"><br>
     </form>
 <?php    }
@@ -100,7 +101,6 @@ $day = substr($_GET["date"],6);
       <input type="hidden" name="date" value="<?php print $_GET['date']?>">
       <input type="hidden" name="class" value="<?php print $i?>">
       <input type = "hidden" name="ID" value = "<?php print $now['ID']?>">
-      <input type="hidden" name="Name" value="<?php print $name['Name']?>">
     </form>
   <?php } }
     ?>
