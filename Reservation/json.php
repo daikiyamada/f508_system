@@ -6,10 +6,14 @@ mb_internal_encoding("utf-8"); //内部文字コードを変更
 mb_http_input("auto");
 mb_http_output("utf-8");
 
+$year = substr($_GET["date"],0,4);
+$month = substr($_GET["date"],4,2);
+$day = substr($_GET["date"],6);
+
 $dbh = connect();
-String date1 = year + month + "01" + "0"
-String date2 = year + month + "31" + "8"
-$sth = $dbh->prepare("SELECT * FROM Reservation where Date between :date1 and : date2");
+String date1 = year + month + "01" + "00"
+String date2 = year + month + "31" + "10"
+$sth = $dbh->prepare("SELECT * FROM Reservation where Date between :date1 and :date2");
 // 月日を文字列で取得して，数字に変更して配列に入れる
 $sth->execute();
 
