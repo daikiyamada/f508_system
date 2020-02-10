@@ -1,6 +1,6 @@
 <?php
-session_set_cookie_params(60 * 5);
 session_start();
+session_set_cookie_params(60 * 5);
 if(!$_SESSION['ID']){
 ?>
 <script type ="text/javascript">
