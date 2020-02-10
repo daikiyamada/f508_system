@@ -27,7 +27,7 @@ location.href="/Reservation/login.php";
 <li><a href="/index.html">Home</a></li>
 <li><a href="setuser_form.php">ユーザ登録</a></li>
 <li><a href="deleteuser.php">ユーザ削除</a></li>
-  <li><a href="../del_reservation.php">予約一覧</a></li>
+<li><a href="../del_reservation.php">予約一覧</a></li>
 <li><a href="logout_management.php">ログアウト</a></li>
 </ul>
 <h1 id =news_head>お知らせ</h1>
