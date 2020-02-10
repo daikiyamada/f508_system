@@ -2,7 +2,7 @@
   require_once 'Manager.php';
   try{
     $db = connect();
-    $id = "Manager";
+    $id = 'Manager';
     $stt = $db->prepare('SELECT * FROM f508system WHERE ID=:ID');
     $stt -> execute(array(':ID' => $id));
     $usr = $stt -> fetch();
@@ -30,4 +30,5 @@
   }catch (PDOException $e){
     exit("エラーが発生しました:{$e->getMessage()}");
   }
+  $db=NULL;
  ?>
