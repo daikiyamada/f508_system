@@ -14,8 +14,6 @@
       </script>
       <?php
       }
-    }
-    else {
     session_set_cookie_params(60 * 5);
     session_start();
     session_regenerate_id(true); //セッションIDを振り直す
@@ -26,7 +24,6 @@
     location.href = "system_menu.php";
     </script>
     <?php
-  }
   }catch (PDOException $e){
     exit("エラーが発生しました:{$e->getMessage()}");
   }
