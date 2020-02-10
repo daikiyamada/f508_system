@@ -26,6 +26,7 @@ location.href="/Reservation/login.php";
 <ul id="menu">
 <li><a href="/index.html">Home</a></li>
 <li><a href="../calendar.html">F508管理システム</a></li>
+<li><a href="logout_management.php">ログアウト</a></li>
 </ul>
 登録するユーザ情報の入力をしてください。
 <form action="setuser.php" method="POST">
