@@ -30,7 +30,7 @@ $day = substr($_POST["date"],6);
 </div>
 <ul id="menu">
 <li><a href="/index.html">Home</a></li>
-<li><a href="calendar.html">F508管理システム</a></li>
+<li><a href="calendar.php">F508管理システム</a></li>
 <li><a href="logout.php">ログアウト</a></li>
 </ul>
 使用用途の入力お願いいたします。<br>
