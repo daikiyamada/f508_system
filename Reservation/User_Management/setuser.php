@@ -1,21 +1,3 @@
-<!DOCTYPE html>
-<?xml version="1.0" encoding="utf-8"?>
-<html xmlns="http://www.w3.org/1999/xhtml" xml="" lang="ja" lalng="ja" xml:lang="ja">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<head>
-  <title>研究室管理システム</title>
-</head>
-  <link rel="stylesheet" type="text/css" href="/Homepage.css" />
-<body>
-  <div id="back1">
-    <hr id="line1"/>
-    <h1 id="title1">ユーザ登録</h1>
-  </div>
-<ul id="menu">
-<li><a href="/index.html">Home</a></li>
-<li><a href="../calendar.html">F508管理システム</a></li>
-</ul>
-<h1 id =news_head>お知らせ</h1>
 <?php
 if($_POST['ID']==NULL||$_POST['Name']==NULL||$_POST['pw']==NULL||$_POST['mail']==NULL||$_POST['pw2']==NULL){
   ?>
@@ -38,12 +20,12 @@ require_once 'Manager.php';
   }catch (PDOException $e){
     exit("エラーが発生しました:{$e->getMessage()}");
   }
-  mb_language("Japanese");
-  mb_internal_encoding("UTF-8");
-  $To = $_POST['mail'];
-  $Title = "ユーザ登録";
-  $Sentence = "さん、F508管理システムのユーザ登録が無事完了しました。"
-  bool mb_send_mail($To,$Title,$_POST['Name']+$Sentence);
+  //mb_language("Japanese");
+  //mb_internal_encoding("UTF-8");
+  //$To = $_POST['mail'];
+  //$Title = "ユーザ登録";
+  //$Sentence = "さん、F508管理システムのユーザ登録が無事完了しました。"
+  //bool mb_send_mail($To,$Title,$_POST['Name']+$Sentence);
 ?>
 <script>
 var rt = window.confirm('登録完了しました。登録を継続しますか？');
@@ -51,13 +33,3 @@ if(rt) location.href="setuser._form.php";
 else location.href="system_menu.php";
 </script>
 <script type="text/javascript" style="text-align: right;">
-/*
-  var modified = new Date(document.lastModified);
-  var yy = modified.getFullYear();
-  var mm= modified.getMonth() + 1;
-  var dd = modified.getDate();
-  document.write('最終更新日:' + yy + '年' + mm + '月' + dd + '日');
-*/
-</script>
-</body>
-</html>
