@@ -20,8 +20,8 @@ require_once 'Manager.php';
   }catch (PDOException $e){
     exit("エラーが発生しました:{$e->getMessage()}");
   }
-  //mb_language("Japanese");
-  //mb_internal_encoding("UTF-8");
+  mb_language("Japanese");
+  mb_internal_encoding("UTF-8");
   //$To = $_POST['mail'];
   //$Title = "ユーザ登録";
   //$Sentence = "さん、F508管理システムのユーザ登録が無事完了しました。"
