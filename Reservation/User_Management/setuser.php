@@ -21,7 +21,7 @@ require_once 'Manager.php';
   try{
     //データベースに接続してPDOオブジェクトを作成
     $db=connect();
-    $sql = 'INSERT INTO f508system(ID,Name,pw) VALUES(:ID,:Name,:pw,:mail,:pw2)';
+    $sql = 'INSERT INTO f508system(ID,Name,pw,:mail,:pw2) VALUES(:ID,:Name,:pw,:mail,:pw2)';
     //プリペアドステートメントを生成
     $stt = $db ->prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
     //プリペアドステートメントを実行
