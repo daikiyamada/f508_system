@@ -7,6 +7,7 @@ if($_POST['ID']==NULL||$_POST['Name']==NULL||$_POST['pw']==NULL||$_POST['mail']=
   </script>
   <?php
 }
+else{
 require_once 'Manager.php';
   try{
     //データベースに接続してPDOオブジェクトを作成
@@ -19,13 +20,8 @@ require_once 'Manager.php';
     $db = NULL;
   }catch (PDOException $e){
     exit("エラーが発生しました:{$e->getMessage()}");
-  }
-  mb_language("Japanese");
-  mb_internal_encoding("UTF-8");
-  //$To = $_POST['mail'];
-  //$Title = "ユーザ登録";
-  //$Sentence = "さん、F508管理システムのユーザ登録が無事完了しました。"
-  //bool mb_send_mail($To,$Title,$_POST['Name']+$Sentence);
+
+}
 ?>
 <script>
 var rt = window.confirm('登録完了しました。登録を継続しますか？');
