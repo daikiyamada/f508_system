@@ -35,7 +35,6 @@ $day = substr($_GET["date"],6);
 </ul>
 <div class = "form">
 各コマの時間は、従来通りとなります。それに加えて、0コマは１コマ前の時間を示し、6コマは放課後を示しています。<br>
-使用用途の入力お願いいたします。<br>
 使用する時間がコマを跨ぐ場合は、詳細な時間も記入してください。<br>
 <br>
 </div>
@@ -86,7 +85,7 @@ $day = substr($_GET["date"],6);
       <input type="hidden" name="reserveID" value="0">
       <input type="hidden" name="date" value="<?php print $_GET['date']?>">
       <input type="hidden" name="class" value="<?php print $i?>">
-      <input type="submit" value="登録" class="button"><br>
+      <input type="submit" value="登録フォームへ" class="button"><br>
     </form>
 <?php    }
     else{

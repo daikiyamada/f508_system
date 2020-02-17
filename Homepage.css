@@ -147,7 +147,11 @@ form#login{
 	font-size:18pt;
 	font-style:bold;
 }
-
+.location{
+	text-align:center;
+	font-size:18pt;
+	font-style:bold;
+}
 /*============================================
 サブメニュー（左カラム）
 ============================================*/

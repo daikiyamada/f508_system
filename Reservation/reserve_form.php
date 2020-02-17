@@ -35,14 +35,16 @@ $day = substr($_POST["date"],6);
 </ul>
 
 <p id="reserve">
+  <div class="location">
 <form method="POST" action="form.php">
   <input type="hidden" name="reserveID" value="<?php print $_POST['reserveID']?>">
   <input type="hidden" name="date" value="<?php print $_POST['date']?>">
   <input type="hidden" name="class" value="<?php print $_POST['class']?>">
   <input type="hidden" name="ID" value="<?php print $_SESSION['ID']?>">
-  使用用途：<input type="text" name="purpose"><br>
-  <input type="submit" value="予約">
+  使用用途の入力画面：<input type="text" name="purpose">
+  <input type="submit" value="予約" class="button"><br>
 </form>
+</div>
 </p>
 </body>
 </html>
