@@ -64,21 +64,23 @@ use calender
 table {
 	width: 80%;
 	margin: 0 auto;
+	max-width: 500px;
 	border-spacing: 0;
 	border-collapse: collapse;
 }
 td {
-	font-size: 20pt;
+	font-size: 18px;
 	border: 1px solid rgb(0, 0, 0);
-	padding: 10px;
+	padding: 20px;
 	/* text-align: left; */
-	height: 10px;
+	height: 8px;
 }
+
 .button {
   position: relative;
   display: inline-block;
   font-weight: bold;
-  padding: 1.0em 2.0em;
+  padding: 2.0em 4.0em;
   text-decoration: none;
   color: #FFF;
   background: #00bcd4;
