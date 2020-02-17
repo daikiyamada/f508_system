@@ -58,9 +58,45 @@ li a:hover:not(.active) {
 	background-color: #da3c41;
 }
 /*=============================================*/
+h1#news_head{
+	font-size:24pt;
+	text-align: center;
+}
+p#news{
+	font-size:18pt;
+	text-align: center;
+}
+h1#list{
+	font-size:16pt;
+	font-style: bold;
+}
+li#detail{
+	font-size:12pt;
+}
+
+
 /*============================================
 use calender
 ============================================*/
+
+#calendar {
+	display: flex;
+	flex-wrap: wrap;
+}
+p #reserve{
+	text-align: center;
+	font-size: 28pt;
+}
+section {
+	margin: 10px;
+}
+
+h1#calendar1 {
+	color:#0000ff;
+	margin-left: 370px;
+	margin-bottom: 10px;
+}
+
 table {
 	border-spacing: 0;
 	border-collapse: collapse;
@@ -84,6 +120,13 @@ td:last-child {
 
 td.is-disabled {
 	color: rgb(255, 255, 255);
+}
+
+label, input[type='checkbox'] {
+	cursor: pointer;
+}
+form#login{
+	text-align:center;
 }
 .button {
   position: relative;

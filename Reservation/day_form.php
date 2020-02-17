@@ -22,7 +22,7 @@ $day = substr($_GET["date"],6);
 <head>
   <title>F508管理システム</title>
 </head>
-  <link rel="stylesheet" type="text/css" href="/Homepage.css" />
+  <link rel="stylesheet" type="text/css" href="day_reserve.css" />
   <body>
 <div id="back1">
   <hr id="line1"/>
