@@ -62,9 +62,8 @@ li a:hover:not(.active) {
 use calender
 ============================================*/
 .table1{
-  width: 100%;
+  width: 80%;
   margin: 0 auto;
-  max-width: 700px;
 }
 table {
 	border-spacing: 0;
@@ -94,6 +93,6 @@ td {
 }
 .form{
 	text-align:center;
-	font-size:18pt;
+	font-size:14pt;
 	font-style:bold;
 }
