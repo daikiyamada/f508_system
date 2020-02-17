@@ -75,7 +75,7 @@ table {
 	margin: 0 auto;
 	/* text-align: left; */
 	height: 18px;
-	width:8%;
+	width:10%;
 }
 .name {
 	text-align:center;
@@ -103,7 +103,7 @@ table {
 	padding: 10px;
 	/* text-align: left; */
 	height: 18px;
-	width:12%;
+	width:10%;
 }
 .button {
 	display: inline-block;
