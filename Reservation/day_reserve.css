@@ -77,18 +77,17 @@ td {
 }
 
 .button {
-  position: relative;
-  display: inline-block;
-  font-weight: bold;
-  padding: 1.0em 2.0em;
+	display: inline-block;
+  padding: 7px 20px;
+  border-radius: 25px;
   text-decoration: none;
   color: #FFF;
-  background: #00bcd4;
+  background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
   transition: .4s;
 }
 
 .button:hover {
-  background: #1ec7bb;
+    background-image: linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
 }
 .form{
 	text-align:center;
