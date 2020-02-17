@@ -61,6 +61,11 @@ li a:hover:not(.active) {
 /*============================================
 use calender
 ============================================*/
+.table1{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
+}
 table {
 	border-spacing: 0;
 	border-collapse: collapse;
@@ -99,7 +104,6 @@ td.is-disabled {
 .button:hover {
   background: #1ec7bb;
 }
-
 .form{
 	text-align:center;
 	font-size:18pt;
