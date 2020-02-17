@@ -128,6 +128,28 @@ label, input[type='checkbox'] {
 form#login{
 	text-align:center;
 }
+.button {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #FFF;
+  background: #00bcd4;
+  transition: .4s;
+}
+
+.button:hover {
+  background: #1ec7bb;
+}
+.form{
+	text-align:center;
+	font-size:18pt;
+	font-style:bold;
+}
+.form2{
+	text-align:center;
+}
 \
 /*============================================
 サブメニュー（左カラム）
