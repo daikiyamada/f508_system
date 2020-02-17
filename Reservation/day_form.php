@@ -36,7 +36,6 @@ $day = substr($_GET["date"],6);
 <div class = "form">
 各コマの時間は、従来通りとなります。それに加えて、0コマは１コマ前の時間を示し、6コマは放課後を示しています。<br>
 </div>
-<div class="form2">
 <table>
   <tr><th>コマ</th><th>代表者名</th><th>使用目的</th><th>予約フォーム</th></tr>
   <?php
@@ -107,6 +106,5 @@ $day = substr($_GET["date"],6);
  }
   ?>
 </table>
-</div>
 </body>
 </html>
