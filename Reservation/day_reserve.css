@@ -71,10 +71,21 @@ table {
 	text-align:center;
 	font-size: 18px;
 	border: 1px solid rgb(0, 0, 0);
-	padding: 10px;
+	padding: 0px;
+	margin: 0 auto;
 	/* text-align: left; */
 	height: 20px;
-	width:70px;
+	width:50px;
+}
+.name {
+	text-align:center;
+	font-size: 18px;
+	border: 1px solid rgb(0, 0, 0);
+	padding: 0px;
+	margin: 0 auto;
+	/* text-align: left; */
+	height: 20px;
+	width:100px;
 }
 td {
 	text-align:center;
@@ -85,7 +96,15 @@ td {
 	height: 20px;
 	width:150px;
 }
-
+td {
+	text-align:center;
+	font-size: 18px;
+	border: 1px solid rgb(0, 0, 0);
+	padding: 20px;
+	/* text-align: left; */
+	height: 20px;
+	width:150px;
+}
 .button {
 	display: inline-block;
 	margin: 0 auto;
