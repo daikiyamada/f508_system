@@ -83,14 +83,14 @@ $day = substr($_GET["date"],6);
       <input type="hidden" name="reserveID" value="0">
       <input type="hidden" name="date" value="<?php print $_GET['date']?>">
       <input type="hidden" name="class" value="<?php print $i?>">
-      <input type="submit" value="登録"><br>
+      <input type="submit" value="登録" class="btn-circle-border-simple"><br>
     </form>
 <?php    }
     else{
       if($_SESSION['ID']==$now['ID']){
       ?>
       <form method="POST" action="del.php">
-      <input type="submit" value="削除">
+      <input type="submit" value="削除" class="btn-circle-border-simple">
       <input type="hidden" name="date" value="<?php print $_GET['date']?>">
       <input type="hidden" name="class" value="<?php print $i?>">
       <input type = "hidden" name="ID" value = "<?php print $now['ID']?>">
