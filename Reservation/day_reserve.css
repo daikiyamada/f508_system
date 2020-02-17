@@ -71,21 +71,21 @@ table {
 	text-align:center;
 	font-size: 18px;
 	border: 1px solid rgb(0, 0, 0);
-	padding: 0px;
+	padding: 5px;
 	margin: 0 auto;
 	/* text-align: left; */
 	height: 18px;
-	width:50px;
+	width:70px;
 }
 .name {
 	text-align:center;
 	font-size: 18px;
 	border: 1px solid rgb(0, 0, 0);
-	padding: 0px;
+	padding: 5px;
 	margin: 0 auto;
 	/* text-align: left; */
 	height: 18px;
-	width:100px;
+	width:150px;
 }
 .purpose {
 	text-align:center;
@@ -94,7 +94,7 @@ table {
 	padding: 10px;
 	/* text-align: left; */
 	height: 18px;
-	width:200px;
+	width:230px;
 }
 .button2 {
 	text-align:center;
@@ -103,11 +103,12 @@ table {
 	padding: 10px;
 	/* text-align: left; */
 	height: 18px;
-	width:30px;
+	width:50px;
 }
 .button {
 	display: inline-block;
 	margin: 0 auto;
+  padding: 5px 10px;
   border-radius: 18px;
   text-decoration: none;
   color: #FFF;
