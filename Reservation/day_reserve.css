@@ -69,15 +69,18 @@ table {
 	border-collapse: collapse;
 }
 td {
+	text-align:center;
 	font-size: 18px;
 	border: 1px solid rgb(0, 0, 0);
 	padding: 20px;
 	/* text-align: left; */
 	height: 12px;
+	width:150px;
 }
 
 .button {
 	display: inline-block;
+	margin: 0 auto;
   padding: 7px 20px;
   border-radius: 25px;
   text-decoration: none;
