@@ -38,7 +38,6 @@ $day = substr($_GET["date"],6);
 使用用途の入力お願いいたします。<br>
 使用する時間がコマを跨ぐ場合は、詳細な時間も記入してください。<br>
 <br>
-<br>
 </div>
 <div class="table1">
 <table>
