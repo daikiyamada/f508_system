@@ -72,24 +72,13 @@ table {
 }
 
 td {
-	font-size: 30px;
+	font-size: 24px;
 	border: 1px solid rgb(0, 0, 0);
 	padding: 20px;
 	/* text-align: left; */
-	height: 10px;
+	height: 8px;
 }
 
-td:first-child {
-	color: red;
-}
-
-td:last-child {
-	color: royalblue;
-}
-
-td.is-disabled {
-	color: rgb(255, 255, 255);
-}
 .button {
   position: relative;
   display: inline-block;
