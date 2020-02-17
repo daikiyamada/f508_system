@@ -52,8 +52,8 @@ $day = substr($_GET["date"],6);
         $now = $stt->fetch();
   ?>
   <tr>
-    <td><?php print $i; ?>コマ</td>
-<td>
+    <td class = "coma"><?php print $i; ?>コマ</td>
+<td class="name">
    <?php
    if($now== false){
      print " ";
@@ -69,7 +69,7 @@ $day = substr($_GET["date"],6);
    }
     ?>
   </td>
-  <td>
+  <td class="purpose">
     <?php
     if($now==false){
       print "";
@@ -79,7 +79,7 @@ $day = substr($_GET["date"],6);
     }
     ?>
   </td>
-  <td>
+  <td class = "button2">
     <?php
     if($now==false){?>
       <form method="POST" action="reserve_form.php">
