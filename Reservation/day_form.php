@@ -65,7 +65,7 @@ $day = substr($_GET["date"],6);
    }
     ?>
   </td>
-  <td id="purpose">
+  <td>
     <?php
     if($now==false){
       print " ";
