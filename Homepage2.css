@@ -87,23 +87,19 @@ form#login{
 td#purpose{
 	font-size: 14pt;
 }
-.btn-circle-border-simple {
+.button {
+  position: relative;
   display: inline-block;
-  text-decoration: none;
-  color: #668ad8;
-  width: 60px;
-  height: 60px;
-  line-height: 60px;
-  border-radius: 50%;
-  border: solid 2px #668ad8;
-  text-align: center;
-  overflow: hidden;
   font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #FFF;
+  background: #00bcd4;
   transition: .4s;
 }
 
-.btn-circle-border-simple:hover {
-  background: #b3e1ff;
+.button:hover {
+  background: #1ec7bb;
 }
 /*============================================
 サブメニュー（左カラム）

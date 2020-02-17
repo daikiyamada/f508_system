@@ -89,7 +89,7 @@ $day = substr($_GET["date"],6);
       if($_SESSION['ID']==$now['ID']){
       ?>
       <form method="POST" action="del.php">
-      <input type="submit" value="削除" class="btn-circle-border-simple">
+      <input type="submit" value="削除" class="button">
       <input type="hidden" name="date" value="<?php print $_GET['date']?>">
       <input type="hidden" name="class" value="<?php print $i?>">
       <input type = "hidden" name="ID" value = "<?php print $now['ID']?>">
