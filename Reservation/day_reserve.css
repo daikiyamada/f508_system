@@ -75,7 +75,7 @@ table {
 	margin: 0 auto;
 	/* text-align: left; */
 	height: 18px;
-	width:70px;
+	width:10%;
 }
 .name {
 	text-align:center;
@@ -85,7 +85,7 @@ table {
 	margin: 0 auto;
 	/* text-align: left; */
 	height: 18px;
-	width:150px;
+	width:20%;
 }
 .purpose {
 	text-align:center;
@@ -94,7 +94,7 @@ table {
 	padding: 10px;
 	/* text-align: left; */
 	height: 18px;
-	width:230px;
+	width:40%;
 }
 .button2 {
 	text-align:center;
@@ -103,7 +103,7 @@ table {
 	padding: 10px;
 	/* text-align: left; */
 	height: 18px;
-	width:50px;
+	width:10%;
 }
 .button {
 	display: inline-block;
