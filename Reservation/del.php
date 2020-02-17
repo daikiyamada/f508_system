@@ -33,15 +33,5 @@ try{
 //処理完了後、登録ページを再表示
 header('Location: http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/calendar.php')
 ?>
-<script type="text/javascript" style="text-align: right;">
-<!--
-  var modified = new Date(document.lastModified);
-  var yy = modified.getFullYear();
-  var mm= modified.getMonth() + 1;
-  var dd = modified.getDate();
-  document.write('最終更新日:' + yy + '年' + mm + '月' + dd + '日');
-  //
--->
-
 </body>
 </html>

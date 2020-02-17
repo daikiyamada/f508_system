@@ -19,15 +19,5 @@
   パスワード：<input type="text" name="pw"><br>
   <input type="submit" value="ログイン">
 </form>
-<!--
-  <script type="text/javascript" style="text-align: right;">
-  var modified = new Date(document.lastModified);
-  var yy = modified.getFullYear();
-  var mm= modified.getMonth() + 1;
-  var dd = modified.getDate();
-  document.write('最終更新日:' + yy + '年' + mm + '月' + dd + '日');
-</script>
--->
-
 </body>
 </html>
