@@ -41,7 +41,7 @@ $day = substr($_GET["date"],6);
 </div>
 <div class="table1">
 <table>
-  <tr><th>コマ</th><th>代表者名</th><th>使用目的</th><th>予約フォーム</th></tr>
+  <tr class="head"><th>コマ</th><th>代表者名</th><th>使用目的</th><th>予約フォーム</th></tr>
   <?php
   require 'Manager.php';
     try{
