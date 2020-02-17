@@ -64,7 +64,6 @@ use calender
 table {
 	width: 80%;
 	margin: 0 auto;
-	max-width: 500px;
 	border-spacing: 0;
 	border-collapse: collapse;
 }
@@ -74,15 +73,15 @@ td {
 	border: 1px solid rgb(0, 0, 0);
 	padding: 20px;
 	/* text-align: left; */
-	height: 12px;
+	height: 15px;
 	width:150px;
 }
 
 .button {
 	display: inline-block;
 	margin: 0 auto;
-  padding: 7px 20px;
-  border-radius: 25px;
+  padding: 5px 12px;
+  border-radius: 15px;
   text-decoration: none;
   color: #FFF;
   background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
