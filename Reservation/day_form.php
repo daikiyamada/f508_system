@@ -26,7 +26,7 @@ $day = substr($_GET["date"],6);
   <title>F508管理システム</title>
 </head>
   <link rel="stylesheet" type="text/css" href="day_reserve.css" />
-  <body>
+<body>
 <div id="back1">
   <hr id="line1"/>
   <h1 id="title1"><?php print $year?>/<?php print $month?>/<?php print $day?>の予約状況</h1>
