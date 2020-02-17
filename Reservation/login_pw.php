@@ -13,6 +13,7 @@
       </script>
       <?php
     }
+    else{
     session_set_cookie_params(60 * 10);
     session_start();
     session_regenerate_id(true); //セッションIDを振り直す
@@ -24,6 +25,7 @@
     </script>
     <?php
     $db = NULL;
+  }
   }catch (PDOException $e){
     exit("エラーが発生しました:{$e->getMessage()}");
   }

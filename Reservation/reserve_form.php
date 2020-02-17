@@ -33,7 +33,7 @@ $day = substr($_POST["date"],6);
 <li><a href="calendar.php">F508管理システム</a></li>
 <li><a href="logout.php">ログアウト</a></li>
 </ul>
-使用用途の入力お願いいたします。<br>
+
 <p id="reserve">
 <form method="POST" action="form.php">
   <input type="hidden" name="reserveID" value="<?php print $_POST['reserveID']?>">
