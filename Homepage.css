@@ -111,7 +111,7 @@ td {
 }
 
 td:first-child {
-	color: red;
+	color: black;
 }
 
 td:last-child {

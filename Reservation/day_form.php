@@ -34,7 +34,7 @@ $day = substr($_GET["date"],6);
 <li><a href="logout.php">ログアウト</a></li>
 </ul>
 <table>
-  <tr><th>コマ</th><th>空き状況</th><th>代表者名</th><th>使用目的</th><th>予約フォーム</th></tr>
+  <tr><th>コマ</th><th>代表者名</th><th>使用目的</th><th>予約フォーム</th></tr>
   <?php
   require 'Manager.php';
     try{
@@ -46,15 +46,6 @@ $day = substr($_GET["date"],6);
   ?>
   <tr>
     <td><?php print $i; ?>コマ</td>
- <td><?php
-  if($now==false){
-    print "空き";
-  }
-  else{
-    print "予約済";
-  }
-  ?>
-</td>
 <td>
    <?php
    if($now== false){
