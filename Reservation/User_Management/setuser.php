@@ -24,8 +24,6 @@ require_once 'Manager.php';
 }
 ?>
 <script>
-var rt = window.confirm('登録完了しました。登録を継続しますか？');
-if(rt) location.href="setuser._form.php";
-else location.href="system_menu.php";
+var rt = window.alert('登録完了しました');
+location.href="system_menu.php";
 </script>
-<script type="text/javascript" style="text-align: right;">

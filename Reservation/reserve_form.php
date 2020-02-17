@@ -9,6 +9,9 @@ location.href="/Reservation/login.php";
 </script>
 <?php
 }
+else{
+  $_SESSION['ID'] = $_SESSION['ID'];
+}
  ?>
 <html>
 <?xml version="1.0" encoding="utf-8"?>
@@ -34,8 +37,7 @@ $day = substr($_POST["date"],6);
 <li><a href="logout.php">ログアウト</a></li>
 </ul>
 
-<p id="reserve">
-  <div class="location">
+<div class="location">
 <form method="POST" action="form.php">
   <input type="hidden" name="reserveID" value="<?php print $_POST['reserveID']?>">
   <input type="hidden" name="date" value="<?php print $_POST['date']?>">
@@ -45,6 +47,5 @@ $day = substr($_POST["date"],6);
   <input type="submit" value="予約" class="button"><br>
 </form>
 </div>
-</p>
 </body>
 </html>

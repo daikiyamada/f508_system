@@ -129,18 +129,18 @@ form#login{
 	text-align:center;
 }
 .button {
-  position: relative;
-  display: inline-block;
-  font-weight: bold;
-  padding: 0.25em 0.5em;
+	display: inline-block;
+	margin: 0 auto;
+  border-radius: 40px;
+	font-size: 18px;
   text-decoration: none;
   color: #FFF;
-  background: #00bcd4;
+  background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
   transition: .4s;
 }
 
 .button:hover {
-  background: #1ec7bb;
+    background-image: linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
 }
 .form{
 	text-align:center;

@@ -13,6 +13,9 @@ location.href="/Reservation/login.php";
 </script>
 <?php
 }
+else{
+  $_SESSION['ID'] = $_SESSION['ID'];
+}
  ?>
 <?php
 $year = substr($_GET["date"],0,4);

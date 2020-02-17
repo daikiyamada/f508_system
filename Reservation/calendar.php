@@ -10,6 +10,9 @@ location.href="/Reservation/login.php";
 </script>
 <?php
 }
+else{
+  $_SESSION['ID'] = $_SESSION['ID'];
+}
  ?>
 <?xml version="1.0" encoding="utf-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml="" lang="ja" lalng="ja" xml:lang="ja">
