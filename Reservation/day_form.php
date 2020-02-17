@@ -73,6 +73,7 @@ $day = substr($_GET["date"],6);
       ?>
       <form method="POST" action="form.php">
       使用用途：<input type="text" name="purpose">
+    </form>
       <?php
     }
     else{
@@ -83,10 +84,11 @@ $day = substr($_GET["date"],6);
   <td>
     <?php
     if($now==false){?>
+      <form method="POST" action="form.php">
       <input type="hidden" name="reserveID" value="0">
       <input type="hidden" name="date" value="<?php print $_GET['date']?>">
       <input type="hidden" name="class" value="<?php print $i?>">
-      <input type="submit" value="登録" class="btn-circle-border-simple"><br>
+      <input type="submit" value="登録" class="button"><br>
     </form>
 <?php    }
     else{
