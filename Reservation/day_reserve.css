@@ -73,14 +73,14 @@ td {
 	border: 1px solid rgb(0, 0, 0);
 	padding: 20px;
 	/* text-align: left; */
-	height: 8px;
+	height: 12px;
 }
 
 .button {
   position: relative;
   display: inline-block;
   font-weight: bold;
-  padding: 2.0em 4.0em;
+  padding: 1.0em 2.0em;
   text-decoration: none;
   color: #FFF;
   background: #00bcd4;
