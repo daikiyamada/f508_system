@@ -74,7 +74,7 @@ table {
 	padding: 0px;
 	margin: 0 auto;
 	/* text-align: left; */
-	height: 20px;
+	height: 18px;
 	width:50px;
 }
 .name {
@@ -84,31 +84,30 @@ table {
 	padding: 0px;
 	margin: 0 auto;
 	/* text-align: left; */
-	height: 20px;
+	height: 18px;
 	width:100px;
 }
-td {
+.purpose {
 	text-align:center;
 	font-size: 18px;
 	border: 1px solid rgb(0, 0, 0);
-	padding: 20px;
+	padding: 10px;
 	/* text-align: left; */
-	height: 20px;
-	width:150px;
+	height: 18px;
+	width:200px;
 }
-td {
+.button2 {
 	text-align:center;
 	font-size: 18px;
 	border: 1px solid rgb(0, 0, 0);
-	padding: 20px;
+	padding: 10px;
 	/* text-align: left; */
-	height: 20px;
-	width:150px;
+	height: 18px;
+	width:30px;
 }
 .button {
 	display: inline-block;
 	margin: 0 auto;
-  padding: 5px 10px;
   border-radius: 18px;
   text-decoration: none;
   color: #FFF;
