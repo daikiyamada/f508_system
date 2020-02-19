@@ -1,5 +1,5 @@
 <?php
-if($_POST['ID']==NULL||$_POST['Name']==NULL||$_POST['pw']==NULL||$_POST['mail']==NULL||$_POST['pw2']==NULL){
+if($_POST['ID']==NULL||$_POST['Name']==NULL||$_POST['pw']==NULL||$_POST['mail']==NULL){
   ?>
   <script type="text/javascript">
   window.alert("全ての情報を入力してください");
