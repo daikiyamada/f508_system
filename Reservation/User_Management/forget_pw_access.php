@@ -5,7 +5,7 @@
     $stt = $db->prepare('SELECT * FROM f508system WHERE ID=:ID');
     $stt -> execute(array(':ID' => $_POST['ID']));
     $usr = $stt -> fetch();
-    if(strcmp( strcmp($_POST['ID'],$id)!=0){
+    if(strcmp($usr['mail'],$_POST['mail'])!=0 || strcmp($_POST['ID'],$usr['ID'])!=0){
       ?>
       <script type='text/javascript'>
       window.alert('入力情報が異なります。再度入力お願いします');
