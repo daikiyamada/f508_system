@@ -35,8 +35,8 @@ require_once 'Manager.php';
       }
       else{
         ?>
-        <script>
-        window.alert('<?php print $now?>は予約埋まっているため、予約できませんでしt。');
+        <script type="text/javascript">
+        window.alert('<?php print $now?>は予約埋まっているため、予約できませんでした。');
         </script>
         <?php
       }
