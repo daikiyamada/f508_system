@@ -8,7 +8,8 @@ require_once 'Manager.php';
     $row = "\n";
     print $year.$month.$day.$row;
     for($i=0;$i<(int)$_POST['time'];$i++){
-      $last_date = date('d', strtotime('last day of ' . $month));
+      $last = $year."-".$month;
+      $last_date = date('d', strtotime('last day of ' . $last));
       $now = $day+$i*7;
       print $last_date.$row;
       print "now:".$now.$row;
@@ -18,8 +19,12 @@ require_once 'Manager.php';
           $month=1;
           $year++;
         }
-        else $month++;
+        else{
+          $month++;
+        }
       }
+      if($month<10) $month = "0".$month;
+      if($day<10) $day ="0".$day;
       $date = $year.$month.$day;
       print $date."\n";
       $sql = 'INSERT INTO Reservation(reserveID,date,class,ID,purpose) VALUES(:reserveID,:date,:class,:ID,:purpose)';
