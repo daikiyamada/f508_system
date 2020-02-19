@@ -20,7 +20,7 @@ require_once 'Manager.php';
     $db = NULL;
   }catch (PDOException $e){
     exit("エラーが発生しました:{$e->getMessage()}");
-
+  }
 }
 if($_SESSION['Manager']){
 ?>
