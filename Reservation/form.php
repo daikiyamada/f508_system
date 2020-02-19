@@ -37,7 +37,8 @@ $purpose = $_POST['purpose'];
       else{
         ?>
         <script type="text/javascript">
-        window.alert('<?php print $now?>は予約埋まっているため、予約できませんでした。');
+        var check = window.confirm('<?php print $now?>は予約埋まっているため、予約できませんでした。この後も予約しますか？');
+        if(!check)location.href="calendar.php";
         </script>
         <?php
       }
