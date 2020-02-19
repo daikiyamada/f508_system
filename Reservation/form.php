@@ -5,14 +5,12 @@ require_once 'Manager.php';
     $year = (int)substr($_POST["date"],0,4);
     $month = (int)substr($_POST["date"],4,2);
     $day = (int)substr($_POST["date"],6);
-    print $year;
-    print $month;
-    print $day;
+    print $year.$month.$day."\n";
     for($i=0;$i<(int)$_POST['time'];$i++){
       $last_date = date('Y-m-d', strtotime('last day of ' . $month));
       $last_date= (int)substr($last_date,6);
       $now = $day+$i*7;
-      print "now:"+$now;
+      print "now:".$now."\n";
       if($now > $last_date){
         $now = $now - $last_date;
         if($month ==12){
@@ -22,7 +20,7 @@ require_once 'Manager.php';
         else $month++;
       }
       $date = $year.$month.$day;
-      print $date;
+      print $date."\n";
       $sql = 'INSERT INTO Reservation(reserveID,date,class,ID,purpose) VALUES(:reserveID,:date,:class,:ID,:purpose)';
       $stt = $db ->prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
       $stt->execute(array(':reserveID'=>$_POST['reserveID'],':date'=>$date,'class'=>$_POST['class'],':ID'=>$_POST['ID'],':purpose'=> $_POST['purpose']));
