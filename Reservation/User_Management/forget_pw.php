@@ -14,7 +14,7 @@
 <ul id="menu">
 <li><a href="/index.html">Home</a></li>
 </ul>
-<form id="login" action="newuser_pw.php" method="POST">
+<form id="login" action="forget_pw_access.php" method="POST">
   ID：<input type = "text" name = "ID"><br>
   登録したメールアドレス：<input type="text" name="mail"><br>
   <input type="submit" value="ログイン">
