@@ -24,9 +24,22 @@ require_once 'Manager.php';
       if($month<10&&strcmp(substr($month,0,1),"0")!=0) $month = "0".$month;
       if($now<10) $now ="0".$now;
       $date = $year.$month.$now;
-      $sql = 'INSERT INTO Reservation(reserveID,date,class,ID,purpose) VALUES(:reserveID,:date,:class,:ID,:purpose)';
-      $stt = $db ->prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
+      $sql = 'SELECT * from Reservation WHERE date=:date and class = :class';
+      $stt = $db -> prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
       $stt->execute(array(':reserveID'=>$_POST['reserveID'],':date'=>$date,'class'=>$_POST['class'],':ID'=>$_POST['ID'],':purpose'=> $_POST['purpose']));
+      $res = $stt->fetch();
+      if($res){
+        $sql = 'INSERT INTO Reservation(reserveID,date,class,ID,purpose) VALUES(:reserveID,:date,:class,:ID,:purpose)';
+        $stt = $db ->prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
+        $stt->execute(array(':reserveID'=>$_POST['reserveID'],':date'=>$date,'class'=>$_POST['class'],':ID'=>$_POST['ID'],':purpose'=> $_POST['purpose']));
+      }
+      else{
+        ?>
+        <script>
+        window.alert('<?php print $now?>は予約埋まっているため、予約できませんでしt。');
+        </script>
+        <?php
+      }
     }
       $db = NULL;
   }catch (PDOException $e){
