@@ -3,6 +3,7 @@ require_once 'Manager.php';
 $ID = $_POST['ID'];
 $class = $_POST['class'];
 $purpose = $_POST['purpose'];
+$list = array();
   try{
     $db=connect();
     $year = (int)substr($_POST["date"],0,4);
@@ -35,19 +36,29 @@ $purpose = $_POST['purpose'];
         $stt->execute(array(':reserveID'=>$_POST['reserveID'],':date'=>$date,'class'=>$_POST['class'],':ID'=>$ID,':purpose'=> $purpose));
       }
       else{
-        ?>
-        <script type="text/javascript">
-        var check = window.confirm('<?php print $now?>は予約埋まっているため、予約できませんでした。この後も予約しますか？');
-        if(!check)location.href="calendar.php";
-        </script>
-        <?php
+        array_push($list,$date);
       }
     }
       $db = NULL;
   }catch (PDOException $e){
     exit("エラーが発生しました:{$e->getMessage()}");
   }
+  if(count($list)==0){
   ?>
   <script type="text/javascript">
+    var check = window.alert('予約完了しました。');
   location.href="calendar.php";
   </script>
+<?php
+ }
+ else {
+   $result = "以下の日付の予約が埋まっていて、予約できませんでした。<br/>";
+   for( $i =0;$i<count($list);$i++){
+     $result = $result.$list[$i]."<br/>";
+   }
+   ?>
+   <script type="text/javascript">
+   window.alert(<?php print $result?>);
+   </script>
+<?php
+ }?>
