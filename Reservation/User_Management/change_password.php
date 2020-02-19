@@ -12,12 +12,10 @@ require_once 'Manager.php';
   try{
     //データベースに接続してPDOオブジェクトを作成
     $db=connect();
-    $sql = 'UPDATE f508system SET "pw" =:pw WHERE "ID"=:ID';
     //プリペアドステートメントを生成
-    $stt = $db ->prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
+    $stt = $db -> prepare('UPDATE f508system SET pw=:pw WHERE ID=:ID');
     //プリペアドステートメントを実行
     $stt->execute(array(':ID' => $_POST['ID'],':pw'=>$_POST['pw']));
-    $db-> commit();
     $db = NULL;
   }catch (PDOException $e){
     exit("エラーが発生しました:{$e->getMessage()}");
