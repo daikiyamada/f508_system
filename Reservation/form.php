@@ -31,12 +31,12 @@ $j = 0;
       $stt = $db -> prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
       $stt->execute(array(':date'=>$date,'class'=>$class));
       $res = $stt->fetch();
-      if(!$res['date']){
+      if(strcmp($res['date'],$date)!=0 && strcmp($res['class'],$class)==0){
         $sql = 'INSERT INTO Reservation(reserveID,date,class,ID,purpose) VALUES(:reserveID,:date,:class,:ID,:purpose)';
         $stt = $db ->prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
         $stt->execute(array(':reserveID'=>$_POST['reserveID'],':date'=>$date,'class'=>$_POST['class'],':ID'=>$ID,':purpose'=> $purpose));
       }
-      else if($res['date']){
+      else{
         array_push($list,$date);
       }
     }
