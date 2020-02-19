@@ -54,12 +54,13 @@ $j = 0;
  }
  else {
    $result = "以下の日付の予約が埋まっていて、予約できませんでした。<br/>";
-   for( $i =0;$i<count($list);$i++){
-     $result = $result.$list[$i]."<br/>";
+   foreach($value as $list){
+     $result = $result.$value."<br/>";
    }
    ?>
    <script type="text/javascript">
    window.alert(<?php print $result?>);
+  location.href="calendar.php";
    </script>
 <?php
  }?>
