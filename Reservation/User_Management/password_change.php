@@ -9,17 +9,16 @@
 <body>
   <div id="back1">
     <hr id="line1"/>
-    <h1 id="title1">ログイン画面</h1>
+    <h1 id="title1">パスワード変更</h1>
   </div>
 <ul id="menu">
 <li><a href="/index.html">Home</a></li>
-<li><a href="User_Management/newuser_login.php">新規登録</a></li>
-<li><a href="User_Management/forget_pw.php">パスワードを忘れた場合</a></li>
 </ul>
-<form id="login" action="login_pw.php" method="POST">
-  学籍番号：<input type = "text" name = "ID"><br>
-  パスワード：<input type="text" name="pw"><br>
-  <input type="submit" value="ログイン">
+<form id="login" action="change_password.php" method="POST">
+  ID：<?php $_SESSION['ID']さん?>
+  <input type="hidden" name="ID" value="<?php print $_SESSION['ID']?>"><br>
+  新しいパスワード：<input type="text" name="pw"><br>
+  <input type="submit" value="変更">
 </form>
 </body>
 </html>

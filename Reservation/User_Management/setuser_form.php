@@ -33,7 +33,7 @@ location.href="/Reservation/login.php";
   学籍番号：<input type="text" name = "ID"/> <br/>
   氏名：<input type = "text" name ="Name"/> <br/>
   パスワード（16文字以下）：<input type="text" name="pw"/><br/>
-  メールアドレス：<input type="text" name = "mail"/><br/>
+  メールアドレス（soka-u.jp以外)：<input type="text" name = "mail"/><br/>
   <input type="submit" value="登録">
 </form>
 </body>

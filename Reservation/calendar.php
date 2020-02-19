@@ -28,7 +28,8 @@ else{
   </div>
     <ul id="menu">
         <li><a href="../index.html">Home</a></li>
-        <li><a href="User_Management/login_management_check.php">ユーザ管理</a></li>
+        <li><a href="User_Management/password_change.php">パスワードの変更</a></li>
+        <li><a href="User_Management/login_management_check.php">ユーザ管理（管理者権限）</a></li>
         <li><a href="http://shinolab.tech">篠宮研究室</a></li>
         <li><a href="http://teraylab.net/">寺島研究室</a></li>
         <li><a href="logout.php">ログアウト</a></li>

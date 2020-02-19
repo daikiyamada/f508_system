@@ -2,15 +2,14 @@
   require_once 'Manager.php';
   try{
     $db = connect();
-    $id = 'Shinomi';
     $stt = $db->prepare('SELECT * FROM f508system WHERE ID=:ID');
-    $stt -> execute(array(':ID' => $id));
+    $stt -> execute(array(':ID' => $_POST['ID']));
     $usr = $stt -> fetch();
-    if(strcmp($usr['pw'],$_POST['pw'])!=0 || strcmp($_POST['ID'],$id)!=0){
+    if(strcmp($usr['mail'],$_POST['mail'])!=0 || strcmp($_POST['ID'],$id)!=0){
       ?>
       <script type='text/javascript'>
-      window.alert('専用アカウントのみログイン可能です。再度入力お願いします');
-      location.href="../login.php";
+      window.alert('入力情報が異なります。再度入力お願いします');
+      location.href="forget_pw.php";
       </script>
       <?php
       }
@@ -18,11 +17,11 @@
     session_set_cookie_params(60 * 5);
     session_start();
     session_regenerate_id(true); //セッションIDを振り直す
-    $_SESSION['Shinomi'] = $_POST['ID'];
+    $_SESSION['ID'] = $_POST['ID'];
     ?>
     <script type='text/javascript'>
-    window.alert('<?php print $usr['Name']?>さん、ログイン成功しました');
-    location.href = "setuser_form.php";
+    window.alert('<?php print $usr['Name']?>さん、パスワードを変更してください。');
+    location.href = "password_change.php";
     </script>
     <?php
   }
