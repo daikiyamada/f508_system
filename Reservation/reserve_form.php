@@ -44,6 +44,7 @@ $day = substr($_POST["date"],6);
   <input type="hidden" name="class" value="<?php print $_POST['class']?>">
   <input type="hidden" name="ID" value="<?php print $_SESSION['ID']?>">
   使用用途の入力画面：<input type="text" name="purpose">
+  繰返回数（1週間単位）：<input type="text" name="time" value="1">
   <input type="submit" value="予約" class="button"><br>
 </form>
 </div>
