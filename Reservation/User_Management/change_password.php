@@ -12,7 +12,7 @@ require_once 'Manager.php';
   try{
     //データベースに接続してPDOオブジェクトを作成
     $db=connect();
-    $sql = 'UPDATE f508system SET　pw = :pw WHERE ID=:ID';
+    $stt = prepare('UPDATE f508system WHERE ID=:ID SET　pw = :pw');
     //プリペアドステートメントを実行
     $stt->execute(array(':pw'=> $_POST['pw'],':ID' => $_POST['ID']));
     $db = NULL;
