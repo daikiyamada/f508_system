@@ -30,8 +30,8 @@ else{
 <li><a href="/index.html">Home</a></li>
 </ul>
 <form id="login" action="change_password.php" method="POST">
-  ID：<?php $_SESSION['ID']さん?>
-  <input type="hidden" name="ID" value="<?php print $_SESSION['ID']?>"><br>
+  ID：<?php print $_SESSION['ID'];?>さん
+  <input type="hidden" name="ID" value="<?php print $_SESSION['ID'];?>"><br>
   新しいパスワード：<input type="text" name="pw"><br>
   <input type="submit" value="変更">
 </form>
