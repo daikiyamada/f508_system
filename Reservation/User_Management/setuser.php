@@ -1,4 +1,5 @@
 <?php
+session_start();
 if($_POST['ID']==NULL||$_POST['Name']==NULL||$_POST['pw']==NULL||$_POST['mail']==NULL){
   ?>
   <script type="text/javascript">
