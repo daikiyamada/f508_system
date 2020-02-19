@@ -60,7 +60,7 @@ $j = 0;
    }
    ?>
    <script type="text/javascript">
-   window.alert(<?php print($result)?>);
+   window.alert("<?php print$result?>");
    location.href="calendar.php";
    </script>
 <?php
