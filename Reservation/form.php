@@ -44,8 +44,6 @@ $j = 0;
   }catch (PDOException $e){
     exit("エラーが発生しました:{$e->getMessage()}");
   }
-  print count($list);
-  print_r($list);
   if(count($list)==0){
   ?>
   <script type="text/javascript">
@@ -58,6 +56,7 @@ $j = 0;
    $result = "以下の日付の予約が埋まっていて、予約できませんでした。<br/>";
    foreach($value as $list){
      $result = $result.$value."<br/>";
+     print $result."<br/>";
    }
    ?>
    <script type="text/javascript">
