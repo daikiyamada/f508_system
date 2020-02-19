@@ -55,9 +55,9 @@ $j = 0;
  }
  else {
    $result = "以下の日付の予約が埋まっていて、予約できませんでした。<br/>";
-        print $result."<br/>";
-   foreach($value as $list){
+   foreach($list as $value){
      $result = $result.$value."<br/>";
+     print $result."<br/>";
    }
    ?>
    <script type="text/javascript">
