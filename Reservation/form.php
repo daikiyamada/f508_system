@@ -26,3 +26,5 @@ require_once 'Manager.php';
   }catch (PDOException $e){
     exit("エラーが発生しました:{$e->getMessage()}");
   }
+  header('Location: http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'calendar.php');
+  ?>
