@@ -38,7 +38,7 @@ require_once 'Escape.php'; //エスケープ処理を行うソースファイル
 <form method="POST" action="delete.php">
 <table border = "1">
   <tr>
-    <th>削除ボタン</th><th>学籍番号</th><th>氏名</th>
+    <th>削除ボタン</th><th>学籍番号</th><th>氏名</th><th>メールアドレス</th>
   </tr>
   <?php
   try{
@@ -59,6 +59,9 @@ require_once 'Escape.php'; //エスケープ処理を行うソースファイル
     </td>
     <td>
       <?php print es($row['Name']);?>
+    </td>
+    <td>
+      <?php print es($row['mail']);?>
     </td>
   </tr>
 <?php
