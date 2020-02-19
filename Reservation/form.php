@@ -1,5 +1,8 @@
 <?php
 require_once 'Manager.php';
+$ID = $_POST['ID'];
+$class = $_POST['class'];
+$purpose = $_POST['purpose'];
   try{
     $db=connect();
     $year = (int)substr($_POST["date"],0,4);
@@ -26,12 +29,12 @@ require_once 'Manager.php';
       $date = $year.$month.$now;
       $sql = 'SELECT * from Reservation WHERE date=:date and class = :class';
       $stt = $db -> prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
-      $stt->execute(array(':reserveID'=>$_POST['reserveID'],':date'=>$date,'class'=>$_POST['class'],':ID'=>$_POST['ID'],':purpose'=> $_POST['purpose']));
+      $stt->execute(array(':reserveID'=>$_POST['reserveID'],':date'=>$date,'class'=>$class));
       $res = $stt->fetch();
       if(!$res){
         $sql = 'INSERT INTO Reservation(reserveID,date,class,ID,purpose) VALUES(:reserveID,:date,:class,:ID,:purpose)';
         $stt = $db ->prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
-        $stt->execute(array(':reserveID'=>$_POST['reserveID'],':date'=>$date,'class'=>$_POST['class'],':ID'=>$_POST['ID'],':purpose'=> $_POST['purpose']));
+        $stt->execute(array(':reserveID'=>$_POST['reserveID'],':date'=>$date,'class'=>$_POST['class'],':ID'=>$ID,':purpose'=> $purpose));
       }
       else{
         ?>
@@ -45,5 +48,5 @@ require_once 'Manager.php';
   }catch (PDOException $e){
     exit("エラーが発生しました:{$e->getMessage()}");
   }
-  header('Location: http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/calendar.php');
+  //header('Location: http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/calendar.php');
   ?>
