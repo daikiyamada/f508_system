@@ -44,6 +44,7 @@ $j = 0;
   }catch (PDOException $e){
     exit("エラーが発生しました:{$e->getMessage()}");
   }
+  print count($list);
   if(count($list)==0){
   ?>
   <script type="text/javascript">
@@ -60,7 +61,7 @@ $j = 0;
    ?>
    <script type="text/javascript">
    window.alert(<?php print $result?>);
-  location.href="calendar.php";
+   location.href="calendar.php";
    </script>
 <?php
  }?>
