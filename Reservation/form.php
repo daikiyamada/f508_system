@@ -24,8 +24,8 @@ require_once 'Manager.php';
         }
       }
       if($month<10) $month = "0".$month;
-      if($day<10) $day ="0".$day;
-      $date = $year.$month.$day;
+      if($now<10) $now ="0".$now;
+      $date = $year.$month.$now;
       print $date."\n";
       $sql = 'INSERT INTO Reservation(reserveID,date,class,ID,purpose) VALUES(:reserveID,:date,:class,:ID,:purpose)';
       $stt = $db ->prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
