@@ -44,6 +44,7 @@ $j = 0;
   }catch (PDOException $e){
     exit("エラーが発生しました:{$e->getMessage()}");
   }
+
   if(count($list)==0){
   ?>
   <script type="text/javascript">
@@ -54,14 +55,15 @@ $j = 0;
  }
  else {
    $result = "以下の日付の予約が埋まっていて、予約できませんでした。<br/>";
+        print $result."<br/>";
    foreach($value as $list){
      $result = $result.$value."<br/>";
-     print $result."<br/>";
    }
    ?>
    <script type="text/javascript">
-   window.alert(<?php print $result?>);
+   var check = window.alert(<?php print $result?>);
    location.href="calendar.php";
    </script>
 <?php
- }?>
+ }
+ ?>
