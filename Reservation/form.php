@@ -11,8 +11,8 @@ require_once 'Manager.php';
       $last = $year."-".$month;
       $last_date = date('d', strtotime('last day of ' . $last));
       $now = $day+$i*7;
-      print $last_date.$row;
-      print "now:".$now.$row;
+      print $last_date."<br />";
+      print "now:".$now."<br />";
       if($now > $last_date){
         $now = $now - $last_date;
         if($month ==12){
@@ -23,10 +23,10 @@ require_once 'Manager.php';
           $month++;
         }
       }
-      if($month<10) $month = "0".$month;
+      if($month<10&&strcmp(substr($month,0,1),"0")!=0) $month = "0".$month;
       if($now<10) $now ="0".$now;
       $date = $year.$month.$now;
-      print $date.$row;
+      print $date.$row."<br />";
       $sql = 'INSERT INTO Reservation(reserveID,date,class,ID,purpose) VALUES(:reserveID,:date,:class,:ID,:purpose)';
       $stt = $db ->prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
       $stt->execute(array(':reserveID'=>$_POST['reserveID'],':date'=>$date,'class'=>$_POST['class'],':ID'=>$_POST['ID'],':purpose'=> $_POST['purpose']));
