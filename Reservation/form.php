@@ -8,8 +8,6 @@ $purpose = $_POST['purpose'];
     $year = (int)substr($_POST["date"],0,4);
     $month = (int)substr($_POST["date"],4,2);
     $day = (int)substr($_POST["date"],6);
-    $row = '\n';
-    print $year.$month.$day.$row;
     for($i=0;$i<(int)$_POST['time'];$i++){
       $last = $year."-".$month;
       $last_date = date('d', strtotime('last day of ' . $last));
@@ -48,5 +46,7 @@ $purpose = $_POST['purpose'];
   }catch (PDOException $e){
     exit("エラーが発生しました:{$e->getMessage()}");
   }
-  //header('Location: http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/calendar.php');
   ?>
+  <script type="text/javascript">
+  location.href="calendar.php";
+  </script>
