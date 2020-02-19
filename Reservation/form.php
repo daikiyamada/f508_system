@@ -45,6 +45,7 @@ $j = 0;
     exit("エラーが発生しました:{$e->getMessage()}");
   }
   print count($list);
+  print_r($list);
   if(count($list)==0){
   ?>
   <script type="text/javascript">
