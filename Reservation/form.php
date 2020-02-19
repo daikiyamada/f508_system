@@ -3,7 +3,8 @@ require_once 'Manager.php';
 $ID = $_POST['ID'];
 $class = $_POST['class'];
 $purpose = $_POST['purpose'];
-$list = array();
+$list = array('');
+$j = 0;
   try{
     $db=connect();
     $year = (int)substr($_POST["date"],0,4);
@@ -28,7 +29,7 @@ $list = array();
       $date = $year.$month.$now;
       $sql = 'SELECT * from Reservation WHERE date=:date and class = :class';
       $stt = $db -> prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
-      $stt->execute(array(':reserveID'=>$_POST['reserveID'],':date'=>$date,'class'=>$class));
+      $stt->execute(array(':date'=>$date,'class'=>$class));
       $res = $stt->fetch();
       if(!$res['date']){
         $sql = 'INSERT INTO Reservation(reserveID,date,class,ID,purpose) VALUES(:reserveID,:date,:class,:ID,:purpose)';
