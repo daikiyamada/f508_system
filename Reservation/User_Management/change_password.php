@@ -24,6 +24,6 @@ require_once 'Manager.php';
 }
 ?>
 <script>
-var rt = window.alert('変更完了しました\n <?php print $_POST['pw']?>');
+var rt = window.alert('変更完了しました\n <?php print $_POST['ID']?>');
 location.href="../login.php";
 </script>
