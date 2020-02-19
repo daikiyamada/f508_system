@@ -1,16 +1,13 @@
 <?php
 session_set_cookie_params(60 * 5);
 session_start();
-if(!$_SESSION['Manager']){
+if(!$_SESSION['Manager']&&!$_SESSION['Shinomi']){
 ?>
 <script type ="text/javascript">
 window.alert("ログインしてください");
 location.href="/Reservation/login.php";
 </script>
 <?php
-}
-else{
-  $_SESSION['ID'] = $_SESSION['ID'];
 }
  ?>
 <!DOCTYPE html>
@@ -37,19 +34,7 @@ else{
   氏名：<input type = "text" name ="Name"/> <br/>
   パスワード（16文字以下）：<input type="text" name="pw"/><br/>
   メールアドレス：<input type="text" name = "mail"/><br/>
-  好きな食べ物・場所・スポーツ：<input type="text" name="pw2"/><br/>
   <input type="submit" value="登録">
 </form>
-<br />
-<!--
-  <script type="text/javascript" style="text-align: right;">
-  var modified = new Date(document.lastModified);
-  var yy = modified.getFullYear();
-  var mm= modified.getMonth() + 1;
-  var dd = modified.getDate();
-  document.write('最終更新日:' + yy + '年' + mm + '月' + dd + '日');
-</script>
--->
-
 </body>
 </html>
