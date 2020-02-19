@@ -5,12 +5,13 @@ require_once 'Manager.php';
     $year = (int)substr($_POST["date"],0,4);
     $month = (int)substr($_POST["date"],4,2);
     $day = (int)substr($_POST["date"],6);
-    print $year.$month.$day."\n";
+    $row = "\n";
+    print $year.$month.$day.$row;
     for($i=0;$i<(int)$_POST['time'];$i++){
-      $last_date = date('Y-m-d', strtotime('last day of ' . $month));
-      $last_date= (int)substr($last_date,6);
+      $last_date = date('d', strtotime('last day of ' . $month));
       $now = $day+$i*7;
-      print "now:".$now."\n";
+      print $last_date.$row;
+      print "now:".$now.$row;
       if($now > $last_date){
         $now = $now - $last_date;
         if($month ==12){
