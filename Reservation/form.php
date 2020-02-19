@@ -9,6 +9,7 @@ require_once 'Manager.php';
       $last_date = date('Y-m-d', strtotime('last day of ' . $month));
       $last_date= (int)substr($last_date,6);
       $now = $day+$i*7;
+      print $now;
       if($now > $last_date){
         $now = $now - $last_date;
         if($month ==12){
@@ -26,5 +27,5 @@ require_once 'Manager.php';
   }catch (PDOException $e){
     exit("エラーが発生しました:{$e->getMessage()}");
   }
-  header('Location: http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'calendar.php');
+  //header('Location: http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/calendar.php');
   ?>
