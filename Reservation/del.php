@@ -13,5 +13,5 @@ try{
   exit("エラーが発生しました:{$e->getMessage()}");
 }
 //処理完了後、登録ページを再表示
-header('Location: http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'calendar.php')
+header('Location: http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/calendar.php')
 ?>
