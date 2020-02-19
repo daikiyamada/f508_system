@@ -1,5 +1,4 @@
 <?php
-session_start();
 if($_POST['ID']==NULL||$_POST['pw']==NULL){
   ?>
   <script type="text/javascript">
@@ -25,6 +24,6 @@ require_once 'Manager.php';
 }
 ?>
 <script>
-var rt = window.alert('変更完了しました\n <?php print $_POST['ID']?>');
+var rt = window.alert('変更完了しました\n <?php print $_POST['pw']?>');
 location.href="../login.php";
 </script>
