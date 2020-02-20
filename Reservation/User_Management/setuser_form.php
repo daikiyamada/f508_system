@@ -1,7 +1,7 @@
 <?php
 session_set_cookie_params(60 * 5);
 session_start();
-if(!$_SESSION['Manager']&&!$_SESSION['Shinomi']){
+if(!$_SESSION['Manager']&&!$_SESSION['newuser']){
 ?>
 <script type ="text/javascript">
 window.alert("ログインしてください");

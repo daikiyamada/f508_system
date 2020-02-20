@@ -6,7 +6,7 @@
     $stt = $db->prepare('SELECT * FROM f508system WHERE ID=:ID');
     $stt -> execute(array(':ID' => $id));
     $usr = $stt -> fetch();
-    if(/*!password_verify($_POST['pw'],$usr['pw'])|| */strcmp($_POST['ID'],$id)!=0){
+    if(!password_verify($_POST['pw'],$usr['pw'])|| strcmp($_POST['ID'],$id)!=0){
       ?>
       <script type='text/javascript'>
       window.alert('管理アカウントのみログイン可能です。再度入力お願いします');

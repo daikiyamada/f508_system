@@ -5,10 +5,7 @@
     $stt = $db->prepare('SELECT * FROM f508system WHERE ID=:ID');
     $stt -> execute(array(':ID' => $_POST['ID']));
     $usr = $stt -> fetch();
-    print "post:".password_hash($_POST['pw'],PASSWORD_DEFAULT)."<br/>";
-    print "usr:".$usr['pw']."<br/>";
-    print "boolean:".password_verify($_POST['pw'],$usr['pw'])."<br/>";
-    if(password_verify($_POST['pw'],$usr['pw'])){
+    if(password_verify($_POST['pw'],$usr['pw'])===TRUE){
       session_set_cookie_params(60 * 10);
       session_start();
       session_regenerate_id(true); //セッションIDを振り直す
@@ -25,7 +22,7 @@
       ?>
       <script type='text/javascript'>
       window.alert('パスワードが間違っています。再度入力お願いします');
-      //location.href="/Reservation/login.php";
+      location.href="/Reservation/login.php";
       </script>
       <?php
     }

@@ -2,7 +2,7 @@
   require_once 'Manager.php';
   try{
     $db = connect();
-    $id = 'Shinomi';
+    $id = 'newuser';
     $stt = $db->prepare('SELECT * FROM f508system WHERE ID=:ID');
     $stt -> execute(array(':ID' => $id));
     $usr = $stt -> fetch();
@@ -18,7 +18,7 @@
     session_set_cookie_params(60 * 5);
     session_start();
     session_regenerate_id(true); //セッションIDを振り直す
-    $_SESSION['Shinomi'] = $_POST['ID'];
+    $_SESSION['newuser'] = $_POST['ID'];
     ?>
     <script type='text/javascript'>
     window.alert('<?php print $usr['Name']?>さん、ログイン成功しました');
