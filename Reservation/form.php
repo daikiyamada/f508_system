@@ -12,7 +12,9 @@ $j = 0;
     $day = (int)substr($_POST["date"],6);
     for($i=0;$i<(int)$_POST['time'];$i++){
       $last = $year."-".$month;
+      print "last:".$last."<br/>";
       $last_date = date('d', strtotime('last day of ' . $last));
+      print "last_date:".$last_date."<br/>";
       $now = $day+$i*7;
       if($now > $last_date){
         $now = $now - $last_date;
@@ -24,6 +26,8 @@ $j = 0;
           $month++;
         }
       }
+      print "month:".$month."<br/>";
+      print "now:".$now."<br/>";
       if($month<10&&strcmp(substr($month,0,1),"0")!=0) $month = "0".$month;
       if($now<10) $now ="0".$now;
       $date = $year.$month.$now;
