@@ -5,9 +5,9 @@
     $stt = $db->prepare('SELECT * FROM f508system WHERE ID=:ID');
     $stt -> execute(array(':ID' => $_POST['ID']));
     $usr = $stt -> fetch();
-    print password_hash($_POST['pw'],PASSWORD_DEFAULT);
-    print $usr['pw']."<br/>";
-    print password_verify($_POST['pw'],$usr['pw'])."<br/>";
+    print "post:".password_hash($_POST['pw'],PASSWORD_DEFAULT)."<br/>";
+    print "usr:".$usr['pw']."<br/>";
+    print "boolean:".password_verify($_POST['pw'],$usr['pw'])."<br/>";
     if(password_verify($_POST['pw'],$usr['pw'])){
       session_set_cookie_params(60 * 10);
       session_start();
