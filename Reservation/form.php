@@ -31,6 +31,7 @@ $j = 0;
       $stt = $db -> prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
       $stt->execute(array(':date'=>$date,'class'=>$class));
       $res = $stt->fetch();
+      print $date."<br/>";
       if(strcmp($res['date'],$date)!=0){
         $sql = 'INSERT INTO Reservation(reserveID,date,class,ID,purpose) VALUES(:reserveID,:date,:class,:ID,:purpose)';
         $stt = $db ->prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
@@ -49,7 +50,7 @@ $j = 0;
   ?>
   <script type="text/javascript">
     var check = window.alert('予約完了しました。');
-  location.href="calendar.php";
+  //location.href="calendar.php";
   </script>
 <?php
  }
@@ -61,7 +62,7 @@ $j = 0;
    ?>
    <script type="text/javascript">
    window.alert("<?php print$result?>");
-   location.href="calendar.php";
+   //location.href="calendar.php";
    </script>
 <?php
  }
