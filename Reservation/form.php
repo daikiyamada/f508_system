@@ -12,9 +12,7 @@ $j = 0;
     $day = (int)substr($_POST["date"],6);
     for($i=0;$i<(int)$_POST['time'];$i++){
       $last = $year."-".$month;
-      print "last:".$last."<br/>";
       $last_date = date('d', strtotime('last day of ' . $last));
-      print "last_date:".$last_date."<br/>";
       if($day > $last_date){
         $day = $day - $last_date;
         if($month ==12){
@@ -25,8 +23,6 @@ $j = 0;
           $month++;
         }
       }
-      print "month:".$month."<br/>";
-      print "day:".$day."<br/>";
       if($month<10&&strcmp(substr($month,0,1),"0")!=0) $month = "0".$month;
       if($day<10) $day ="0".$day;
       $date = $year.$month.$day;
@@ -34,7 +30,6 @@ $j = 0;
       $stt = $db -> prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
       $stt->execute(array(':date'=>$date,'class'=>$class));
       $res = $stt->fetch();
-      print $date."<br/>";
       if(strcmp($res['date'],$date)!=0){
         $sql = 'INSERT INTO Reservation(reserveID,date,class,ID,purpose) VALUES(:reserveID,:date,:class,:ID,:purpose)';
         $stt = $db ->prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
@@ -54,7 +49,7 @@ $j = 0;
   ?>
   <script type="text/javascript">
     var check = window.alert('予約完了しました。');
-  //location.href="calendar.php";
+  location.href="calendar.php";
   </script>
 <?php
  }
@@ -66,7 +61,7 @@ $j = 0;
    ?>
    <script type="text/javascript">
    window.alert("<?php print$result?>");
-   //location.href="calendar.php";
+   location.href="calendar.php";
    </script>
 <?php
  }
