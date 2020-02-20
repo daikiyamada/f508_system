@@ -15,7 +15,6 @@ $j = 0;
       print "last:".$last."<br/>";
       $last_date = date('d', strtotime('last day of ' . $last));
       print "last_date:".$last_date."<br/>";
-      $day = $day+7;
       if($day > $last_date){
         $day = $day - $last_date;
         if($month ==12){
@@ -44,6 +43,7 @@ $j = 0;
       else{
         array_push($list,$date);
       }
+      $day = $day+7;
     }
       $db = NULL;
   }catch (PDOException $e){
