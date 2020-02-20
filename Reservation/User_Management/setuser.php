@@ -9,6 +9,7 @@ if($_POST['ID']==NULL||$_POST['Name']==NULL||$_POST['pw']==NULL||$_POST['mail']=
   <?php
 }
 else{
+  $pw = password_hash($_POST['pw'],PASSWORD_BCRYPT);
 require_once 'Manager.php';
   try{
     //データベースに接続してPDOオブジェクトを作成
@@ -17,7 +18,7 @@ require_once 'Manager.php';
     //プリペアドステートメントを生成
     $stt = $db ->prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
     //プリペアドステートメントを実行
-    $stt->execute(array(':ID'=>$_POST['ID'],':Name'=>$_POST['Name'],':pw'=> $_POST['pw'],':mail'=> $_POST['mail']));
+    $stt->execute(array(':ID'=>$_POST['ID'],':Name'=>$_POST['Name'],':pw'=> $pw,':mail'=> $_POST['mail']));
     $db = NULL;
   }catch (PDOException $e){
     exit("エラーが発生しました:{$e->getMessage()}");

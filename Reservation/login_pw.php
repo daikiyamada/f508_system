@@ -5,7 +5,7 @@
     $stt = $db->prepare('SELECT * FROM f508system WHERE ID=:ID');
     $stt -> execute(array(':ID' => $_POST['ID']));
     $usr = $stt -> fetch();
-    if(strcmp($usr['pw'],$_POST['pw'])!=0){
+    if(!password_verify($_POST['pw'],$usr['pw'])){
       ?>
       <script type='text/javascript'>
       window.alert('パスワードが間違っています。再度入力お願いします');
