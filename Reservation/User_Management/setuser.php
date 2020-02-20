@@ -9,7 +9,7 @@ if($_POST['ID']==NULL||$_POST['Name']==NULL||$_POST['pw']==NULL||$_POST['mail']=
   <?php
 }
 else{
-  $pw = password_hash($_POST['pw'],PASSWORD_BCRYPT);
+  $pw = password_hash($_POST['pw'],PASSWORD_DEFAULT);
 require_once 'Manager.php';
   try{
     //データベースに接続してPDOオブジェクトを作成

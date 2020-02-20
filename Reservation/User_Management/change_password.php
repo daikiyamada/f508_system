@@ -10,7 +10,7 @@ if($_POST['ID']==NULL||$_POST['pw']==NULL){
 else{
 require_once 'Manager.php';
   try{
-    $pw = password_hash($_POST['pw'],PASSWORD_BCRYPT);
+    $pw = password_hash($_POST['pw'],PASSWORD_DEFAULT);
     //データベースに接続してPDOオブジェクトを作成
     $db=connect();
     //プリペアドステートメントを生成
