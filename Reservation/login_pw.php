@@ -17,6 +17,7 @@
       </script>
       <?php
       $db = NULL;
+    }
     else{
       ?>
       <script type='text/javascript'>
@@ -25,7 +26,6 @@
       </script>
       <?php
     }
-  }
   }catch (PDOException $e){
     exit("エラーが発生しました:{$e->getMessage()}");
   }
