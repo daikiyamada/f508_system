@@ -16,7 +16,7 @@ require_once 'Manager.php';
     //プリペアドステートメントを生成
     $stt = $db -> prepare('UPDATE f508system SET pw=:pw WHERE ID=:ID');
     //プリペアドステートメントを実行
-    $stt->execute(array(':ID' => $_POST['ID'],':pw'=>$_POST['pw']));
+    $stt->execute(array(':ID' => $_POST['ID'],':pw'=>$pw));
     $db = NULL;
   }catch (PDOException $e){
     exit("エラーが発生しました:{$e->getMessage()}");
