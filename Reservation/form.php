@@ -15,9 +15,9 @@ $j = 0;
       print "last:".$last."<br/>";
       $last_date = date('d', strtotime('last day of ' . $last));
       print "last_date:".$last_date."<br/>";
-      $now = $day+$i*7;
-      if($now > $last_date){
-        $now = $now - $last_date;
+      $day = $day+7;
+      if($day > $last_date){
+        $day = $day - $last_date;
         if($month ==12){
           $month=1;
           $year++;
@@ -27,10 +27,10 @@ $j = 0;
         }
       }
       print "month:".$month."<br/>";
-      print "now:".$now."<br/>";
+      print "day:".$day."<br/>";
       if($month<10&&strcmp(substr($month,0,1),"0")!=0) $month = "0".$month;
-      if($now<10) $now ="0".$now;
-      $date = $year.$month.$now;
+      if($day<10) $day ="0".$day;
+      $date = $year.$month.$day;
       $sql = 'SELECT * from Reservation WHERE date=:date and class = :class';
       $stt = $db -> prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
       $stt->execute(array(':date'=>$date,'class'=>$class));
