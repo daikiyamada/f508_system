@@ -19,7 +19,7 @@
 <form id="login" action="login_pw.php" method="POST">
   学籍番号：<input type = "text" name = "ID"><br>
   パスワード：<input type="text" name="pw"><br>
-  <input type="submit" value="ログイン">
+  <input type="submit" value="ログイン" class="button">
 </form>
 </body>
 </html>
