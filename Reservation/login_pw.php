@@ -5,7 +5,7 @@
     $stt = $db->prepare('SELECT * FROM f508system WHERE ID=:ID');
     $stt -> execute(array(':ID' => $_POST['ID']));
     $usr = $stt -> fetch();
-    if(password_verify($_POST['pw'],$usr['pw'])===TRUE){
+    if(password_verify($_POST['pw'],$usr['pw'])){
       session_set_cookie_params(60 * 10);
       session_start();
       session_regenerate_id(true); //セッションIDを振り直す
