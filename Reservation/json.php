@@ -14,8 +14,8 @@ year = date("Y");
 month = date("m");
 
 $dbh = connect();
-String date1 = year + month + "01" + "00"
-String date2 = year + month + "31" + "10"
+$date1 = year + month + "01" + "00";
+$date2 = year + month + "31" + "10";
 $sth = $dbh->prepare("SELECT * FROM Reservation where date between :date1 and :date2");
 // 月日を文字列で取得して，数字に変更して配列に入れる
 $sth->execute();
