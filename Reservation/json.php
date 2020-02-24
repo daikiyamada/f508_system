@@ -6,9 +6,9 @@ mb_internal_encoding("utf-8"); //内部文字コードを変更
 mb_http_input("auto");
 mb_http_output("utf-8");
 
-$year = substr($_GET["date"],0,4);
-$month = substr($_GET["date"],4,2);
-$day = substr($_GET["date"],6);
+// $year = substr($_GET["date"],0,4);
+// $month = substr($_GET["date"],4,2);
+// $day = substr($_GET["date"],6);
 
 $dbh = connect();
 String date1 = year + month + "01" + "00"
