@@ -22,11 +22,11 @@ let dt = []
     dataType: 'json'
     })
     .done(function (data, dataType) {
-        var $contnet = $('#content');
+        var $contnet = $('#daydata');
         for (var i = 0; i<data.length; i++){
-            $content.append("<p>id: " + data[i].date);
+            $daydata.append("<p>id: " + data[i].date);
         }
-        })
+    })
     })
     .fail(function () {
     window.alert('読み込みエラー');
@@ -41,9 +41,7 @@ let dt = []
         }else if(cnt[n] == 7){
         console.log("×")
         }
-    }
-
-    });
+    };
     </script>
 </head>
 
