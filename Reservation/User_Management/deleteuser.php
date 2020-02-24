@@ -1,3 +1,18 @@
+<?php
+session_set_cookie_params(60 * 5);
+session_start();
+if(!$_SESSION['Manager']){
+?>
+<script type ="text/javascript">
+window.alert("ログインしてください");
+location.href="/Reservation/login.php";
+</script>
+<?php
+}
+else{
+  $_SESSION['ID'] = $_SESSION['ID'];
+}
+ ?>
 <!DOCTYPE html>
 <?xml version="1.0" encoding="utf-8"?>
 <?php
@@ -17,12 +32,13 @@ require_once 'Escape.php'; //エスケープ処理を行うソースファイル
   </div>
 <ul id="menu">
 <li><a href="/index.html">Home</a></li>
-<li><a href="../calendar.html">F508管理システム</a></li>
+<li><a href="../calendar.php">F508管理システム</a></li>
+<li><a href="logout_management.php">ログアウト</a></li>
 </ul>
 <form method="POST" action="delete.php">
 <table border = "1">
   <tr>
-    <th>削除ボタン</th><th>学籍番号</th><th>氏名</th>
+    <th>削除ボタン</th><th>学籍番号</th><th>氏名</th><th>メールアドレス</th>
   </tr>
   <?php
   try{
@@ -32,6 +48,7 @@ require_once 'Escape.php'; //エスケープ処理を行うソースファイル
     $ct = 0;
     while($row = $stt -> fetch(PDO::FETCH_ASSOC)){
       $ct++;
+    if($row['ID']!="Manager"){
   ?>
   <tr>
     <td>
@@ -43,8 +60,12 @@ require_once 'Escape.php'; //エスケープ処理を行うソースファイル
     <td>
       <?php print es($row['Name']);?>
     </td>
+    <td>
+      <?php print es($row['mail']);?>
+    </td>
   </tr>
 <?php
+  }
 }
 $db = NULL;
 }catch(PDOException $e){
