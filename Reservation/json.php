@@ -20,19 +20,25 @@ $sth = $dbh->prepare("SELECT * FROM Reservation where date between :date1 and :d
 // 月日を文字列で取得して，数字に変更して配列に入れる
 $sth->execute();
 
-$userData = array();
+$userData = null;
 
 while($row = $sth->fetch(PDO::FETCH_ASSOC)){
     $userData[]=array(
-    'date'=>$row['date'],
-    'ID'=>$row['ID'],
-    'purpose'=>$row['purpose'],
-    'reserveID'=>$row['reserveID'],
-    'class'=>$row['class']
+    'date'=> $row->date,
+    'ID'=> $row->ID,
+    'purpose'=> $row->purpose,
+    'reserveID'=> $row->reserveID,
+    'class'=> $row->class
     );
 }
 
 //jsonとして出力
+$file = 'my.json';
 header('Content-type: application/json');
 echo json_encode($userData, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
-file_put_contents("my.json", json_encode($userData, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT));
+$result = file_put_contents($file, json_encode($userData, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT), FILE_APPEND);
+if($result === 0){
+    echo "書き込み失敗\n";
+}else {
+    echo "書き込み成功:" . $result . "Byte\n";
+}
