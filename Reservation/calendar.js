@@ -86,30 +86,22 @@ function moveCalendar(e) {
 
     if (e.target.id === 'prev') {
         month--
-        location.href = "json.php?date=" + e.target.dataset.date;
-
         if (month < 1) {
             year--
             month = 12
-            location.href = "json.php?date=" + e.target.dataset.date;
         }
     }
 
     if (e.target.id === 'now') {
         year = ty
         month = tm
-        location.href = "json.php?date=" + e.target.dataset.date;
-
     }
 
     if (e.target.id === 'next') {
         month++
-        location.href = "json.php?date=" + e.target.dataset.date;
-
         if (month > 12) {
             year++
             month = 1
-            location.href = "json.php?date=" + e.target.dataset.date;
         }
     }
 
