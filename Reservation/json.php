@@ -16,7 +16,7 @@ month = date("m");
 $dbh = connect();
 String date1 = year + month + "01" + "00"
 String date2 = year + month + "31" + "10"
-$sth = $dbh->prepare("SELECT * FROM Reservation where Date between :date1 and :date2");
+$sth = $dbh->prepare("SELECT * FROM Reservation where date between :date1 and :date2");
 // 月日を文字列で取得して，数字に変更して配列に入れる
 $sth->execute();
 
@@ -24,10 +24,11 @@ $userData = array();
 
 while($row = $sth->fetch(PDO::FETCH_ASSOC)){
     $userData[]=array(
-    'reserveID'=>$row['reserveID'],
     'date'=>$row['date'],
     'ID'=>$row['ID'],
-    'purpose'=>$row['purpose']
+    'purpose'=>$row['purpose'],
+    'reserveID'=>$row['reserveID'],
+    'class'=>$row['class']
     );
 }
 
