@@ -16,10 +16,12 @@
 <li id="menu3"><a href="http://teraylab.net/">寺島研究室HP</a></li>
 </ul>
 <h1 id =news_head>お知らせ</h1>
+<p id=news>システム構築中 </p>
 <?php
 session_start();
-print $_SESSION['ID'];
-print $_SESSION['Manager'];
+$_SESSION['user_name']=$_POST['user'];
+print 'セッション情報を保存しました';
+print '最後に登録ボタンを押してください';
 ?>
 <form action="destroy.php">
 <input type="submit" value="登録"/>

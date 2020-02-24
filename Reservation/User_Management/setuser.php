@@ -1,42 +1,49 @@
+<!DOCTYPE html>
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml="" lang="ja" lalng="ja" xml:lang="ja">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<head>
+  <title>研究室管理システム</title>
+</head>
+  <link rel="stylesheet" type="text/css" href="/Homepage.css" />
+<body>
+  <div id="back1">
+    <hr id="line1"/>
+    <h1 id="title1">ユーザ登録</h1>
+  </div>
+<ul id="menu">
+<li><a href="/index.html">Home</a></li>
+<li><a href="../calendar.html">F508管理システム</a></li>
+</ul>
+<h1 id =news_head>お知らせ</h1>
 <?php
-session_start();
-if($_POST['ID']==NULL||$_POST['Name']==NULL||$_POST['pw']==NULL||$_POST['mail']==NULL){
-  ?>
-  <script type="text/javascript">
-  window.alert("全ての情報を入力してください");
-  location.href="setuser_form.php";
-  </script>
-  <?php
-}
-else{
-  $pw = password_hash($_POST['pw'],PASSWORD_DEFAULT);
 require_once 'Manager.php';
   try{
     //データベースに接続してPDOオブジェクトを作成
     $db=connect();
-    $sql = 'INSERT INTO f508system(ID,Name,pw,mail) VALUES(:ID,:Name,:pw,:mail)';
+    $sql = 'INSERT INTO f508system(ID,Name,pw) VALUES(:ID,:Name,:pw)';
     //プリペアドステートメントを生成
     $stt = $db ->prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
     //プリペアドステートメントを実行
-    $stt->execute(array(':ID'=>$_POST['ID'],':Name'=>$_POST['Name'],':pw'=> $pw,':mail'=> $_POST['mail']));
+    $stt->execute(array(':ID'=>$_POST['ID'],':Name'=>$_POST['Name'],':pw'=> $_POST['pw']));
     $db = NULL;
   }catch (PDOException $e){
     exit("エラーが発生しました:{$e->getMessage()}");
   }
-}
-if($_SESSION['Manager']){
 ?>
 <script>
-var rt = window.alert('登録完了しました');
-location.href="system_menu.php";
+var rt = window.confirm('登録完了しました。登録を継続しますか？');
+if(rt) location.href="setuser.html";
+else location.href="system_menu.html";
 </script>
-<?php }
-else if($_SESSION['Shinomi']){
-  ?>
-  <script>
-  var rt = window.alert('登録完了しました');
-  location.href="../login.php";
-  </script>
-  <?php
-}
-?>
+<script type="text/javascript" style="text-align: right;">
+/*
+  var modified = new Date(document.lastModified);
+  var yy = modified.getFullYear();
+  var mm= modified.getMonth() + 1;
+  var dd = modified.getDate();
+  document.write('最終更新日:' + yy + '年' + mm + '月' + dd + '日');
+*/
+</script>
+</body>
+</html>

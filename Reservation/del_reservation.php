@@ -17,12 +17,12 @@ require_once 'Escape.php'; //エスケープ処理を行うソースファイル
   </div>
 <ul id="menu">
 <li><a href="/index.html">Home</a></li>
-<li><a href="calendar.php">F508管理システム</a></li>
+<li><a href="calendar.html">F508管理システム</a></li>
 </ul>
 <form method="POST" action="del.php">
 <table border = "1">
   <tr>
-    <th>日付</th><th>コマ</th><th>学籍番号</th><th>用途</th>
+    <th>予約番号</th><th>日付</th><th>コマ</th><th>学籍番号</th><th>用途</th>
   </tr>
   <?php
   try{
@@ -34,6 +34,9 @@ require_once 'Escape.php'; //エスケープ処理を行うソースファイル
       $ct++;
   ?>
   <tr>
+    <td>
+      <input type="submit" name="reserveID" value="<?php print($row['reserveID'])?>"/>
+    </td>
     <td>
       <?php print es($row['date']);?>
     </td>

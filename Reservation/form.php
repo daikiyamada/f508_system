@@ -1,68 +1,44 @@
+<!DOCTYPE html>
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml="" lang="ja" lalng="ja" xml:lang="ja">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<head>
+  <title>研究室管理システム</title>
+</head>
+  <link rel="stylesheet" type="text/css" href="/Homepage.css" />
+<body>
+  <div id="back1">
+    <hr id="line1"/>
+    <h1 id="title1">予約画面</h1>
+  </div>
+<ul id="menu">
+<li><a href="/index.html">Home</a></li>
+<li><a href="calendar.html">F508管理システム</a></li>
+</ul>
+<h1 id =news_head>お知らせ</h1>
 <?php
 require_once 'Manager.php';
-$ID = $_POST['ID'];
-$class = $_POST['class'];
-$purpose = $_POST['purpose'];
-$list = array();
-$j = 0;
   try{
+    //データベースに接続してPDOオブジェクトを作成
     $db=connect();
-    $year = (int)substr($_POST["date"],0,4);
-    $month = (int)substr($_POST["date"],4,2);
-    $day = (int)substr($_POST["date"],6);
-    for($i=0;$i<(int)$_POST['time'];$i++){
-      $last = $year."-".$month;
-      $last_date = date('d', strtotime('last day of ' . $last));
-      if($day > $last_date){
-        $day = $day - $last_date;
-        if($month ==12){
-          $month=1;
-          $year++;
-        }
-        else{
-          $month++;
-        }
-      }
-      if($month<10&&strcmp(substr($month,0,1),"0")!=0) $month = "0".$month;
-      if($day<10) $day ="0".$day;
-      $date = $year.$month.$day;
-      $sql = 'SELECT * from Reservation WHERE date=:date and class = :class';
-      $stt = $db -> prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
-      $stt->execute(array(':date'=>$date,'class'=>$class));
-      $res = $stt->fetch();
-      if(strcmp($res['date'],$date)!=0){
-        $sql = 'INSERT INTO Reservation(reserveID,date,class,ID,purpose) VALUES(:reserveID,:date,:class,:ID,:purpose)';
-        $stt = $db ->prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
-        $stt->execute(array(':reserveID'=>$_POST['reserveID'],':date'=>$date,'class'=>$_POST['class'],':ID'=>$ID,':purpose'=> $purpose));
-      }
-      else{
-        array_push($list,$date);
-      }
-      $day = $day+7;
-    }
-      $db = NULL;
+    $sql = 'INSERT INTO Reservation(reserveID,date,class,ID,purpose) VALUES(:reserveID,:date,:class,:ID,:purpose)';
+    //プリペアドステートメントを生成
+    $stt = $db ->prepare($sql,array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
+    //プリペアドステートメントを実行
+    $stt->execute(array(':reserveID'=>$_POST['reserveID'],':date'=>$_POST['date'],'class'=>$_POST['class'],':ID'=>$_POST['ID'],':purpose'=> $_POST['purpose']));
+    $db = NULL;
   }catch (PDOException $e){
     exit("エラーが発生しました:{$e->getMessage()}");
   }
-
-  if(count($list)==0){
-  ?>
-  <script type="text/javascript">
-    var check = window.alert('予約完了しました。');
-  location.href="calendar.php";
-  </script>
-<?php
- }
- else {
-   $result = '以下の日付の予約が埋まっていて、予約できませんでした。\n';
-   foreach($list as $value){
-     $result = $result.$value.'\n';
-   }
-   ?>
-   <script type="text/javascript">
-   window.alert("<?php print$result?>");
-   location.href="calendar.php";
-   </script>
-<?php
- }
- ?>
+?>
+<script type="text/javascript" style="text-align: right;">
+/*
+  var modified = new Date(document.lastModified);
+  var yy = modified.getFullYear();
+  var mm= modified.getMonth() + 1;
+  var dd = modified.getDate();
+  document.write('最終更新日:' + yy + '年' + mm + '月' + dd + '日');
+*/
+</script>
+</body>
+</html>
