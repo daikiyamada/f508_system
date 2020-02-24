@@ -45,3 +45,4 @@ if($result === 0){
 }else {
     echo "書き込み成功:" . $result . "Byte\n";
 }
+?>
