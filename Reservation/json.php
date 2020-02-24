@@ -22,6 +22,10 @@ $sth->execute();
 
 $userData = null;
 
+ini_set('display_errors', 1);
+ini_set('error_reporting', E_ALL);
+
+
 while($row = $sth->fetch(PDO::FETCH_ASSOC)){
     $userData[]=array(
     'date'=> $row->date,
