@@ -4,6 +4,7 @@ let year = date.getFullYear() //年を取得
 let month = date.getMonth() + 1 //月を取得（0～11）
 let ty = date.getFullYear() // 今年を取得
 let tm = date.getMonth() + 1 // 今月を取得
+// ty tm を引数としてjson.phpにわたす
 const config = {
     show: 1,
 }
