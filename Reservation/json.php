@@ -35,8 +35,8 @@ while($row = $sth->fetch(PDO::FETCH_ASSOC)){
 //jsonとして出力
 $file = 'my.json';
 header('Content-type: application/json');
-echo json_encode($userData, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
-$result = file_put_contents($file, json_encode($userData, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT), FILE_APPEND);
+$json_data = json_encode($userData, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
+$result = file_put_contents($file, $json_data, FILE_APPEND);
 if($result === 0){
     echo "書き込み失敗\n";
 }else {
