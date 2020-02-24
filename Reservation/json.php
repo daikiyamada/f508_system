@@ -38,7 +38,7 @@ while($row = $sth->fetch(PDO::FETCH_ASSOC)){
 }
 
 //jsonとして出力
-$file = 'my.json';
+$file = 'mysql.json';
 header('Content-type: application/json');
 $json_data = json_encode($userData, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
 $result = file_put_contents($file, $json_data, FILE_APPEND);

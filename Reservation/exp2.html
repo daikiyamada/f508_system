@@ -19,14 +19,13 @@ let dt = []
     //ファイルの読み込み
     $.ajax({
     url: 'json.php',
-    dataType: 'json',
-    data: dt
+    dataType: 'json'
     })
-    
-    .done(function (data) {
-        let dataArray = data.dt;
-        $.each(dataArray, function(i){
-            $(".daydata").append("<p>id: " + dataArray[i].Date)
+    .done(function (data, dataType) {
+        var $contnet = $('#content');
+        for (var i = 0; i<data.length; i++){
+            $content.append("<p>id: " + data[i].date);
+        }
         })
     })
     .fail(function () {
