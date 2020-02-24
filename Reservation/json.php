@@ -24,8 +24,8 @@ $userData = array();
 
 while($row = $sth->fetch(PDO::FETCH_ASSOC)){
     $userData[]=array(
-    'ReservationNumber'=>$row['ReservationNumber'],
-    'Date'=>$row['Date'],
+    'reserveID'=>$row['reserveID'],
+    'date'=>$row['date'],
     'ID'=>$row['ID'],
     'purpose'=>$row['purpose']
     );
