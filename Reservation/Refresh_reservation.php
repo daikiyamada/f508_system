@@ -1,10 +1,10 @@
 <?php require_once 'Manager.php';
 try{
   $db = connect_yoshida();
-  $sql = "DELETE FROM Reservation WHERE =:ReservationNumber"; //SQL文の作成
+  $sql = "DELETE FROM Reservation WHERE =:reserveID"; //SQL文の作成
   $stt = $db->prepare($sql);
-  $stt -> execute(array(':ReservationNumber' =>$_POST['ReservationNumber']));
-  print $_POST['ReservationNumber'];
+  $stt -> execute(array(':reserveID' =>$_POST['reseveID']));
+  print $_POST['reserveID'];
 }catch(PDOException $e){
   die("エラーが発生: {$e ->getMEssage()}");
 }
