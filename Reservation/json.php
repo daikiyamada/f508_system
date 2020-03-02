@@ -14,12 +14,12 @@ require_once 'Manager.php';
 // $year = substr($_GET["date"],0,4);
 // $month = substr($_GET["date"],4,2);
 // $day = substr($_GET["date"],6);
-year = date("Y");
-month = date("m");
+$year = date("Y");
+$month = date("m");
 try{
     $dbh = connect();
-    date1 = year + month + "01" + "00";
-    date2 = year + month + "31" + "10";
+    $date1 = $year + $month + "01" + "00";
+    $date2 = $year + $month + "31" + "10";
     $sth = $dbh->prepare("SELECT * FROM Reservation where date between :date1 and :date2");
     // 月日を文字列で取得して，数字に変更して配列に入れる
     $sth->execute();
