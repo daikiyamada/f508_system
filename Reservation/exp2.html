@@ -18,6 +18,7 @@ let dt = []
     $(document).ready(function () {
     //ファイルの読み込み
     $.ajax({
+        type: 'POST',
         url: 'json.php',
         dataType: 'json'
     }).done(function (data, dataType) {
