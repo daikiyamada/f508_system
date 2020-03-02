@@ -23,17 +23,24 @@ try{
     
     echo "<pre>";
     var_dump($date1);
+    var_dump($date2);
     echo "</pre>";
 
     $sth = $dbh->prepare("SELECT * FROM Reservation where date between :date1 and :date2");
     // 月日を文字列で取得して，数字に変更して配列に入れる
     $sth->setFetchMode(PDO::FETCH_ASSOC);
     $sth->execute();
-
     $userData = array();
 
     while($row = $sth->fetch(PDO::FETCH_ASSOC)){
-        $userData[]=$row;
+        // $userData[]=$row;
+        $userData[] = array(
+            'date' =>$row['date'],
+            'ID' => $row['ID'],
+            'purpose' => $row['purpose'],
+            'reserveID' => $row['reserveID'],
+            'class' => $row['class']
+        )
     }
     //jsonとして出力
     // $file = 'mysql.json';
