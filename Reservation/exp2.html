@@ -26,8 +26,14 @@ let dt = []
         for (var i = 0; i<data.length; i++){
             $daydata.append("<p>id: " + data[i].date + "</p>");
         }
-    }).fail(function () {
-        window.alert('読み込みエラー');
+    }).fail(function (jqXHR, textStatus, errorThrown) {
+        // 通信失敗時の処理
+        alert('ファイルの取得に失敗しました。');
+        console.log("ajax通信に失敗しました");
+        console.log("jqXHR : " + jqXHR.status); // HTTPステータスが取得
+        console.log("textStatus : " + textStatus); // タイムアウト、パースエラー
+        console.log("errorThrown : " + errorThrown.message); // 例外情報
+        console.log("URL : " + url);
     });
 });
     for(let n of cnt){
