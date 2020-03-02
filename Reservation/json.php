@@ -18,8 +18,8 @@ $year = date("Y");
 $month = date("m");
 try{
     $dbh = connect();
-    $date1 = $year . $month . "01" . "00";
-    $date2 = $year . $month . "31" . "10";
+    $date1 = $year . $month . "01";
+    $date2 = $year . $month . "31";
     
     echo "<pre>";
     var_dump($year);
