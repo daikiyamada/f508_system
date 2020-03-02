@@ -36,8 +36,9 @@ try{
     }
     //jsonとして出力
     // $file = 'mysql.json';
-    header('Content-type: application/json');
-    $json_data = json_encode($userData, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
+    header('Content-type: application/json; charset=UTF-8');
+    // $json_data = json_encode($userData, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
+    $json_data = json_encode($userData);
     // $result = file_put_contents($file, $json_data, FILE_APPEND);
     // if($result === 0){
     //     echo "書き込み失敗\n";
