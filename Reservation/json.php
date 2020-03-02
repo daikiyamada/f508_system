@@ -40,7 +40,7 @@ try{
             'purpose' => $row['purpose'],
             'reserveID' => $row['reserveID'],
             'class' => $row['class']
-        )
+        );
     }
     //jsonとして出力
     // $file = 'mysql.json';
