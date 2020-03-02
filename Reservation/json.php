@@ -31,7 +31,7 @@ try{
     $sth = $dbh->prepare("SELECT * FROM Reservation");
     // $sth = $dbh->prepare("SELECT * FROM Reservation where date between :date1 and :date2");
     // 月日を文字列で取得して，数字に変更して配列に入れる
-    $sth->setFetchMode(PDO::FETCH_ASSOC);
+    // $sth->setFetchMode(PDO::FETCH_ASSOC);
     // $sth->execute(array(':date' => $date, ':ID' => $ID, ':purpose' => $purpose, ':reserveID' => $reserveID, ':class' => $class));
     $sth->execute();
     $userData = array();
