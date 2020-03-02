@@ -18,19 +18,17 @@ let dt = []
     $(document).ready(function () {
     //ファイルの読み込み
     $.ajax({
-    url: 'json.php',
-    dataType: 'json'
-    })
-    .done(function (data, dataType) {
-        var $contnet = $('#daydata');
+        url: 'json.php',
+        dataType: 'json'
+    }).done(function (data, dataType) {
+        var $contnets = $('#daydata');
         for (var i = 0; i<data.length; i++){
-            $daydata.append("<p>id: " + data[i].date);
+            $daydata.append("<p>id: " + data[i].date + "</p>");
         }
-    })
-    })
-    .fail(function () {
-    window.alert('読み込みエラー');
+    }).fail(function () {
+        window.alert('読み込みエラー');
     });
+});
     for(let n of cnt){
         if(cnt[n] == 0 || cnt[n] == 1){
             console.log("◎")
