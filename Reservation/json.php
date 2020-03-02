@@ -27,6 +27,7 @@ try{
 
     $sth = $dbh->prepare("SELECT * FROM Reservation where date between :date1 and :date2");
     // 月日を文字列で取得して，数字に変更して配列に入れる
+    $sth->setFetchMode(PDO::FETCH_ASSOC);
     $sth->execute();
 
     $userData = array();
@@ -37,8 +38,8 @@ try{
     //jsonとして出力
     // $file = 'mysql.json';
     header('Content-type: application/json; charset=UTF-8');
-    // $json_data = json_encode($userData, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
-    $json_data = json_encode($userData);
+    $json_data = json_encode($userData, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
+    // $json_data = json_encode($userData);
     // $result = file_put_contents($file, $json_data, FILE_APPEND);
     // if($result === 0){
     //     echo "書き込み失敗\n";
