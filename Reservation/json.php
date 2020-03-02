@@ -35,14 +35,14 @@ try{
     $userData = array();
 
     while($row = $sth->fetch(PDO::FETCH_ASSOC)){
-        // $userData[]=$row;
-        $userData[] = array(
-            'date' =>$row['date'],
-            'ID' => $row['ID'],
-            'purpose' => $row['purpose'],
-            'reserveID' => $row['reserveID'],
-            'class' => $row['class']
-        );
+        $userData[]=$row;
+        // $userData[] = array(
+        //     'date' =>$row['date'],
+        //     'ID' => $row['ID'],
+        //     'purpose' => $row['purpose'],
+        //     'reserveID' => $row['reserveID'],
+        //     'class' => $row['class']
+        // );
     }
     //jsonとして出力
     // $file = 'mysql.json';
