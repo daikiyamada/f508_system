@@ -20,6 +20,11 @@ try{
     $dbh = connect();
     $date1 = $year + $month + "01" + "00";
     $date2 = $year + $month + "31" + "10";
+    
+    echo "<pre>";
+    var_dump($date1);
+    echo "</pre>";
+
     $sth = $dbh->prepare("SELECT * FROM Reservation where date between :date1 and :date2");
     // 月日を文字列で取得して，数字に変更して配列に入れる
     $sth->execute();
@@ -30,15 +35,15 @@ try{
         $userData[]=$row;
     }
     //jsonとして出力
-    $file = 'mysql.json';
+    // $file = 'mysql.json';
     header('Content-type: application/json');
     $json_data = json_encode($userData, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
-    $result = file_put_contents($file, $json_data, FILE_APPEND);
-    if($result === 0){
-        echo "書き込み失敗\n";
-    }else {
-        echo "書き込み成功:" . $result . "Byte\n";
-    }
+    // $result = file_put_contents($file, $json_data, FILE_APPEND);
+    // if($result === 0){
+    //     echo "書き込み失敗\n";
+    // }else {
+    //     echo "書き込み成功:" . $result . "Byte\n";
+    // }
 }catch(PDOException $e){
     echo "接続失敗";
     echo $e->getMessage();
