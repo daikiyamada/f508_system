@@ -27,6 +27,8 @@ try{
     var_dump($month);
     var_dump($date1);
     var_dump($date2);
+    var_dump($intd1);
+    var_dump($intd2);
     echo "</pre>";
 
     // $sth = $dbh->prepare("SELECT * FROM Reservation");
