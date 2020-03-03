@@ -25,14 +25,6 @@
         $date2 = $year . $month . "31";
         $intd1 = intval($date1);
         $intd2 = intval($date2);
-        echo "<pre>";
-        var_dump($year);
-        var_dump($month);
-        var_dump($date1);
-        var_dump($date2);
-        var_dump($intd1);
-        var_dump($intd2);
-        echo "</pre>";
 
         $sql = "SELECT * FROM Reservation";
         // $sth = $dbh->prepare("SELECT * FROM Reservation");
@@ -48,19 +40,17 @@
 
         while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
             $userData[] = $row;
-            // $userData[] = array(
-            //     'date' =>$row['date'],
-            //     'ID' => $row['ID'],
-            //     'purpose' => $row['purpose'],
-            //     'reserveID' => $row['reserveID'],
-            //     'class' => $row['class']
-            // );
+            $str_len = strlen($userData);
+            $contnets = $daydata;
+                for ($i = 0; $i < $str_len; $i++) {
+                    echo $userData[$i];
+                }
         }
         //jsonとして出力
         // $file = 'mysql.json';
         header('Content-type: application/json; charset=UTF-8');
         $json_data = json_encode($userData, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
-        echo $json_data;
+        // echo $json_data;
         // $json_data = json_encode($userData);
         // $result = file_put_contents($file, $json_data, FILE_APPEND);
         // if($result === 0){
@@ -87,26 +77,6 @@
         let td = new Array(31)
         let dt = []
 
-        $(document).ready(function() {
-            //ファイルの読み込み
-            $.ajax({
-                type: 'POST',
-                url: 'json.php',
-                dataType: 'json'
-            }).done(function(data, dataType) {
-                var $contnets = $('#daydata');
-                for (var i = 0; i < data.length; i++) {
-                    $daydata.append("<p>id: " + data[i].date + "</p>");
-                }
-            }).fail(function(jqXHR, textStatus, errorThrown) {
-                // 通信失敗時の処理
-                alert('ファイルの取得に失敗しました。');
-                console.log("ajax通信に失敗しました");
-                console.log("jqXHR : " + jqXHR.status); // HTTPステータスが取得
-                console.log("textStatus : " + textStatus); // タイムアウト、パースエラー
-                console.log("errorThrown : " + errorThrown.message); // 例外情報
-            });
-        });
         for (let n of cnt) {
             if (cnt[n] == 0 || cnt[n] == 1) {
                 console.log("◎")
