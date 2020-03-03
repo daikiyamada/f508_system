@@ -20,7 +20,8 @@ try{
     $dbh = connect();
     $date1 = $year . $month . "01";
     $date2 = $year . $month . "31";
-    
+    $intd1 = intval($date1);
+    $intd2 = intval($date2);
     echo "<pre>";
     var_dump($year);
     var_dump($month);
@@ -29,7 +30,7 @@ try{
     echo "</pre>";
 
     // $sth = $dbh->prepare("SELECT * FROM Reservation");
-    $sth = $dbh->prepare("SELECT * FROM Reservation where date between :date1 and :date2");
+    $sth = $dbh->prepare("SELECT * FROM Reservation where date between :intd1 and :intd2");
     // 月日を文字列で取得して，数字に変更して配列に入れる
     // $sth->setFetchMode(PDO::FETCH_ASSOC);
     // 入力の配列を伴うとき
