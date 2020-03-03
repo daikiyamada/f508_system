@@ -31,8 +31,9 @@ try{
     var_dump($intd2);
     echo "</pre>";
 
+    $sql = "SELECT * FROM Reservation";
     // $sth = $dbh->prepare("SELECT * FROM Reservation");
-    $sql = "SELECT * FROM Reservation Where date between :intd1 and :intd2";
+    // $sql = "SELECT * FROM Reservation Where date between :intd1 and :intd2";
     $sth = $dbh->prepare($sql);
     // 月日を文字列で取得して，数字に変更して配列に入れる
     // $sth->setFetchMode(PDO::FETCH_ASSOC);
