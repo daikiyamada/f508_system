@@ -84,7 +84,7 @@ $dbh = null;
         };
     </script>
     <div id="back1" class="daydata">
-        <p>日にちごとの判定</p>
+        <p id="title1">日にちごとの判定</p>
     </div>
 </body>
 </html>
