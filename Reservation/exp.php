@@ -66,8 +66,8 @@
             }
         };
     </script>
-    <div id="back1" class="daydata">
-        <p id="title1">日にちごとの判定</p>
+    <div class="daydata">
+        <p >日にちごとの判定</p>
     </div>
 </body>
 </html>
