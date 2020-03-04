@@ -28,8 +28,8 @@ try{
     echo "</pre>";
 
     // $sql = "SELECT * FROM Reservation";
-    // $sql = "SELECT * FROM Reservation Where date between :intd1 and :intd2";
-    $sql = "SELECT * FROM Reservation Where date between 20200301 and 20200331";
+    $sql = "SELECT * FROM Reservation Where date between $intd1 and $intd2";
+    // $sql = "SELECT * FROM Reservation Where date between 20200301 and 20200331";
     $sth = $dbh->prepare($sql);
     // 月日を文字列で取得して，数字に変更して配列に入れる
     // $sth->setFetchMode(PDO::FETCH_ASSOC);
