@@ -3,53 +3,36 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml="" lang="ja" lalng="ja" xml:lang="ja">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
-require_once 'Manager.php';
+// require_once 'Manager.php';
+// $year = date("Y");
+// $month = date("m");
+// try {
+//     $dbh = connect();
+//     $date1 = $year . $month . "01";
+//     $date2 = $year . $month . "31";
+//     $intd1 = intval($date1);
+//     $intd2 = intval($date2);
 
-// mb_language("uni");
-// mb_internal_encoding("utf-8"); //内部文字コードを変更
-// mb_http_input("auto");
-// mb_http_output("utf-8");
-// echo date("Y/m/d H:i:s");
+//     $sql = "SELECT * FROM Reservation Where date between $intd1 and $intd2";
+//     $sth = $dbh->prepare($sql);
+//     $sth->execute();
+//     $userData = array();
 
-$year = date("Y");
-$month = date("m");
-try {
-    $dbh = connect();
-    $date1 = $year . $month . "01";
-    $date2 = $year . $month . "31";
-    $intd1 = intval($date1);
-    $intd2 = intval($date2);
-
-    $sql = "SELECT * FROM Reservation Where date between $intd1 and $intd2";
-    $sth = $dbh->prepare($sql);
-    $sth->execute();
-    $userData = array();
-
-    while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
-        $userData[] = $row;
-        $str_len = strlen($userData);
-        $contnets = $daydata;
-        for ($i = 0; $i < $str_len; $i++) {
-            echo $userData[$i];
-        }
-    }
-    //jsonとして出力
-    // $file = 'mysql.json';
-    header('Content-type: application/json; charset=UTF-8');
-    $json_data = json_encode($userData, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
-    // echo $json_data;
-    // $json_data = json_encode($userData);
-    // $result = file_put_contents($file, $json_data, FILE_APPEND);
-    // if($result === 0){
-    //     echo "書き込み失敗\n";
-    // }else {
-    //     echo "書き込み成功:" . $result . "Byte\n";
-    // }
-} catch (PDOException $e) {
-    echo "接続失敗";
-    echo $e->getMessage();
-}
-$dbh = null;
+//     while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
+//         $userData[] = $row;
+//         $str_len = strlen($userData);
+//         $contnets = $daydata;
+//         for ($i = 0; $i < $str_len; $i++) {
+//             echo $userData[$i];
+//         }
+//     }
+//     header('Content-type: application/json; charset=UTF-8');
+//     $json_data = json_encode($userData, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+// } catch (PDOException $e) {
+//     echo "接続失敗";
+//     echo $e->getMessage();
+// }
+// $dbh = null;
 ?>
 
 <head>

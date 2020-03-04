@@ -52,12 +52,6 @@ try{
     $json_data = json_encode($userData, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
     echo $json_data;
     // $json_data = json_encode($userData);
-    // $result = file_put_contents($file, $json_data, FILE_APPEND);
-    // if($result === 0){
-    //     echo "書き込み失敗\n";
-    // }else {
-    //     echo "書き込み成功:" . $result . "Byte\n";
-    // }
 }catch(PDOException $e){
     echo "接続失敗";
     echo $e->getMessage();
