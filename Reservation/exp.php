@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<html>
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml="" lang="ja" lalng="ja" xml:lang="ja">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
 require_once 'Manager.php';
 
@@ -49,16 +52,11 @@ try {
 $dbh = null;
 ?>
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml="" lang="ja" lalng="ja" xml:lang="ja">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
 <head>
     <title>Ajax、PHP、MySQLの連携</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href=" ../Homepage.css" />
 </head>
 <link rel="stylesheet" type="text/css" href=" ../Homepage.css" />
-
 <body>
     <script type="text/javascript">
         const date = new Date()
