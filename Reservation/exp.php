@@ -22,8 +22,9 @@ try {
         $userData[] = $row;
         $str_len = strlen($userData);
         $contnets = $daydata;
-        for ($i = 0; $i < $str_len; $i++) {
-            echo $userData[$i];
+        foreach($sth as $userData){
+            echo $userData['date'];
+            echo '<br>';
         }
     }
     header('Content-type: application/json; charset=UTF-8');
@@ -67,7 +68,7 @@ $dbh = null;
         };
     </script>
     <div class="daydata">
-        <p >日にちごとの判定</p>
+        <p>日にちごとの判定</p>
     </div>
 </body>
 </html>
