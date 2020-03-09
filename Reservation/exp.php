@@ -19,14 +19,14 @@ try {
     $userData = array();
 
     while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
-        // $userData[] = $row;
-        // $str_len = strlen($userData);
-        // $contnets = $daydata;
-        // foreach($sth as $userData){
-            // echo $userData['date'];
-        // }
+        $userData[] = $row;
+        $str_len = strlen($userData);
+        $contnets = $daydata;
+        foreach($sth as $userData){
+            echo $userData['date'];
+        }
     }
-    header('Content-type: application/json; charset=UTF-8');
+    // header('Content-type: application/json; charset=UTF-8');
     // $json_data = json_encode($userData, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
 } catch (PDOException $e) {
     echo "接続失敗";
