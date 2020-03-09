@@ -24,7 +24,7 @@ try {
         $contnets = $daydata;
         foreach($sth as $userData){
             echo $userData['date'];
-            echo <br>;
+            // echo "<br>";
         }
     }
     // header('Content-type: application/json; charset=UTF-8');
