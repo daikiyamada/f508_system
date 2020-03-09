@@ -21,7 +21,7 @@ try {
     while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
         $userData[] = $row;
         $str_len = strlen($userData);
-        $contnets = $daydata;
+        // $contnets = $daydata;
         foreach($sth as $userData){
             echo $userData['date'];
         }
