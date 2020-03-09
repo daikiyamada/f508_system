@@ -19,11 +19,11 @@ try {
     $userData = array();
 
     while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
-        $userData[] = $row;
-        $str_len = strlen($userData);
+        // $userData[] = $row;
+        // $str_len = strlen($userData);
         // $contnets = $daydata;
         // foreach($sth as $userData){
-            echo $userData['date'];
+            // echo $userData['date'];
         // }
     }
     header('Content-type: application/json; charset=UTF-8');
