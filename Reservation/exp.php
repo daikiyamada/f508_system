@@ -18,17 +18,16 @@ try {
     $sth->execute();
     $userData = array();
 
-    // while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
-    //     $userData[] = $row;
-    //     $str_len = strlen($userData);
-    //     $contnets = $daydata;
-    //     foreach($sth as $userData){
-    //         echo $userData['date'];
-    //         echo '<br>';
-    //     }
-    // }
-    // header('Content-type: application/json; charset=UTF-8');
-    // $json_data = json_encode($userData, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+    while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
+        $userData[] = $row;
+        $str_len = strlen($userData);
+        $contnets = $daydata;
+        foreach($sth as $userData){
+            echo $userData['date'];
+        }
+    }
+    header('Content-type: application/json; charset=UTF-8');
+    $json_data = json_encode($userData, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
 } catch (PDOException $e) {
     echo "接続失敗";
     echo $e->getMessage();
