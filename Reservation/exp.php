@@ -27,7 +27,7 @@ try {
         // }
     }
     header('Content-type: application/json; charset=UTF-8');
-    $json_data = json_encode($userData, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+    // $json_data = json_encode($userData, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
 } catch (PDOException $e) {
     echo "接続失敗";
     echo $e->getMessage();
