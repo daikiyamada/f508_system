@@ -22,9 +22,9 @@ try {
         $userData[] = $row;
         $str_len = strlen($userData);
         // $contnets = $daydata;
-        foreach($sth as $userData){
+        // foreach($sth as $userData){
             echo $userData['date'];
-        }
+        // }
     }
     header('Content-type: application/json; charset=UTF-8');
     $json_data = json_encode($userData, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
