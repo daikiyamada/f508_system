@@ -21,9 +21,9 @@ try {
     while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
         $userData[] = $row;
         $contnets = $daydata;
-        // foreach($sth as $userData){
-        //    echo $userData['date'];
-        //}
+        foreach($sth as $userData){
+            echo $userData;
+        }
         $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE);
     }
 } catch (PDOException $e) {
