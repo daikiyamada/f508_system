@@ -24,11 +24,9 @@ try {
         $contnets = $daydata;
         foreach($sth as $userData){
             echo $userData['date'];
-            // echo "<br>";
         }
+        $jsonData = json_encode($userData, JSON_HEX_TAG | JSON_HEX_AMP);
     }
-    // header('Content-type: application/json; charset=UTF-8');
-    // $json_data = json_encode($userData, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
 } catch (PDOException $e) {
     echo "接続失敗";
     echo $e->getMessage();
@@ -49,11 +47,14 @@ $dbh = null;
         let day = ('00' + date.getDate()).slice(-2) //日にちを取得（1桁は0で埋める）
         let ty = date.getFullYear() // 今年を取得
         let tm = date.getMonth() + 1 // 今月を取得
+        var JsList = JSON.parse("<?php echo $jsonData; ?>")
 
         let cnt = new Array(31)
 
         let td = new Array(31)
         let dt = []
+
+        console.log(JsList)
 
         for (let n of cnt) {
             if (cnt[n] == 0 || cnt[n] == 1) {
