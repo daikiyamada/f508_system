@@ -25,7 +25,7 @@ try {
         // foreach($sth as $userData){
         //    echo $userData['date'];
         //}
-        $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+        $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE);
     }
 } catch (PDOException $e) {
     echo "接続失敗";
