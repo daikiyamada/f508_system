@@ -22,10 +22,10 @@ try {
         $userData[] = $row;
         $str_len = strlen($userData);
         $contnets = $daydata;
-        foreach($sth as $userData){
-            echo $userData['date'];
-        }
-        $jsonData = json_encode($userData, JSON_HEX_TAG | JSON_HEX_AMP);
+        // foreach($sth as $userData){
+        //    echo $userData['date'];
+        //}
+        $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
     }
 } catch (PDOException $e) {
     echo "接続失敗";
