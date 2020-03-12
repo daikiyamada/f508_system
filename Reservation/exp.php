@@ -39,18 +39,18 @@ $dbh = null;
 <link rel="stylesheet" type="text/css" href=" ../Homepage.css" />
 <body>
     <script type="text/javascript">
-        const date = new Date()
-        let year = date.getFullYear() //年を取得
-        let month = ('00' + (date.getMonth() + 1)).slice(-2) //月を取得（0～11）（1桁は0で埋める）
-        let day = ('00' + date.getDate()).slice(-2) //日にちを取得（1桁は0で埋める）
-        let ty = date.getFullYear() // 今年を取得
-        let tm = date.getMonth() + 1 // 今月を取得
-        var JsList = JSON.parse("<?php echo $jsonData; ?>")
-        let cnt = new Array(31)
-        let td = new Array(31)
-        let dt = []
+        const date = new Date();
+        let year = date.getFullYear(); //年を取得
+        let month = ('00' + (date.getMonth() + 1)).slice(-2); //月を取得（0～11）（1桁は0で埋める）
+        let day = ('00' + date.getDate()).slice(-2); //日にちを取得（1桁は0で埋める）
+        let ty = date.getFullYear(); // 今年を取得
+        let tm = date.getMonth() + 1; // 今月を取得
+        var JsList = JSON.parse("<?php echo $jsonData; ?>");
+        let cnt = new Array(31);
+        let td = new Array(31);
+        let dt = [];
 
-        console.log(JsList)
+        console.log(JsList);
 
         for (let n of cnt) {
             if (cnt[n] == 0 || cnt[n] == 1) {
