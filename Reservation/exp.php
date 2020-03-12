@@ -48,9 +48,7 @@ $dbh = null;
         let ty = date.getFullYear() // 今年を取得
         let tm = date.getMonth() + 1 // 今月を取得
         var JsList = JSON.parse("<?php echo $jsonData; ?>")
-
         let cnt = new Array(31)
-
         let td = new Array(31)
         let dt = []
 
