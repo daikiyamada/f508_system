@@ -20,7 +20,7 @@ try {
 
     while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
         $userData[] = $row;
-        $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+        $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE);
         foreach($sth as $userData){
             echo $userData['ID'];
         }
