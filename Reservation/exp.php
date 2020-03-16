@@ -20,10 +20,10 @@ try {
 
     while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
         $userData[] = $row;
+        foreach($sth as $userData){
+        echo $jsonData;
+        }
         $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE);
-        // foreach($sth as $userData){
-            // echo $jsonData;
-        // }
     }
 } catch (PDOException $e) {
     echo "接続失敗";
