@@ -22,7 +22,7 @@ try {
         $userData[] = $row;
         $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE);
         foreach($sth as $userData){
-            echo $jsonData["date"];
+            echo $jsonData;
         }
     }
 } catch (PDOException $e) {
