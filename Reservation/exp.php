@@ -21,9 +21,9 @@ try {
     while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
         $userData[] = $row;
         $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE);
-        // foreach($sth as $userData){
-        //     echo $userData['ID'];
-        // }
+        foreach($sth as $userData){
+            echo $userData;
+        }
     }
 } catch (PDOException $e) {
     echo "接続失敗";
