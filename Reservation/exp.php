@@ -20,7 +20,7 @@ try {
 
     while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
         $userData[] = $row;
-        $jsonData = json_encode($userData, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
+        $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
         foreach($sth as $userData){
             echo $userData['ID'];
         }
@@ -45,7 +45,7 @@ $dbh = null;
         let day = ('00' + date.getDate()).slice(-2); //日にちを取得（1桁は0で埋める）
         let ty = date.getFullYear(); // 今年を取得
         let tm = date.getMonth() + 1; // 今月を取得
-        var JsList = JSON.parse("<?php $jsonData; ?>");
+        var JsList = JSON.parse('<?php echo $jsonData; ?>');
         let cnt = new Array(31);
         let td = new Array(31);
         let dt = [];
