@@ -49,7 +49,7 @@ try{
     //jsonとして出力
     // $file = 'mysql.json';
     header('Content-type: application/json; charset=UTF-8');
-    $json_data = json_encode($userData, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
+    $json_data = json_encode($userData, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
     echo $json_data;
     // $json_data = json_encode($userData);
 }catch(PDOException $e){

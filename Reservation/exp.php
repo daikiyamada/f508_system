@@ -21,7 +21,7 @@ try {
     while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
         $userData[] = $row;
         $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE);
-        echo $row;
+        // echo $row;
         // foreach($sth as $userData){
             // echo $jsonData;
         // }
@@ -51,7 +51,7 @@ $dbh = null;
         let td = new Array(31);
         let dt = [];
 
-        document.write(JsList);
+        // document.write(JsList);
 
         for (let n of cnt) {
             if (cnt[n] == 0 || cnt[n] == 1) {
