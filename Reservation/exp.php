@@ -47,24 +47,25 @@ $dbh = null;
         let ty = date.getFullYear(); // 今年を取得
         let tm = date.getMonth() + 1; // 今月を取得
         var JsList = JSON.parse('<?php echo $jsonData; ?>' || "null");
-        let cnt = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
-        let td = new Array(31);
+        let cnt = new Array(40)
+        let td = new Array(40);
         let dt = [];
+        let obj = [];
 
         console.log(JsList.date);
 
-        // for (let m of JsList){
-        //     if (JsList[m])
+        // for (let m of JsList.keys(obj)){
+        //     if (obj[m])
         // }
 
-        for (let n of cnt) {
-            if (cnt[n] == 0 || cnt[n] == 1) {
+        for (let n of cnt.keys(obj)) {
+            if (obj[n] == 0 || obj[n] == 1) {
                 console.log("◎")
-            } else if (cnt[n] == 2 || cnt[n] == 3 || cnt[n] == 4) {
+            } else if (obj[n] == 2 || obj[n] == 3 || obj[n] == 4) {
                 console.log("○")
-            } else if (cnt[n] == 5 || cnt[n] == 6) {
+            } else if (obj[n] == 5 || obj[n] == 6) {
                 console.log("△")
-            } else if (cnt[n] == 7) {
+            } else if (obj[n] == 7) {
                 console.log("×")
             }
         };
