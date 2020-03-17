@@ -46,13 +46,13 @@ $dbh = null;
         let day = ('00' + date.getDate()).slice(-2); //日にちを取得（1桁は0で埋める）
         let ty = date.getFullYear(); // 今年を取得
         let tm = date.getMonth() + 1; // 今月を取得
-        var JsList = JSON.parse('<?php echo $jsonData; ?>' || "null");
+        var JsList = JSON.parse('<?php $jsonData; ?>' || "null");
         let cnt = new Array(31);
         let td = new Array(31);
         let dt = [];
 
         console.log(JsList);
-        
+
         for (let n of cnt) {
             if (cnt[n] == 0 || cnt[n] == 1) {
                 console.log("◎")
