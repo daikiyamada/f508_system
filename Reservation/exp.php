@@ -51,8 +51,8 @@ $dbh = null;
         let td = new Array(31);
         let dt = [];
 
-        document.write(JsList);
-
+        console.log(JsList);
+        
         for (let n of cnt) {
             if (cnt[n] == 0 || cnt[n] == 1) {
                 console.log("◎")
