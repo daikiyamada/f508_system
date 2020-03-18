@@ -52,7 +52,7 @@ $dbh = null;
         let dt = [];
         let obj = [];
 
-        console.log(JsList.date[0]);
+        console.log(JsList.date);
 
         // for (let m of JsList.keys(obj)){
         //     if (obj[m])
