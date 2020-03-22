@@ -54,7 +54,7 @@ $dbh = null;
         let dt = [];
         let obj = [];
 
-        console.log(Jsfile);
+        console.log(JsList);
 
         // for (let m of JsList.keys(obj)){
         //     if (obj[m])
