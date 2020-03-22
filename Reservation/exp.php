@@ -50,8 +50,8 @@ $dbh = null;
         var JsList = JSON.stringify(JsArray, undefined, 1);
 
         const json = '{"date": "20200320", "ID": "19m5102", "purpose": "sasa", "reserveID": "5", "class": "0"}';
-        const obj = JSON.parse(json);
-        console.log(obj.date);
+        const jsobj = JSON.parse(json);
+        console.log(jsobj.date);
         let cnt = new Array(40)
         let td = new Array(40);
         let dt = [];
