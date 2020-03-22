@@ -48,6 +48,7 @@ $dbh = null;
         let tm = date.getMonth() + 1; // 今月を取得
         var JsArray = JSON.parse('<?php echo $jsonData; ?>' || "null");
         var JsList = JSON.stringify(JsArray);
+        var Jsfile = JSON.stringify('<?php echo $jsonData; ?>');
         let cnt = new Array(40)
         let td = new Array(40);
         let dt = [];
