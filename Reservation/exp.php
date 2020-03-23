@@ -22,9 +22,7 @@ try {
         $userData[] = $row;
         $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE);
         // echo $row;
-        foreach($sth as $userData){
-            echo $jsonData;
-        }
+        echo $jsonData;
         echo gettype($jsonData);
     }
 } catch (PDOException $e) {
