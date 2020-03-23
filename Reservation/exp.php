@@ -22,9 +22,10 @@ try {
         $userData[] = $row;
         $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE);
         // echo $row;
-        // foreach($sth as $userData){
-            // echo $jsonData;
-        // }
+        foreach($sth as $userData){
+            echo $jsonData;
+        }
+        echo gettype($jsonData);
     }
 } catch (PDOException $e) {
     echo "接続失敗";
