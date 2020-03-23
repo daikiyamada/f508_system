@@ -21,10 +21,12 @@ try {
     while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
         $userData[] = $row;
         echo gettype($userData);
-        $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE);
+        // $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE);
         // $jsdecode = json_decode($jsonData);
         // echo $row;
     }
+    header('Content-type: application/json');
+    $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE);
     echo $jsonData;
     echo '----';
     // echo $jsdecode;
