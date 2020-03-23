@@ -21,10 +21,13 @@ try {
     while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
         $userData[] = $row;
         $jsonData = json_encode($userData);
+        $jsdecode = json_decode($userData);
         // echo $row;
     }
     echo $jsonData;
+    echo $jsdecode;
     echo gettype($jsonData);
+    echo gettype($jsdecode);
 } catch (PDOException $e) {
     echo "接続失敗";
     echo $e->getMessage();
@@ -45,7 +48,8 @@ $dbh = null;
         let day = ('00' + date.getDate()).slice(-2); //日にちを取得（1桁は0で埋める）
         let ty = date.getFullYear(); // 今年を取得
         let tm = date.getMonth() + 1; // 今月を取得
-        var JsArray = JSON.parse('<?php echo $jsonData; ?>' || "null");
+        // var JsArray = JSON.parse('<?php echo $jsonData; ?>' || "null");
+        var JsArray = JSON.parse('<?php echo $jsdecode; ?>' || "null");
         var JsList = JSON.stringify(JsArray, undefined, 1);
 
         const json = '{"date": "20200320", "ID": "19m5102", "purpose": "sasa", "reserveID": "5", "class": "0"}';
