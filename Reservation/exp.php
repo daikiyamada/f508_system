@@ -25,6 +25,7 @@ try {
         // echo $row;
     }
     echo $jsonData;
+    echo '----';
     echo $jsdecode;
     echo gettype($jsonData);
     echo gettype($jsdecode);
