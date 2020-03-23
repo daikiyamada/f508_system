@@ -21,7 +21,7 @@ try {
     while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
         $userData[] = $row;
         $jsonData = json_encode($userData);
-        $jsdecode = json_decode($userData);
+        $jsdecode = json_decode($jsonData);
         // echo $row;
     }
     echo $jsonData;
