@@ -1,4 +1,19 @@
-<!DOCTYPE html>
+<?php
+session_set_cookie_params(60 * 5);
+session_start();
+if(!$_SESSION['Manager']){
+?>
+<script type ="text/javascript">
+window.alert("管理者権限です。ログインできません。");
+location.href="/Reservation/login.php";
+</script>
+<?php
+}
+else{
+  $_SESSION['ID'] = $_SESSION['ID'];
+}
+ ?>
+ <!DOCTYPE html>
 <?xml version="1.0" encoding="utf-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml="" lang="ja" lalng="ja" xml:lang="ja">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -13,8 +28,10 @@
   </div>
 <ul id="menu">
 <li><a href="/index.html">Home</a></li>
-<li><a href="setuser.html">ユーザ登録</a></li>
+<li><a href="setuser_form.php">ユーザ登録</a></li>
 <li><a href="deleteuser.php">ユーザ削除</a></li>
+<li><a href="../del_reservation.php">予約一覧</a></li>
+<li><a href="logout_management.php">ログアウト</a></li>
 </ul>
 <h1 id =news_head>お知らせ</h1>
 <p>ユーザ登録とユーザ削除機能は完成しました。</p>

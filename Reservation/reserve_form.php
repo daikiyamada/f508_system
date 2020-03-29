@@ -1,3 +1,18 @@
+<?php
+session_start();
+session_set_cookie_params(60 * 5);
+if(!$_SESSION['ID']){
+?>
+<script type ="text/javascript">
+window.alert("ログインしてください");
+location.href="/Reservation/login.php";
+</script>
+<?php
+}
+else{
+  $_SESSION['ID'] = $_SESSION['ID'];
+}
+ ?>
 <html>
 <?xml version="1.0" encoding="utf-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml="" lang="ja" lalng="ja" xml:lang="ja">
@@ -18,19 +33,27 @@ $day = substr($_POST["date"],6);
 </div>
 <ul id="menu">
 <li><a href="/index.html">Home</a></li>
-<li><a href="calendar.html">F508管理システム</a></li>
+<li><a href="calendar.php">F508管理システム</a></li>
+<li><a href="logout.php">ログアウト</a></li>
 </ul>
-学籍番号と使用用途の入力お願いいたします。<br>
-<p id="reserve">
+
+<div class="location">
 <form method="POST" action="form.php">
   <input type="hidden" name="reserveID" value="<?php print $_POST['reserveID']?>">
   <input type="hidden" name="date" value="<?php print $_POST['date']?>">
   <input type="hidden" name="class" value="<?php print $_POST['class']?>">
+<<<<<<< HEAD
   学籍番号：<input type="text" name="ID" value="<?php print $_POST['ID']?>"><br>
   用途：<input type="text" name="purpose" value="<?php print $_POST['purpose']?>"><br>
   <!-- valueの部分は必要なければ削除してください。 -->
   <input type="submit" value="予約">
+=======
+  <input type="hidden" name="ID" value="<?php print $_SESSION['ID']?>">
+  使用用途の入力画面：<input type="text" name="purpose"><br>
+  繰返回数（1週間単位）：<input type="text" name="time" value="1"><br>
+  <input type="submit" value="予約" class="button"><br>
+>>>>>>> 1bbbfc1c4061e16b04171478ee82376f9d969adf
 </form>
-</p>
+</div>
 </body>
 </html>
