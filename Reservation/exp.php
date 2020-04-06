@@ -23,8 +23,8 @@ try {
         $userData = $row;
         $month = $substr($row['date'],4,5);
         $date = $substr($row['date'],6,7);
-        $cnt[] = array(32);
-        $cnt[$date]++;
+        // $cnt[] = array(32);
+        // $cnt[$date]++;
         // echo $row;
         // echo $row['reserveID'];
         // echo gettype($userData);
