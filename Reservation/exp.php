@@ -23,6 +23,7 @@ try {
         $userData = $row;
         echo $row;
         echo $row['reserveID'];
+        echo $userData;
         // echo gettype($userData);
         // $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE);
         // $jsdecode = json_decode($jsonData);
