@@ -20,7 +20,7 @@ try {
     $userData = array();
 
     while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
-        $userData = $row.date;
+        $userData = $row;
         // echo gettype($userData);
         // $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE);
         // $jsdecode = json_decode($jsonData);
@@ -28,10 +28,10 @@ try {
     }
     // header('Content-type: application/json');
     $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE);
-    echo $jsonData;
-    echo '----';
+    // echo $jsonData;
+    // echo '----';
     // echo $jsdecode;
-    echo gettype($jsonData);
+    // echo gettype($jsonData);
     // echo gettype($jsdecode);
 } catch (PDOException $e) {
     echo "接続失敗";
