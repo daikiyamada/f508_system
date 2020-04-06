@@ -26,7 +26,7 @@ try {
         // $cnt[] = array(32);
         // $cnt[$date]++;
         // echo $row;
-        echo $row['date'];
+        echo  $substr($row['date'], 4, 5);
         // echo gettype($userData);
         // $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE);
         // $jsdecode = json_decode($jsonData);
@@ -35,7 +35,7 @@ try {
     // header('Content-type: application/json');
     $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE);
     
-    echo $cnt;
+    // echo $cnt;
     // echo '----';
     // echo $jsdecode;
     // echo gettype($jsonData);
