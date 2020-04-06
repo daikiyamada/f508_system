@@ -19,7 +19,7 @@ try {
     // $userData = array();
 
     while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
-        $userData[] = $row;
+        $userData = $row;
         // echo gettype($userData);
         // $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE);
         // $jsdecode = json_decode($jsonData);
