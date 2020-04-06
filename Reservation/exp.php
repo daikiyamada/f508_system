@@ -17,7 +17,7 @@ try {
     $sql = "SELECT date FROM Reservation Where date between $intd1 and $intd2";
     $sth = $dbh->prepare($sql);
     $sth->execute();
-    // $userData = array();
+    $userData = array();
 
     while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
         $userData = $row;
@@ -28,6 +28,7 @@ try {
     }
     // header('Content-type: application/json');
     $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE);
+    
     // echo $jsonData;
     // echo '----';
     // echo $jsdecode;
