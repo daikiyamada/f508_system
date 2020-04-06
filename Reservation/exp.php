@@ -29,7 +29,7 @@ try {
     // header('Content-type: application/json');
     $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE);
     
-    // echo $jsonData;
+    echo $jsonData;
     // echo '----';
     // echo $jsdecode;
     // echo gettype($jsonData);
