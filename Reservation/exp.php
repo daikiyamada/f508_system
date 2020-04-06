@@ -21,8 +21,8 @@ try {
 
     while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
         $userData = $row;
-        $month = $substr($row['date'],4,5);
-        $date = $substr($row['date'],6,7);
+        // $month = $substr($row['date'],4,5);
+        // $date = $substr($row['date'],6,7);
         // $cnt[] = array(32);
         // $cnt[$date]++;
         // echo $row;
