@@ -13,7 +13,8 @@ try {
     $intd1 = intval($date1);
     $intd2 = intval($date2);
 
-    $sql = "SELECT * FROM Reservation Where date between $intd1 and $intd2";
+    // $sql = "SELECT * FROM Reservation Where date between $intd1 and $intd2";
+    $sql = "SELECT date FROM Reservation Where date between $intd1 and $intd2";
     $sth = $dbh->prepare($sql);
     $sth->execute();
     // $userData = array();
