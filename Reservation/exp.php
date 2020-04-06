@@ -21,9 +21,9 @@ try {
 
     while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
         $userData = $row;
-        echo $row;
-        echo $row['reserveID'];
-        echo $userData;
+        // echo $row;
+        // echo $row['reserveID'];
+        echo $userData['reserveID'];
         // echo gettype($userData);
         // $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE);
         // $jsdecode = json_decode($jsonData);
@@ -33,6 +33,7 @@ try {
     $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE);
     
     echo $jsonData;
+    // $substr
     // echo '----';
     // echo $jsdecode;
     // echo gettype($jsonData);
