@@ -38,7 +38,9 @@ try {
     // echo $jsonData;
     foreach($cnt as $key => $val){
         echo $key;
+        echo '--';
         echo $val['date'];
+        echo 'date';
     }
 } catch (PDOException $e) {
     echo "接続失敗";
