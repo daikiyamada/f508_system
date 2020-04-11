@@ -18,10 +18,12 @@ try {
     $sth = $dbh->prepare($sql);
     $sth->execute();
     // $userData = array();
+    $month = array();
+    $date = array();
 
     while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
         $userData[] = $row;
-        $month[] = substr($row['date'],4);
+        $month[] = substr($row['date'],4,2);
         $date[] = substr($row['date'],6,2);
         // $cnt[] = array(32);
         // $cnt[$date]++;
