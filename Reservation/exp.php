@@ -23,6 +23,8 @@ try {
         $userData[] = $row;
         $month = substr($row['date'],4);
         $date = substr($row['date'],6,2);
+        echo $month;
+        echo $date;
         // $cnt[] = array(32);
         // $cnt[$date]++;
         // echo $row;
