@@ -36,7 +36,7 @@ try {
     // header('Content-type: application/json');
     $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE);
     // echo $jsonData;
-    echo $cnt;
+    echo implode($cnt);
     // echo '----';
 } catch (PDOException $e) {
     echo "接続失敗";
