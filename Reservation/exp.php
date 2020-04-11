@@ -21,8 +21,8 @@ try {
 
     while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
         $userData[] = $row;
-        // $month = $substr($row['date'],4);
-        // $date = $substr($row['date'],6,2);
+        // $month = substr($row['date'],4);
+        // $date = substr($row['date'],6,2);
         // $cnt[] = array(32);
         // $cnt[$date]++;
         // echo $row;
@@ -35,8 +35,8 @@ try {
     }
     // header('Content-type: application/json');
     $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE);
-    // echo $substr($jsonData, 6);
-    echo $jsonData;
+    echo substr($jsonData, 6);
+    // echo $jsonData;
     // echo $cnt;
     // echo '----';
 } catch (PDOException $e) {
