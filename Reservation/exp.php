@@ -18,16 +18,13 @@ try {
     $sth = $dbh->prepare($sql);
     $sth->execute();
     // $userData = array();
-    $month = array();
-    $date = array();
 
     while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
         $userData[] = $row;
-        $month[] = substr($row['date'],4,2);
-        $date[] = substr($row['date'],6,2);
-        echo $month;
-        // $cnt[] = array(32);
-        // $cnt[$date]++;
+        $month = substr($row['date'],4,2);
+        $date = substr($row['date'],6,2);
+        $cnt[] = array(32);
+        $cnt[$date]++;
         // echo $row;
         // echo $userData;
         // echo $row['date'];
@@ -38,10 +35,8 @@ try {
     }
     // header('Content-type: application/json');
     $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE);
-    echo $month;
-    // echo substr($jsonData, 6);
     // echo $jsonData;
-    // echo $cnt;
+    echo $cnt;
     // echo '----';
 } catch (PDOException $e) {
     echo "接続失敗";
