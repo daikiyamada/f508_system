@@ -34,7 +34,7 @@ try {
     }
     // header('Content-type: application/json');
     $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE);
-    // echo $substr($jsonData, 6);
+    echo $substr($jsonData, 6);
     // echo $cnt;
     // echo '----';
     // echo $jsdecode;
