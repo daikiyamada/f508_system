@@ -36,8 +36,10 @@ try {
     // header('Content-type: application/json');
     $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE);
     // echo $jsonData;
-    echo $cnt[0][0];
-    // echo '----';
+    foreach($cnt as $key => $val){
+        echo $key;
+        echo $val['date'];
+    }
 } catch (PDOException $e) {
     echo "接続失敗";
     echo $e->getMessage();
