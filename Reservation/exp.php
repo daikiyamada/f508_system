@@ -26,6 +26,7 @@ try {
         // $cnt[] = array(32);
         // $cnt[$date]++;
         echo $row;
+        echo $userData;
         echo $row['date'];
         // echo gettype($userData);
         // $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE);
