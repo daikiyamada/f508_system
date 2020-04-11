@@ -21,12 +21,12 @@ try {
 
     while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
         $userData[] = $row;
-        $month = $substr($row['date'],4);
-        $date = $substr($row['date'],6,2);
+        // $month = $substr($row['date'],4);
+        // $date = $substr($row['date'],6,2);
         // $cnt[] = array(32);
         // $cnt[$date]++;
-        // echo $row;
-        // echo $row['date'];
+        echo $row;
+        echo $row['date'];
         // echo gettype($userData);
         // $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE);
         // $jsdecode = json_decode($jsonData);
