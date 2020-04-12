@@ -37,10 +37,8 @@ try {
     $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE);
     // echo $jsonData;
     foreach($cnt as $key => $val){
-        echo 'key'."\n";
-        echo $key;
-        echo 'date'."\n";
-        echo $val['date'];
+        echo 'key'."\n".$key;
+        echo 'date'."\n".$val['date'];
         // echo 'date[]';
         // echo $val['date'][];
     }
