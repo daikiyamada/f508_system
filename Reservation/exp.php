@@ -24,7 +24,7 @@ try {
         $month = substr($row['date'],4,2);
         $date = substr($row['date'],6,2);
         $cnt[] = array(32);
-        $cnt[$date]++;
+        $cnt[$date][]++;
         // echo $row;
         // echo $userData;
         // echo $row['date'];
@@ -37,10 +37,12 @@ try {
     $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE);
     // echo $jsonData;
     foreach($cnt as $key => $val){
+        echo 'key';
         echo $key;
-        echo '--';
-        echo $val['date'];
         echo 'date';
+        echo $val['date'];
+        echo 'date[]';
+        echo $val['date'][];
     }
 } catch (PDOException $e) {
     echo "接続失敗";
