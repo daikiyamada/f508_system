@@ -26,10 +26,6 @@ try {
         // $cnt[] = array(32);
         $cnt[$date]['c'] += 1;
         // echo $cnt[$date]['c'];
-        // echo $row;
-        // echo $userData;
-        // echo $row['date'];
-        // echo gettype($userData);
         // $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE);
         // $jsdecode = json_decode($jsonData);
         // echo $row;
@@ -42,8 +38,6 @@ try {
         echo $key."\n";
         echo "date\n";
         echo $val['c'];
-        // echo 'date[]';
-        // echo $val['date'][];
     }
 } catch (PDOException $e) {
     echo "接続失敗";
@@ -65,25 +59,9 @@ $dbh = null;
         let day = ('00' + date.getDate()).slice(-2); //日にちを取得（1桁は0で埋める）
         let ty = date.getFullYear(); // 今年を取得
         let tm = date.getMonth() + 1; // 今月を取得
-        var JsArray = JSON.parse('<?php echo $jsonData; ?>' || "null");
+        // var JsArray = JSON.parse('<?php echo $jsonData; ?>' || "null");
         // var JsArray = JSON.parse('<?php echo $jsdecode; ?>' || "null");
-        var JsList = JSON.stringify(JsArray, undefined, 1);
-
-        // const json = '{"date": "20200320", "ID": "19m5102", "purpose": "sasa", "reserveID": "5", "class": "0"}';
-        // const jsobj = JSON.parse(json);
-        // console.log(jsobj.date);
-        let cnt = new Array(40)
-        let td = new Array(40);
-        let dt = [];
-        let obj = [];
-
-        console.log(JsList);
-        console.log('JsArray');
-        console.log(JsArray);
-
-        // for (let m of JsList.keys(obj)){
-        //     if (obj[m])
-        // }
+        // var JsList = JSON.stringify(JsArray, undefined, 1);
 
         for (let n of cnt.keys(obj)) {
             if (obj[n] == 0 || obj[n] == 1) {
