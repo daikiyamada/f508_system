@@ -32,7 +32,13 @@ else{
         <li><a href="User_Management/login_management_check.php">ユーザ管理（管理者権限）</a></li>
         <li><a href="http://shinolab.tech">篠宮研究室</a></li>
         <li><a href="http://teraylab.net/">寺島研究室</a></li>
+<<<<<<< HEAD:Reservation/calendar.html
+        <!-- <li><a href="exp.html">予約確認（仮）</a></li> -->
+        <li><a href="exp2.html">json確認</a></li>
+        <li><a href="form.html">予約確認（仮）</a></li>
+=======
         <li><a href="logout.php">ログアウト</a></li>
+>>>>>>> 1bbbfc1c4061e16b04171478ee82376f9d969adf:Reservation/calendar.php
     </ul>
     <div style="text-align: center;">
     <button id="prev" type="button">前の月</button>

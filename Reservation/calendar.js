@@ -1,9 +1,10 @@
 const weeks = ['日', '月', '火', '水', '木', '金', '土']
 const date = new Date()
-let year = date.getFullYear()
-let month = date.getMonth() + 1
-let ty = date.getFullYear()
-let tm = date.getMonth() + 1
+let year = date.getFullYear() //年を取得
+let month = date.getMonth() + 1 //月を取得（0～11）
+let ty = date.getFullYear() // 今年を取得
+let tm = date.getMonth() + 1 // 今月を取得
+// ty tm を引数としてjson.phpにわたす
 const config = {
     show: 1,
 }
@@ -86,7 +87,6 @@ function moveCalendar(e) {
 
     if (e.target.id === 'prev') {
         month--
-
         if (month < 1) {
             year--
             month = 12
@@ -96,12 +96,10 @@ function moveCalendar(e) {
     if (e.target.id === 'now') {
         year = ty
         month = tm
-
     }
 
     if (e.target.id === 'next') {
         month++
-
         if (month > 12) {
             year++
             month = 1
