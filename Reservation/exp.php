@@ -24,7 +24,7 @@ try {
         $month = substr($row['date'],4,2);
         $date = substr($row['date'],6,2);
         // $cnt[] = array(32);
-        $cnt[$date]['c'] =+ 1;
+        $cnt[$date]['c'] += 1;
         echo $cnt[$date]['c'];
         // echo $row;
         // echo $userData;
