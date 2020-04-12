@@ -39,7 +39,7 @@ try {
     foreach($cnt as $key => $val){
         echo 'key';
         echo $key;
-        echo 'date';
+        // echo 'date';
         // echo $val['date'];
         // echo 'date[]';
         // echo $val['date'][];
