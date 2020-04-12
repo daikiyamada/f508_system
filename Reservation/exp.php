@@ -40,7 +40,7 @@ try {
         echo "key\n";
         echo $key."\n";
         echo "date\n";
-        echo $val['date'];
+        echo $val['date']['c'];
         // echo 'date[]';
         // echo $val['date'][];
     }
