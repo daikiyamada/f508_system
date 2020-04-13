@@ -66,14 +66,14 @@ $dbh = null;
         // console.log(JsArray);
         console.log(cntData);
 
-        for (let n of cntData.keys(obj)) {
-            if (obj[n] == 0 || obj[n] == 1) {
+        for (let n in cntData) {
+            if (cntData[n]["c"] == 0 || cntData[n]["c"] == 1) {
                 console.log("◎")
-            } else if (obj[n] == 2 || obj[n] == 3 || obj[n] == 4) {
+            } else if (cntData[n]["c"] == 2 || cntData[n]["c"] == 3 || cntData[n]["c"] == 4) {
                 console.log("○")
-            } else if (obj[n] == 5 || obj[n] == 6) {
+            } else if (cntData[n]["c"] == 5 || cntData[n]["c"] == 6) {
                 console.log("△")
-            } else if (obj[n] == 7) {
+            } else if (cntData[n]["c"] == 7) {
                 console.log("×")
             }
         };
