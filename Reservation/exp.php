@@ -62,7 +62,8 @@ $dbh = null;
         var JsArray = JSON.parse('<?php echo $jsonData; ?>' || "null");
         var cntData = <?php echo $cnt; ?>
         // var JsList = JSON.stringify(JsArray, undefined, 1);
-        console.log(JsArray);
+        // console.log(JsArray);
+        console.log(cntData);
 
         // for (let n of cnt.keys(obj)) {
         //     if (obj[n] == 0 || obj[n] == 1) {
