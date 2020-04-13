@@ -24,7 +24,7 @@ try {
         $month = substr($row['date'],4,2);
         $date = substr($row['date'],6,2);
         // $cnt[] = array(32);
-        $cnt[$date]['c'] += 1;
+        $cnt[$date][] += 1;
         // echo $cnt[$date]['c'];
         // $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE);
         // $jsdecode = json_decode($jsonData);
@@ -65,6 +65,7 @@ $dbh = null;
         // var JsList = JSON.stringify(JsArray, undefined, 1);
         // console.log(JsArray);
         console.log(cntData);
+        console.log(cntData)
 
         // for (let n of cnt.keys(obj)) {
         //     if (obj[n] == 0 || obj[n] == 1) {
