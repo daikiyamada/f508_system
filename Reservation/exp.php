@@ -34,9 +34,9 @@ try {
     $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE);
     // echo $jsonData;
     foreach($cnt as $key => $val){
-        echo "key\n";
+        // echo "key\n";
         echo $key."\n";
-        echo "date\n";
+        // echo "date\n";
         echo $val['c'];
     }
 } catch (PDOException $e) {
