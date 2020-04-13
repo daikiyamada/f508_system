@@ -33,12 +33,12 @@ try {
     // header('Content-type: application/json');
     $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE);
     // echo $jsonData;
-    foreach($cnt as $key => $val){
-        // echo "key\n";
-        echo $key;
-        // echo "date\n";
-        echo $val['c'];
-    }
+    // foreach($cnt as $key => $val){
+    //     echo "key\n";
+    //     echo $key."\n";
+    //     echo "date\n";
+    //     echo $val['c'];
+    // }
 } catch (PDOException $e) {
     echo "接続失敗";
     echo $e->getMessage();
