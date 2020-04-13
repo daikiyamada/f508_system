@@ -32,6 +32,7 @@ try {
     }
     // header('Content-type: application/json');
     $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE);
+    $CData = json_encode($cnt, JSON_UNESCAPED_UNICODE);
     // echo $jsonData;
     // foreach($cnt as $key => $val){
     //     echo "key\n";
@@ -60,7 +61,7 @@ $dbh = null;
         let ty = date.getFullYear(); // 今年を取得
         let tm = date.getMonth() + 1; // 今月を取得
         // var JsArray = JSON.parse('<?php echo $jsonData; ?>' || "null");
-        var cntData = JSON.parse('<?php echo $cnt; ?>' || "null");
+        var cntData = JSON.parse('<?php echo $CData; ?>' || "null");
         // var JsList = JSON.stringify(JsArray, undefined, 1);
         // console.log(JsArray);
         console.log(cntData);
