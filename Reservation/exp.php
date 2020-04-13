@@ -35,7 +35,7 @@ try {
     // echo $jsonData;
     foreach($cnt as $key => $val){
         // echo "key\n";
-        echo $key."\n";
+        echo $key;
         // echo "date\n";
         echo $val['c'];
     }
