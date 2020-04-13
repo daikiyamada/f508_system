@@ -60,6 +60,7 @@ $dbh = null;
         let ty = date.getFullYear(); // 今年を取得
         let tm = date.getMonth() + 1; // 今月を取得
         var JsArray = JSON.parse('<?php echo $jsonData; ?>' || "null");
+        var cntData = <?php echo $cnt; ?>
         // var JsList = JSON.stringify(JsArray, undefined, 1);
         console.log(JsArray);
 
