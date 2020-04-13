@@ -65,19 +65,18 @@ $dbh = null;
         // var JsList = JSON.stringify(JsArray, undefined, 1);
         // console.log(JsArray);
         console.log(cntData);
-        console.log(cntData)
 
-        // for (let n of cnt.keys(obj)) {
-        //     if (obj[n] == 0 || obj[n] == 1) {
-        //         console.log("◎")
-        //     } else if (obj[n] == 2 || obj[n] == 3 || obj[n] == 4) {
-        //         console.log("○")
-        //     } else if (obj[n] == 5 || obj[n] == 6) {
-        //         console.log("△")
-        //     } else if (obj[n] == 7) {
-        //         console.log("×")
-        //     }
-        // };
+        for (let n of cntData.keys(obj)) {
+            if (obj[n]["c"] == 0 || obj[n]["c"] == 1) {
+                console.log("◎")
+            } else if (obj[n]["c"] == 2 || obj[n]["c"] == 3 || obj[n]["c"] == 4) {
+                console.log("○")
+            } else if (obj[n]["c"] == 5 || obj[n]["c"] == 6) {
+                console.log("△")
+            } else if (obj[n]["c"] == 7) {
+                console.log("×")
+            }
+        };
     </script>
     <div class="daydata">
         <p>日にちごとの判定</p>
