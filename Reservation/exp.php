@@ -17,18 +17,13 @@ try {
     // $sql = "SELECT date FROM Reservation Where date between $intd1 and $intd2";
     $sth = $dbh->prepare($sql);
     $sth->execute();
-    // $userData = array();
+    $cnt = array(32);
 
     while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
         $userData[] = $row;
         $month = substr($row['date'],4,2);
         $date = substr($row['date'],6,2);
-        // $cnt[] = array(32);
         $cnt[$date]['c'] += 1;
-        // echo $cnt[$date]['c'];
-        // $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE);
-        // $jsdecode = json_decode($jsonData);
-        // echo $row;
     }
     // header('Content-type: application/json');
     $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE);
