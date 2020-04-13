@@ -67,13 +67,13 @@ $dbh = null;
         console.log(cntData);
 
         for (let n of cntData.keys(obj)) {
-            if (obj[n]["c"] == 0 || obj[n]["c"] == 1) {
+            if (obj[n] == 0 || obj[n] == 1) {
                 console.log("◎")
-            } else if (obj[n]["c"] == 2 || obj[n]["c"] == 3 || obj[n]["c"] == 4) {
+            } else if (obj[n] == 2 || obj[n] == 3 || obj[n] == 4) {
                 console.log("○")
-            } else if (obj[n]["c"] == 5 || obj[n]["c"] == 6) {
+            } else if (obj[n] == 5 || obj[n] == 6) {
                 console.log("△")
-            } else if (obj[n]["c"] == 7) {
+            } else if (obj[n] == 7) {
                 console.log("×")
             }
         };
