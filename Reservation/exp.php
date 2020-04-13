@@ -59,8 +59,9 @@ $dbh = null;
         let day = ('00' + date.getDate()).slice(-2); //日にちを取得（1桁は0で埋める）
         let ty = date.getFullYear(); // 今年を取得
         let tm = date.getMonth() + 1; // 今月を取得
-        // var JsArray = JSON.parse('<?php echo $jsonData; ?>' || "null");
+        var JsArray = JSON.parse('<?php echo $jsonData; ?>' || "null");
         // var JsList = JSON.stringify(JsArray, undefined, 1);
+        console.log(JsArray);
 
         // for (let n of cnt.keys(obj)) {
         //     if (obj[n] == 0 || obj[n] == 1) {
