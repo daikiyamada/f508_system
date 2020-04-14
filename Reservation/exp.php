@@ -17,7 +17,10 @@ try {
     // $sql = "SELECT date FROM Reservation Where date between $intd1 and $intd2";
     $sth = $dbh->prepare($sql);
     $sth->execute();
-    $cnt = array(32);
+    // $cnt = array(32);
+    for ($i = 1; $i < 32; $i++){
+        $cnt[$i]['c'] = 0;
+    }
 
     while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
         $userData[] = $row;
