@@ -14,10 +14,8 @@ try {
     $intd2 = intval($date2);
 
     $sql = "SELECT * FROM Reservation Where date between $intd1 and $intd2";
-    // $sql = "SELECT date FROM Reservation Where date between $intd1 and $intd2";
     $sth = $dbh->prepare($sql);
     $sth->execute();
-    // $cnt = array(32);
     for ($i = 1; $i < 32; $i++){
         $cnt[$i]['c'] = 0;
     }
@@ -28,16 +26,8 @@ try {
         $date = substr($row['date'],6,2);
         $cnt[$date]['c'] += 1;
     }
-    // header('Content-type: application/json');
     $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE);
     $CData = json_encode($cnt, JSON_UNESCAPED_UNICODE);
-    // echo $jsonData;
-    // foreach($cnt as $key => $val){
-    //     echo "key\n";
-    //     echo $key."\n";
-    //     echo "date\n";
-    //     echo $val['c'];
-    // }
 } catch (PDOException $e) {
     echo "接続失敗";
     echo $e->getMessage();
@@ -58,10 +48,7 @@ $dbh = null;
         let day = ('00' + date.getDate()).slice(-2); //日にちを取得（1桁は0で埋める）
         let ty = date.getFullYear(); // 今年を取得
         let tm = date.getMonth() + 1; // 今月を取得
-        // var JsArray = JSON.parse('<?php echo $jsonData; ?>' || "null");
         var cntData = JSON.parse('<?php echo $CData; ?>' || "null");
-        // var JsList = JSON.stringify(JsArray, undefined, 1);
-        // console.log(JsArray);
         console.log(cntData);
 
         for (let n in cntData) {
