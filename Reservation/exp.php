@@ -66,13 +66,17 @@ $dbh = null;
 
         for (let n in cntData) {
             if (cntData[n]["c"] == 0 || cntData[n]["c"] == 1) {
-                console.log("◎")
+                document.write(n)
+                document.write("◎")
             } else if (cntData[n]["c"] == 2 || cntData[n]["c"] == 3 || cntData[n]["c"] == 4) {
-                console.log("○")
+                document.write(n)
+                document.write("○")
             } else if (cntData[n]["c"] == 5 || cntData[n]["c"] == 6) {
-                console.log("△")
+                document.write(n)
+                document.write("△")
             } else if (cntData[n]["c"] == 7) {
-                console.log("×")
+                document.write(n)
+                document.write("×")
             }
         };
     </script>
