@@ -4,12 +4,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
 require_once 'Manager.php';
-$year = date("Y");
-$month = date("m");
+$Y = date("Y");
+$M = date("m");
 try {
     $dbh = connect();
-    $date1 = $year . $month . "01";
-    $date2 = $year . $month . "31";
+    $date1 = $Y . $M . "01";
+    $date2 = $Y . $M . "31";
     $intd1 = intval($date1);
     $intd2 = intval($date2);
 
@@ -21,12 +21,12 @@ try {
     }
 
     while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
-        $userData[] = $row;
-        // $month = substr($row['date'],4,2);
-        $date = (int)substr($row['date'],6,2);
+        // $userData[] = $row;
+        // $M = substr($row['date'],4,2);
+        $date = (int)-substr($row['date'],6,2);
         $cnt[$date]['c'] += 1;
     }
-    $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE);
+    // $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE);
     $CData = json_encode($cnt, JSON_UNESCAPED_UNICODE);
 } catch (PDOException $e) {
     echo "接続失敗";
