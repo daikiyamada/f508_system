@@ -37,7 +37,8 @@ else{
     <button id="prev" type="button">前の月</button>
     <button id="now" type="button">今月</button>
     <button id="next" type="button">次の月</button>
-    <div id="calendar"></div>
+    </div>
+    <div id="calendar">
     <script type="text/javascript" src="calendar.js"></script>
     </div>
 </body>

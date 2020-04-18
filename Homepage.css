@@ -82,6 +82,7 @@ use calender
 #calendar {
 	display: flex;
 	flex-wrap: wrap;
+	text-align:center;
 }
 p #reserve{
 	text-align: center;
