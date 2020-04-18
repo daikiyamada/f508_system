@@ -6,10 +6,10 @@ try {
     $dbh = connect();
     $date1 = $Y . $M . "01";
     $date2 = $Y . $M . "31";
-    $intd1 = intval($date1);
-    $intd2 = intval($date2);
+    $int1 = intval($date1);
+    $int2 = intval($date2);
 
-    $sql = "SELECT * FROM Reservation Where date between $intd1 and $intd2";
+    $sql = "SELECT * FROM Reservation Where date between $int1 and $int2";
     $sth = $dbh->prepare($sql);
     $sth->execute();
     for ($i = 1; $i < 32; $i++){
