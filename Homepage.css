@@ -79,7 +79,7 @@ li#detail{
 use calender
 ============================================*/
 
-.calendar {
+#calendar {
 	display: flex;
 	flex-wrap: wrap;
 }
