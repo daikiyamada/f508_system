@@ -1,3 +1,36 @@
+<?php
+require_once 'Manager.php';
+$Y = date("Y");
+$M = date("m");
+try {
+    $dbh = connect();
+    $date1 = $Y . $M . "01";
+    $date2 = $Y . $M . "31";
+    $intd1 = intval($date1);
+    $intd2 = intval($date2);
+
+    $sql = "SELECT * FROM Reservation Where date between $intd1 and $intd2";
+    $sth = $dbh->prepare($sql);
+    $sth->execute();
+    for ($i = 1; $i < 32; $i++){
+        $cnt[$i]['c'] = 0;
+    }
+
+    while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
+        // $userData[] = $row;
+        // $M = substr($row['date'],4,2);
+        $date = (int)-substr($row['date'],6,2);
+        $cnt[$date]['c'] += 1;
+    }
+    // $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE);
+    $CData = json_encode($cnt, JSON_UNESCAPED_UNICODE);
+} catch (PDOException $e) {
+    echo "接続失敗";
+    echo $e->getMessage();
+}
+$dbh = null;
+?>
+
 <!DOCTYPE html>
 <?xml version="1.0" encoding="utf-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml="" lang="ja" lalng="ja" xml:lang="ja">
