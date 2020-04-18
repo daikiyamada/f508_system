@@ -66,6 +66,6 @@ $db = NULL;
   document.write('最終更新日:' + yy + '年' + mm + '月' + dd + '日');
   //
 -->
-
+</script>
 </body>
 </html>

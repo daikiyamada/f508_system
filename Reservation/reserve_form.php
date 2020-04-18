@@ -42,12 +42,6 @@ $day = substr($_POST["date"],6);
   <input type="hidden" name="reserveID" value="<?php print $_POST['reserveID']?>">
   <input type="hidden" name="date" value="<?php print $_POST['date']?>">
   <input type="hidden" name="class" value="<?php print $_POST['class']?>">
-<<<<<<< HEAD
-  学籍番号：<input type="text" name="ID" value="<?php print $_POST['ID']?>"><br>
-  用途：<input type="text" name="purpose" value="<?php print $_POST['purpose']?>"><br>
-  <!-- valueの部分は必要なければ削除してください。 -->
-  <input type="submit" value="予約">
-=======
   <input type="hidden" name="ID" value="<?php print $_SESSION['ID']?>">
   使用用途の入力画面：<input type="text" name="purpose"><br>
   繰返回数（1週間単位）：<input type="text" name="time" value="1"><br>
