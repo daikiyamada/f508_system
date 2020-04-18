@@ -38,6 +38,8 @@ else{
     <button id="now" type="button">今月</button>
     <button id="next" type="button">次の月</button>
     </div>
-    <script type="text/javascript" src="calendar.js" class="calendar"></script>
+    <div class="calendar">
+    <script type="text/javascript" src="calendar.js" ></script>
+  </div>
 </body>
 </html>
