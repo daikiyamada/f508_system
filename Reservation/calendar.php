@@ -59,13 +59,16 @@ $dbh = null;
     <button id="next" type="button">次の月</button>
     <div id="calendar"></div>
     <script type="text/javascript" src="calendar.js"></script>
+    <script type="text/javascript">
+      var cntData = JSON.parse('<?php echo $CData; ?>' || "null");
+    </script>
     </div>
-        <script type="text/javascript" style="text-align: right;">
-        var modified = new Date(document.lastModified);
-        var yy = modified.getFullYear();
-        var mm = modified.getMonth() + 1;
-        var dd = modified.getDate();
-        document.write('最終更新日:' + yy + '年' + mm + '月' + dd + '日');
+    <script type="text/javascript" style="text-align: right;">
+      var modified = new Date(document.lastModified);
+      var yy = modified.getFullYear();
+      var mm = modified.getMonth() + 1;
+      var dd = modified.getDate();
+      document.write('最終更新日:' + yy + '年' + mm + '月' + dd + '日');
     </script>
 </body>
 </html>
