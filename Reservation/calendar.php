@@ -61,6 +61,7 @@ $dbh = null;
     <script type="text/javascript" src="calendar.js"></script>
     <script type="text/javascript">
       var cntData = JSON.parse('<?php echo $CData; ?>' || "null");
+      console.log(cntData);
     </script>
     </div>
     <script type="text/javascript" style="text-align: right;">
