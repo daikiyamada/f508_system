@@ -24,10 +24,7 @@ try {
     }
     // $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE);
     $CData = json_encode($cnt, JSON_UNESCAPED_UNICODE);
-    echo 'date';
-    echo $cnt[$date];
-    echo 'c';
-    echo $cnt[$date]['c'];
+    echo $CData;
 } catch (PDOException $e) {
     echo "接続失敗";
     echo $e->getMessage();
