@@ -21,13 +21,13 @@ try {
         // $M = substr($row['date'],4,2);
         $date = (int)-substr($row['date'],6,2);
         $cnt[$date]['c'] += 1;
-        echo 'date';
-        echo $cnt[$date];
-        echo 'c';
-        echo $cnt[$date]['c'];
     }
     // $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE);
     $CData = json_encode($cnt, JSON_UNESCAPED_UNICODE);
+    echo 'date';
+    echo $cnt[$date];
+    echo 'c';
+    echo $cnt[$date]['c'];
 } catch (PDOException $e) {
     echo "接続失敗";
     echo $e->getMessage();
