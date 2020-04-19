@@ -21,6 +21,9 @@ try {
         // $M = substr($row['date'],4,2);
         $date = (int)-substr($row['date'],6,2);
         $cnt[$date]['c'] += 1;
+        echo 'date';
+        echo $cnt[$date];
+        echo 'c';
         echo $cnt[$date]['c'];
     }
     // $jsonData = json_encode($userData, JSON_UNESCAPED_UNICODE);
