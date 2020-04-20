@@ -52,19 +52,14 @@ $dbh = null;
       <button id="now" type="button">今月</button>
       <button id="next" type="button">次の月</button>
       <div id="calendar"></div>
-    <!-- <script type="text/javascript" src="calendar.js"></script> -->
     <script type="text/javascript">
       var cntData = JSON.parse('<?php echo $CData; ?>' || "null");
-      // for (let n in cntData){
-      //   document.write(cntData[n]["c"])
-      // }
       const weeks = ['日', '月', '火', '水', '木', '金', '土']
       const date = new Date()
       let year = date.getFullYear() //年を取得
       let month = date.getMonth() + 1 //月を取得（0～11）
       let ty = date.getFullYear() // 今年を取得
       let tm = date.getMonth() + 1 // 今月を取得
-      // ty tm を引数としてjson.phpにわたす
       const config = {
         show: 1,
       }
