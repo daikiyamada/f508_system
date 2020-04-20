@@ -55,6 +55,9 @@ $dbh = null;
     <!-- <script type="text/javascript" src="calendar.js"></script> -->
     <script type="text/javascript">
       var cntData = JSON.parse('<?php echo $CData; ?>' || "null");
+      for (let n in cntData){
+        document.write(cntData[n]["c"])
+      }
       const weeks = ['日', '月', '火', '水', '木', '金', '土']
       const date = new Date()
       let year = date.getFullYear() //年を取得
