@@ -118,12 +118,34 @@ $dbh = null;
               }
               if(dayCount<10){
                 var dd = String('0'+dayCount)
+                for (let n in cntData) {
+                  if (cntData[n]["c"] == 0 || cntData[n]["c"] == 1) {
+                    var jdg = "◎";
+                  } else if (cntData[n]["c"] == 2 || cntData[n]["c"] == 3 || cntData[n]["c"] == 4) {
+                    var jdg = "○"
+                  } else if (cntData[n]["c"] == 5 || cntData[n]["c"] == 6) {
+                    var jdg = "△"
+                  } else if (cntData[n]["c"] == 7) {
+                    var jdg = "×"
+                  }
+                };
               }
               else{
                 var dd = String(dayCount)
+                for (let n in cntData) {
+                  if (cntData[n]["c"] == 0 || cntData[n]["c"] == 1) {
+                    var jdg = "◎";
+                  } else if (cntData[n]["c"] == 2 || cntData[n]["c"] == 3 || cntData[n]["c"] == 4) {
+                    var jdg = "○"
+                  } else if (cntData[n]["c"] == 5 || cntData[n]["c"] == 6) {
+                    var jdg = "△"
+                  } else if (cntData[n]["c"] == 7) {
+                    var jdg = "×"
+                  }
+                };
               }
               var date = yy+mm+dd
-              calendarHtml += `<td class="calendar_td" data-date=${date}>${dayCount}</td>`
+              calendarHtml += `<td class="calendar_td" data-date=${date}>${dayCount}${jdg}</td>`
               dayCount++
             }
           }
