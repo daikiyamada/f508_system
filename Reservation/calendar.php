@@ -88,7 +88,7 @@ $dbh = null;
         let dayCount = 1 // 日にちのカウント
         let calendarHtml = '' // HTMLを組み立てる変数
         calendarHtml += '<h1>' + year + '/' + month + '</h1>'
-        calendarHtml += '<table><div class="center">'
+        calendarHtml += '<div class="center"><table>'
         // 曜日の行を作成
         for (let i = 0; i < weeks.length; i++) {
           calendarHtml += '<td>' + weeks[i] + '</td>'
@@ -145,7 +145,7 @@ $dbh = null;
           }
           calendarHtml += '</tr>'
         }
-        calendarHtml += '</div></table>'
+        calendarHtml += '</table></div>'
         return calendarHtml
       }
       // 月移動
