@@ -19,7 +19,6 @@
       $date = (int)substr($row['date'],6,2);
       $cnt[$date]['c'] += 1;
     }
-    return json_encode($cnt, JSON_UNESCAPED_UNICODE);
   } catch (PDOException $e) {
     echo "接続失敗";
     echo $e->getMessage();
