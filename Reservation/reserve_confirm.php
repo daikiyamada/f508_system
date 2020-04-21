@@ -8,7 +8,6 @@
     $date2 = $Y . $M . "31";
     $int1 = intval($date1);
     $int2 = intval($date2);
-
     $sql = "SELECT * FROM Reservation Where date between $int1 and $int2";
     $sth = $dbh->prepare($sql);
     $sth->execute();
@@ -24,7 +23,5 @@
     echo $e->getMessage();
   }
   $dbh = null;
-  header("Content-Type: text/javascript; charset=utf-8");
-  echo json_encode($cnt);
 }
 ?>
