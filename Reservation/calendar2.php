@@ -52,6 +52,7 @@
         let dayCount = 1 // 日にちのカウント
         let calendarHtml = '' // HTMLを組み立てる変数
         //javascriptからphp関数の呼び出し
+        location.href="reserve_confirm.php?M="+month+"&Y="+year;
         var requrest = new XMLHttpRequest();
         request.open('GET','reserve_confirm.php?M='+month+'&Y='+year,true);
         request.responseType='json';
