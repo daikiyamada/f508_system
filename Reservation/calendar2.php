@@ -26,17 +26,12 @@
     //カレンダー表示
       const weeks = ['日', '月', '火', '水', '木', '金', '土']
       const date = new Date()
-      let year = date.getFullYear() //年を取得
-      let month = date.getMonth() + 1 //月を取得（0～11）
-      let ty = date.getFullYear() // 今年を取得
-      let tm = date.getMonth() + 1 // 今月を取得
-      const config = {
-        show: 1,
-      }
+      var year = date.getFullYear() //年を取得
+      var month = date.getMonth() + 1 //月を取得（0～11）
+      var ty = date.getFullYear() // 今年を取得
+      var tm = date.getMonth() + 1 // 今月を取得
       /**カレンダー表示*/
       function showCalendar(year, month) {
-        for (i = 0; i < config.show; i++) {
-          document.write(i)
           const calendarHtml = createCalendar(year, month)
           const sec = document.createElement('section')
           sec.innerHTML = calendarHtml
@@ -46,8 +41,7 @@
             year++
             month = 1
           }
-      }
-    }
+        }
       // カレンダー作成
       function createCalendar(year, month) {
         const startDate = new Date(year, month - 1, 1) // 月の最初の日を取得
@@ -60,13 +54,12 @@
         let calendarHtml = '' // HTMLを組み立てる変数
         //javascriptからphp関数の呼び出し
         var requrest = new XMLHttpRequest();
-        request.open('GET','http://ec2-54-248-53-194.ap-northeast-1.compute.amazonaws.com/Reservation/reserve_confirm.php?M=month&Y=year',true);
+        request.open('GET','http://ec2-54-248-53-194.ap-northeast-1.compute.amazonaws.com/Reservation/reserve_confirm.php?M='+month+'&Y='+year,true);
         request.responseType='json';
         request.addEventListener('load',function(response){
-          var cntData = <?="this.response"?>;
+          let cntData = <?="this.response"?>;
         });
         request.send();
-
         calendarHtml += '<h1>' + year + '/' + month + '</h1>'
         calendarHtml += '<div class="center"><table>'
         // 曜日の行を作成
