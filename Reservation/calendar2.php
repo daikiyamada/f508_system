@@ -60,7 +60,7 @@
         request.open('GET','http://ec2-54-248-53-194.ap-northeast-1.compute.amazonaws.com/Reservation/reserve_form.php?M=month&Y=year',true);
         request.responseType='json';
         request.addEventListener('load',function(response){
-          var cntData = JSON.parse('<?php echo $CData; ?>' || "null");
+          var cntData = <?="this.response"?>;
         });
         request.send();
 
