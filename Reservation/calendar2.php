@@ -47,6 +47,7 @@
             month = 1
           }
       }
+    }
       // カレンダー作成
       function createCalendar(year, month) {
         const startDate = new Date(year, month - 1, 1) // 月の最初の日を取得
@@ -161,12 +162,5 @@
     showCalendar(year, month)
     </script>
     </div>
-    <script type="text/javascript" style="text-align: right;">
-      var modified = new Date(document.lastModified);
-      var yy = modified.getFullYear();
-      var mm = modified.getMonth() + 1;
-      var dd = modified.getDate();
-      document.write('最終更新日:' + yy + '年' + mm + '月' + dd + '日');
-    </script>
 </body>
 </html>
