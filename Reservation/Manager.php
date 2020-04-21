@@ -1,8 +1,8 @@
 <?php
 function connect(){
-  $dsn = 'mysql:dbname=reservation;dbhost=localhost';
-  $usr = 'reserve';
-  $pass = "fuga";
+  $dsn = 'mysql:dbname=student;dbhost=localhost';
+  $usr = 'root';
+  $pass = "daiki06890516";
   try{
     $db = new PDO($dsn, $usr,$pass);
   }catch(PDOException $e){

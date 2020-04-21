@@ -3,6 +3,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml="" lang="ja" lalng="ja" xml:lang="ja">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
+session_start();
+session_set_cookie_params(60 * 5);
+if(!$_SESSION['ID']){
+?>
+<script type ="text/javascript">
+window.alert("ログインしてください");
+location.href="/Reservation/login.php";
+</script>
+<?php
+}
+else{
+  $_SESSION['ID'] = $_SESSION['ID'];
+}
+ ?>
+<?php
 $year = substr($_GET["date"],0,4);
 $month = substr($_GET["date"],4,2);
 $day = substr($_GET["date"],6);
@@ -10,18 +25,25 @@ $day = substr($_GET["date"],6);
 <head>
   <title>F508管理システム</title>
 </head>
-  <link rel="stylesheet" type="text/css" href="/Homepage.css" />
-  <body>
+  <link rel="stylesheet" type="text/css" href="day_reserve.css" />
+<body>
 <div id="back1">
   <hr id="line1"/>
   <h1 id="title1"><?php print $year?>/<?php print $month?>/<?php print $day?>の予約状況</h1>
 </div>
 <ul id="menu">
 <li><a href="/index.html">Home</a></li>
-<li><a href="calendar.html">F508管理システム</a></li>
+<li><a href="calendar.php">F508管理システム</a></li>
+<li><a href="logout.php">ログアウト</a></li>
 </ul>
+<div class = "form">
+各コマの時間は、従来通りとなります。それに加えて、0コマは１コマ前の時間を示し、6コマは放課後を示しています。<br>
+使用する時間がコマを跨ぐ場合は、詳細な時間も記入してください。<br>
+<br>
+</div>
+<div class="table1">
 <table>
-  <tr><th>コマ</th><th>空き状況</th><th>代表者名</th><th>使用目的</th><th>予約フォーム</th></tr>
+  <tr class="head"><th>コマ</th><th>代表者名</th><th>使用目的</th><th>予約フォーム</th></tr>
   <?php
   require 'Manager.php';
     try{
@@ -32,17 +54,8 @@ $day = substr($_GET["date"],6);
         $now = $stt->fetch();
   ?>
   <tr>
-    <td><?php print $i; ?>コマ</td>
- <td><?php
-  if($now==false){
-    print "空き";
-  }
-  else{
-    print "予約済";
-  }
-  ?>
-</td>
-<td>
+    <td class = "coma"><?php print $i; ?>コマ</td>
+<td class="name">
    <?php
    if($now== false){
      print " ";
@@ -55,38 +68,39 @@ $day = substr($_GET["date"],6);
      $name = $stt2->fetch();
      print $name['Name'];
    }
-   $db2=NULL;
    }
     ?>
   </td>
-  <td>
+  <td class="purpose">
     <?php
     if($now==false){
-      print " ";
+      print "";
     }
     else{
       print $now['purpose'];
     }
     ?>
   </td>
-  <td>
+  <td class = "button2">
     <?php
     if($now==false){?>
       <form method="POST" action="reserve_form.php">
       <input type="hidden" name="reserveID" value="0">
       <input type="hidden" name="date" value="<?php print $_GET['date']?>">
       <input type="hidden" name="class" value="<?php print $i?>">
-      <input type="submit" value="登録"><br>
+      <input type="submit" value="登録フォームへ" class="button"><br>
     </form>
 <?php    }
-    else{?>
+    else{
+      if($_SESSION['ID']==$now['ID']){
+      ?>
       <form method="POST" action="del.php">
-      <input type="submit" value="削除">
+      <input type="submit" value="削除" class="button">
       <input type="hidden" name="date" value="<?php print $_GET['date']?>">
       <input type="hidden" name="class" value="<?php print $i?>">
       <input type = "hidden" name="ID" value = "<?php print $now['ID']?>">
     </form>
-  <?php  }
+  <?php } }
     ?>
   </td>
 </tr>
@@ -98,5 +112,6 @@ $day = substr($_GET["date"],6);
  }
   ?>
 </table>
+</div>
 </body>
 </html>
