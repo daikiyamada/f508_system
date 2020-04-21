@@ -18,4 +18,6 @@
     $cnt[$date]['c'] += 1;
   }
   $dbh = null;
+  header("Content-Type: text/javascript; charset=utf-8");
+  echo json_encode($cnt);
 ?>
