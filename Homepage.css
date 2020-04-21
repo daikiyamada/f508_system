@@ -78,9 +78,12 @@ li#detail{
 /*============================================
 use calender
 ============================================*/
-
 #calendar {
 	display: flex;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-align-items: center;
+	align-items: center;
 	flex-wrap: wrap;
 }
 p #reserve{
