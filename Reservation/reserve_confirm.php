@@ -1,7 +1,7 @@
 <?php
   require_once 'Manager.php';
   $Y = $_GET['Y'];
-  $M = $_GET['M'];
+  $M = $_GET['M']
   try {
     $dbh = connect();
     $date1 = $Y . $M . "01";
@@ -25,7 +25,5 @@
     echo $e->getMessage();
   }
   $dbh = null;
-  header("Content-Type: text/javascript; charset=utf-8");
-  echo json_encode($cnt);
 }
 ?>

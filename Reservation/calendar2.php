@@ -23,7 +23,6 @@
       <button id="next" type="button">次の月</button>
       <div id="calendar"></div>
     <script type="text/javascript">
-      var cntData = JSON.parse('<?php echo $CData; ?>' || "null");
       const weeks = ['日', '月', '火', '水', '木', '金', '土']
       const date = new Date()
       let year = date.getFullYear() //年を取得
@@ -57,7 +56,14 @@
         let dayCount = 1 // 日にちのカウント
         let calendarHtml = '' // HTMLを組み立てる変数
         //javascriptからphp関数の呼び出し
-        
+        var requrest = new XMLHttpRequest();
+        request.open('GET','http://ec2-54-248-53-194.ap-northeast-1.compute.amazonaws.com/Reservation/reserve_form.php?M=month&Y=year',true);
+        request.responseType='json';
+        request.addEventListener('load',function(response){
+          var cntData = JSON.parse('<?php echo $CData; ?>' || "null");
+        });
+        request.send();
+
         calendarHtml += '<h1>' + year + '/' + month + '</h1>'
         calendarHtml += '<div class="center"><table>'
         // 曜日の行を作成
