@@ -23,6 +23,7 @@
       <button id="next" type="button">次の月</button>
       <div id="calendar"></div>
     <script type="text/javascript">
+    //カレンダー表示
       const weeks = ['日', '月', '火', '水', '木', '金', '土']
       const date = new Date()
       let year = date.getFullYear() //年を取得
@@ -34,6 +35,7 @@
       }
       /**カレンダー表示*/
       function showCalendar(year, month) {
+        document.write(config.show);
         for (i = 0; i < config.show; i++) {
           const calendarHtml = createCalendar(year, month)
           const sec = document.createElement('section')
