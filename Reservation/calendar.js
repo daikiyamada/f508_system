@@ -59,16 +59,16 @@ function createCalendar(year, month) {
             } else {
                 var yy = String(year)
                 if(month<10){
-                    var mm = String('0'+month)
+                  var mm = String('0'+month)
                 }
                 else{
-                    var mm = String(month)
+                  var mm = String(month)
                 }
                 if(dayCount<10){
-                    var dd = String('0'+dayCount)
+                  var dd = String('0'+dayCount)
                 }
                 else{
-                    var dd = String(dayCount)
+                  var dd = String(dayCount)
                 }
                 var date = yy+mm+dd
                 calendarHtml += `<td class="calendar_td" data-date=${date}>${dayCount}</td>`
@@ -115,7 +115,7 @@ document.querySelector('#next').addEventListener('click', moveCalendar)
 
 document.addEventListener("click", function (e) {
     if (e.target.classList.contains("calendar_td")) {
-        location.href="day_form.php?date="+e.target.dataset.date;
+       location.href="day_form.php?date="+e.target.dataset.date;
     }
 })
 
