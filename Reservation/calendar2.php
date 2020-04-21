@@ -30,7 +30,6 @@
       var month = date.getMonth() + 1 //月を取得（0～11）
       var ty = date.getFullYear() // 今年を取得
       var tm = date.getMonth() + 1 // 今月を取得
-      /**カレンダー表示*/
       function showCalendar(year, month) {
           const calendarHtml = createCalendar(year, month)
           const sec = document.createElement('section')
@@ -54,7 +53,7 @@
         let calendarHtml = '' // HTMLを組み立てる変数
         //javascriptからphp関数の呼び出し
         var requrest = new XMLHttpRequest();
-        request.open('GET','http://ec2-54-248-53-194.ap-northeast-1.compute.amazonaws.com/Reservation/reserve_confirm.php?M='+month+'&Y='+year,true);
+        request.open('GET','reserve_confirm.php?M='+month+'&Y='+year,true);
         request.responseType='json';
         request.addEventListener('load',function(response){
           let cntData = <?="this.response"?>;
@@ -62,11 +61,7 @@
         request.send();
         calendarHtml += '<h1>' + year + '/' + month + '</h1>'
         calendarHtml += '<div class="center"><table>'
-        // 曜日の行を作成
-        for (let i = 0; i < weeks.length; i++) {
-          calendarHtml += '<td>' + weeks[i] + '</td>'
-        } //曜日を表示
-        //日付を作成
+        for (let i = 0; i < weeks.length; i++) calendarHtml += '<td>' + weeks[i] + '</td>'
         for (let w = 0; w < 6; w++) {
           calendarHtml += '<tr>'
           for (let d = 0; d < 7; d++) {
@@ -81,17 +76,12 @@
               dayCount++
             } else {
               var yy = String(year)
-              if(month<10){
-                var mm = String('0'+month)
-              }
-              else{
-                var mm = String(month)
-              }
+              if(month<10)  var mm = String('0'+month)
+              else var mm = String(month)
               if(dayCount<10){
                 var dd = String('0'+dayCount)
-                if (cntData[dayCount]["c"] == 0 || cntData[dayCount]["c"] == 1) {
-                  var jdg = "◎";
-                } else if (cntData[dayCount]["c"] == 2 || cntData[dayCount]["c"] == 3 || cntData[dayCount]["c"] == 4) {
+                if (cntData[dayCount]["c"] == 0 || cntData[dayCount]["c"] == 1) var jdg = "◎"
+                else if (cntData[dayCount]["c"] == 2 || cntData[dayCount]["c"] == 3 || cntData[dayCount]["c"] == 4) {
                   var jdg = "○"
                 } else if (cntData[dayCount]["c"] == 5 || cntData[dayCount]["c"] == 6) {
                   var jdg = "△"
