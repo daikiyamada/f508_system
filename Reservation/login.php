@@ -17,8 +17,8 @@
 <li><a href="User_Management/forget_pw.php">パスワードを忘れた場合</a></li>
 </ul>
 <form id="login" action="login_pw.php" method="POST">
-  学籍番号：<input type = "text" name = "ID"><br>
-  パスワード：<input type="password" name="pw"><br>
+  学籍番号：<input type = "text" name = "ID" autocomplete="on"><br>
+  パスワード：<input type="password" name="pw" autocomplete="on"><br>
   <input type="submit" value="ログイン" class="button">
 </form>
 </body>
