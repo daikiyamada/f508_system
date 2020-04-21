@@ -45,7 +45,6 @@ $dbh = null;
       <li><a href="User_Management/system_menu.html">ユーザ管理</a></li>
       <li><a href="http://shinolab.tech">篠宮研究室</a></li>
       <li><a href="http://teraylab.net/">寺島研究室</a></li>
-      <li><a href="form.html">予約確認（仮）</a></li>
     </ul>
     <div style="text-align: center;">
       <button id="prev" type="button">前の月</button>
