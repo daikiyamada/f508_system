@@ -139,7 +139,7 @@ $dbh = null;
                 }
               }
               var date = yy+mm+dd
-              calendarHtml += `<td class="calendar_td" data-date=${date}>${dayCount}${jdg}</td>`
+              calendarHtml += `<td class="calendar_td" data-date=${date}>${dayCount}</br>${jdg}</td>`
               dayCount++
             }
           }
