@@ -35,6 +35,7 @@
       }
       /**カレンダー表示*/
       function showCalendar(year, month) {
+        for (i = 0; i < config.show; i++) {
           const calendarHtml = createCalendar(year, month)
           const sec = document.createElement('section')
           sec.innerHTML = calendarHtml
@@ -55,6 +56,8 @@
         const startDay = startDate.getDay() // 月の最初の日の曜日を取得
         let dayCount = 1 // 日にちのカウント
         let calendarHtml = '' // HTMLを組み立てる変数
+        //javascriptからphp関数の呼び出し
+        
         calendarHtml += '<h1>' + year + '/' + month + '</h1>'
         calendarHtml += '<div class="center"><table>'
         // 曜日の行を作成
