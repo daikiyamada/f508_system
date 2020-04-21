@@ -33,9 +33,9 @@
       const config = {
         show: 1,
       }
+      document.write(config.show);
       /**カレンダー表示*/
       function showCalendar(year, month) {
-        document.write(config.show);
         for (i = 0; i < config.show; i++) {
           const calendarHtml = createCalendar(year, month)
           const sec = document.createElement('section')
