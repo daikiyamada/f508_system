@@ -28,7 +28,8 @@ h1#title1{
 }
 h1#title2{
 	text-align:center;
-	color: white;
+	color: black;
+	font-weight: bold;
 	margin: 0;
 	padding: 0;
 	font-size:28pt;
