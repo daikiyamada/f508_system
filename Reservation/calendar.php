@@ -1,4 +1,19 @@
 <?php
+session_start();
+session_set_cookie_params(60 * 5);
+if(!$_SESSION['ID']){
+?>
+<script type ="text/javascript">
+window.alert("ログインしてください");
+location.href="/Reservation/login.php";
+</script>
+<?php
+}
+else{
+  $_SESSION['ID'] = $_SESSION['ID'];
+}
+ ?>
+ <?php
 require_once 'Manager.php';
 $Y = date("Y");
 $M = date("m");
@@ -181,12 +196,5 @@ $dbh = null;
     showCalendar(year, month)
     </script>
     </div>
-    <script type="text/javascript" style="text-align: right;">
-      var modified = new Date(document.lastModified);
-      var yy = modified.getFullYear();
-      var mm = modified.getMonth() + 1;
-      var dd = modified.getDate();
-      document.write('最終更新日:' + yy + '年' + mm + '月' + dd + '日');
-    </script>
 </body>
 </html>
