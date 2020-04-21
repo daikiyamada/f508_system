@@ -1,32 +1,3 @@
-<?php
-require_once 'Manager.php';
-$Y = date("Y");
-$M = date("m");
-try {
-  $dbh = connect();
-  $date1 = $Y . $M . "01";
-  $date2 = $Y . $M . "31";
-  $int1 = intval($date1);
-  $int2 = intval($date2);
-
-  $sql = "SELECT * FROM Reservation Where date between $int1 and $int2";
-  $sth = $dbh->prepare($sql);
-  $sth->execute();
-  for ($i = 1; $i < 32; $i++){
-    $cnt[$i]['c'] = 0;
-  }
-  while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
-    $date = (int)substr($row['date'],6,2);
-    $cnt[$date]['c'] += 1;
-  }
-  $CData = json_encode($cnt, JSON_UNESCAPED_UNICODE);
-} catch (PDOException $e) {
-  echo "接続失敗";
-  echo $e->getMessage();
-}
-$dbh = null;
-?>
-
 <!DOCTYPE html>
 <?xml version="1.0" encoding="utf-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml="" lang="ja" lalng="ja" xml:lang="ja">
@@ -52,7 +23,7 @@ $dbh = null;
       <button id="next" type="button">次の月</button>
       <div id="calendar"></div>
     <script type="text/javascript">
-      var cntData = JSON.parse('<?php echo $CData; ?>' || "null");
+//      var cntData = JSON.parse('<?php echo $CData; ?>' || "null");
       const weeks = ['日', '月', '火', '水', '木', '金', '土']
       const date = new Date()
       let year = date.getFullYear() //年を取得
@@ -86,6 +57,13 @@ $dbh = null;
         const startDay = startDate.getDay() // 月の最初の日の曜日を取得
         let dayCount = 1 // 日にちのカウント
         let calendarHtml = '' // HTMLを組み立てる変数
+        var request = new XMLHttpRequest();
+        request.open('GET','http://ec2-54-248-53-194.ap-northeast-1.compute.amazonaws.com/Reservation/reserve_confirm.php',true);
+        request.type = 'json';
+        request.addEventListner('load',function (response){
+          var cntDate = <?="this.response"?>;
+        });
+        request.send();
         calendarHtml += '<h1>' + year + '/' + month + '</h1>'
         calendarHtml += '<div class="center"><table>'
         // 曜日の行を作成
