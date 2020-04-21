@@ -1,7 +1,7 @@
 <?php
   require_once 'Manager.php';
   $Y = $_GET['Y'];
-  $M = $_GET['M']
+  $M = $_GET['M'];
   try {
     $dbh = connect();
     $date1 = $Y . $M . "01";
