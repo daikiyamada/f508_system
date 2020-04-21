@@ -57,7 +57,7 @@
         let calendarHtml = '' // HTMLを組み立てる変数
         //javascriptからphp関数の呼び出し
         var requrest = new XMLHttpRequest();
-        request.open('GET','http://ec2-54-248-53-194.ap-northeast-1.compute.amazonaws.com/Reservation/reserve_form.php?M=month&Y=year',true);
+        request.open('GET','http://ec2-54-248-53-194.ap-northeast-1.compute.amazonaws.com/Reservation/reserve_confirm.php?M=month&Y=year',true);
         request.responseType='json';
         request.addEventListener('load',function(response){
           var cntData = <?="this.response"?>;
