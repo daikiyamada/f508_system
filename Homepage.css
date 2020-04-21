@@ -28,6 +28,7 @@ h1#title1{
 }
 h1#title2{
 	text-align:center;
+	margin: auto;
 	color: black;
 	font-weight: bold;
 	margin: 0;
