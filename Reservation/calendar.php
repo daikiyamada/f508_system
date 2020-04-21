@@ -23,7 +23,6 @@
       <button id="next" type="button">次の月</button>
       <div id="calendar"></div>
     <script type="text/javascript">
-//      var cntData = JSON.parse('<?php echo $CData; ?>' || "null");
       const weeks = ['日', '月', '火', '水', '木', '金', '土']
       const date = new Date()
       let year = date.getFullYear() //年を取得
@@ -61,7 +60,7 @@
         request.open('GET','http://ec2-54-248-53-194.ap-northeast-1.compute.amazonaws.com/Reservation/reserve_confirm.php',true);
         request.type = 'json';
         request.addEventListner('load',function (response){
-          var cntDate = <?="this.response"?>;
+            var cntData = JSON.parse('<?php echo $CData; ?>' || "null");
         });
         request.send();
         calendarHtml += '<h1>' + year + '/' + month + '</h1>'
