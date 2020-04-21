@@ -145,7 +145,7 @@ $dbh = null;
           }
           calendarHtml += '</tr>'
         }
-        calendarHtml += '</table><'
+        calendarHtml += '</table>'
         return calendarHtml
       }
       // 月移動
