@@ -86,7 +86,7 @@ $dbh = null;
         const startDay = startDate.getDay() // 月の最初の日の曜日を取得
         let dayCount = 1 // 日にちのカウント
         let calendarHtml = '' // HTMLを組み立てる変数
-        calendarHtml += '<h1>' + year + '/' + month + '</h1>'
+        calendarHtml += '<div class=title1>' + year + '年' + month + '月の空き状況</div>'
         calendarHtml += '<div class="center"><table>'
         // 曜日の行を作成
         for (let i = 0; i < weeks.length; i++) {
