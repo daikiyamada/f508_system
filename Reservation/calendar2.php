@@ -44,7 +44,7 @@
       $date2 = $Y . $M . "31";
       $int1 = intval($date1);
       $int2 = intval($date2);
-
+      print "1:".$int1."<br>2:".$int2."<br>";
       $sql = "SELECT * FROM Reservation Where date between $int1 and $int2";
       $sth = $dbh->prepare($sql);
       $sth->execute();
