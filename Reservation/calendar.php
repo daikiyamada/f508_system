@@ -9,8 +9,7 @@
     <ul id="menu">
       <li><a href="../index.html">Home</a></li>
       <li><a href="User_Management/system_menu.html">ユーザ管理</a></li>
-      <li><a href="http://shinolab.tech">篠宮研究室</a></li>
-      <li><a href="http://teraylab.net/">寺島研究室</a></li>
+      <li><a href="logout.php">ログアウト</a></li>
     </ul>
     <?php
     require_once 'Manager.php';
