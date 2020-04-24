@@ -48,7 +48,7 @@
       location.href="calendar2.php?year="+<?php print $before_year;?>+"&month="+<?php print $before_month;?>;
     }
     function this_month(){
-      location.href="calendar2.php?year="+<?php print $year;?>+"&month="+<?php print $month;?>;
+      location.href="calendar2.php?year="+<?php print date('Y');?>+"&month="+<?php print idate('n');?>;
     }
     function next(){
       location.href="calendar2.php?year="+<?php print $next_year;?>+"&month="+<?php print $next_month;?>;
