@@ -46,6 +46,7 @@
       $date2 = $Y . $M . "31";
       $int1 = intval($date1);
       $int2 = intval($date2);
+      print "1:".$int1."<br>2:".$int2."<br>";
       $sql = "SELECT * FROM Reservation Where date between $int1 and $int2";
       $sth = $dbh->prepare($sql);
       $sth->execute();
@@ -56,6 +57,7 @@
         $date = (int)substr($row['date'],6,2);
         $cnt[$date]['c'] += 1;
       }
+      for($i=1;$i<32;$i++) print $i.":".$cnt[$i]['c']."<br>";
       $CData = json_encode($cnt, JSON_UNESCAPED_UNICODE);
     } catch (PDOException $e) {
       echo "接続失敗";
