@@ -17,6 +17,24 @@
     else $year = $_GET['year'];
     if($_GET['month']=="") $month = date('n');
     else $month = $_GET['month'];
+    if($month==1){
+      $before_year = $year-1;
+      $before_month = $month -1;
+      $next_year = $year;
+      $next_month = $month+1;
+    }
+    else if($month==12){
+      $before_year = $year;
+      $before_month = $month -1;
+      $next_year = $year+1;
+      $next_month = $month+1;
+    }
+    else{
+      $before_year = $year;
+      $before_month = $month;
+      $next_year = $year;
+      $next_month = $month;
+    }
     ?>
     <div class="title2"><?php print $year;?>年<?php print $month;?>月の空き状況</div>
     <form name="move" class="center">
@@ -26,6 +44,15 @@
     </form>
     <div id="calendar">
     <script type="text/javascript">
+    function before(){
+      location.href="calendar2.php?year="+<?php print $before_year;?>+"&month="+<?php print $before_month;?>;
+    }
+    function this_month(){
+      location.href="calendar2.php?year="+<?php print $year;?>+"&month="+<?php print $month;?>;
+    }
+    function next(){
+      location.href="calendar2.php?year="+<?php print $next_year;?>+"&month="+<?php print $next_month;?>;
+    }
     //variables for calendar
       const weeks = ['日', '月', '火', '水', '木', '金', '土'];
       const date = new Date();
