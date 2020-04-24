@@ -26,6 +26,12 @@ h1#title1{
 	padding: 0;
 	text-align: left;
 }
+.title2{
+	text-align:center;
+	font-size:24pt;
+	color: black;
+	font-weight: bold;
+}
 /*============================================
 メインメニュー
 ============================================*/
@@ -78,7 +84,6 @@ li#detail{
 /*============================================
 use calender
 ============================================*/
-
 #calendar {
 	display: flex;
 	-webkit-justify-content: center;
@@ -107,11 +112,11 @@ table {
 }
 
 td {
-	font-size: 30px;
+	font-size: 16pt;
 	border: 1px solid rgb(0, 0, 0);
 	padding: 20px;
 	/* text-align: left; */
-	height: 10px;
+	height: 8px;
 }
 
 td:first-child {
@@ -157,5 +162,12 @@ form#login{
 	font-style:bold;
 }
 /*============================================
-サブメニュー（左カラム）
+カレンダー形式
 ============================================*/
+.move{
+	text-align:center;
+	font-size:16pt;
+}
+.center{
+	text-align:center;
+}

@@ -15,8 +15,8 @@
 <li><a href="/index.html">Home</a></li>
 </ul>
 <form id="login" action="login_management_pw.php" method="POST">
-  ID：<input type = "text" name = "ID"><br>
-  パスワード：<input type="text" name="pw"><br>
+  ID：<input type = "text" name = "ID" autocomplete="on"><br>
+  パスワード：<input type="password" name="pw" autocomplete="on"><br>
   <input type="submit" value="ログイン">
 </form>
 </body>

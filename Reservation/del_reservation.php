@@ -18,6 +18,7 @@ require_once 'Escape.php'; //エスケープ処理を行うソースファイル
 <ul id="menu">
 <li><a href="/index.html">Home</a></li>
 <li><a href="calendar.php">F508管理システム</a></li>
+<li><a href="logout.php">ログアウト</a></li>
 </ul>
 <form method="POST" action="del.php">
 <table border = "1">
