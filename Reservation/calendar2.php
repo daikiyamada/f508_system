@@ -19,7 +19,7 @@
     else $month = $_GET['month'];
     ?>
     <div class="title2"><?php print $year;?>年<?php print $month;?>月の空き状況</div>
-    <form name="move">
+    <form name="move" class="center">
       <input type="button" name="month" value="前月" onClick="before()">
       <input type="button" name="month" value="今月" onClick="this_month()">
       <input type="button" name="month" value="次月" onClick="next()">
