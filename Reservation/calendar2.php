@@ -148,7 +148,7 @@
                 }
               }
               var date = yy+mm+dd
-              calendarHtml += `<td class="calendar_td" data-date=${date}>${dayCount}${jdg}</td>`
+                calendarHtml += `<td class="calendar_td" data-date=${date}>${dayCount}<br><b><font color="black">${jdg}</font></b></td>`
               dayCount++
             }
           }
