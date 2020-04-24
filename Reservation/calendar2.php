@@ -2,62 +2,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml="" lang="ja" lalng="ja" xml:lang="ja">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<head>
-  <title>F508予約システム</title>
-</head>
-<link rel="stylesheet" type="text/css" href=" ../Homepage.css" />
+<head><title>F508予約システム</title></head>
+<link rel="stylesheet" type="text/css" href=" ../Homepage.css"/>
 <body>
-  <div id="back1">
-    <hr id="line1"/>
-    <h1 id="title1">F508管理システム</h1>
-  </div>
+  <div id="back1"><hr id="line1"/><h1 id="title1">F508管理システム</h1></div>
     <ul id="menu">
       <li><a href="../index.html">Home</a></li>
       <li><a href="User_Management/system_menu.html">ユーザ管理</a></li>
       <li><a href="http://shinolab.tech">篠宮研究室</a></li>
       <li><a href="http://teraylab.net/">寺島研究室</a></li>
     </ul>
-    <div style="text-align: center;">
-      <button id="prev" type="button">前の月</button>
-      <button id="now" type="button">今月</button>
-      <button id="next" type="button">次の月</button>
-      <div id="calendar"></div>
+    <div class="move">
+      <button type="button">前の月</button>
+      <button type="button">今月</button>
+      <button type="button">次の月</button>
+    </div>
+    <div id="calendar">
     <script type="text/javascript">
-    //カレンダー表示
+    //variables for calendar
       const weeks = ['日', '月', '火', '水', '木', '金', '土']
       const date = new Date()
-      var year = date.getFullYear() //年を取得
-      var month = date.getMonth() + 1 //月を取得（0～11）
-      var ty = date.getFullYear() // 今年を取得
-      var tm = date.getMonth() + 1 // 今月を取得
+      var year = date.getFullYear()
+      var month = date.getMonth() + 1
+      var ty = date.getFullYear()
+      var tm = date.getMonth() + 1
+      //Function for showing calendar
       function showCalendar(year, month) {
-          const calendarHtml = createCalendar(year, month)
-          const sec = document.createElement('section')
-          sec.innerHTML = calendarHtml
-          document.querySelector('#calendar').appendChild(sec)
-          month++
-          if (month > 12) {
-            year++
-            month = 1
+          const sec = document.createElement('section');
+          sec.innerHTML = createCalendar(year, month);
+          document.querySelector('#calendar').appendChild(sec);
+          if (month+1 > 12) {
+            year++;
+            month = 1;
           }
-        }
-      // カレンダー作成
+          else month++;
+      }
+      // Generator of calendar
       function createCalendar(year, month) {
-        const startDate = new Date(year, month - 1, 1) // 月の最初の日を取得
-        const endDate = new Date(year, month, 0) // 月の最後の日を取得
-        const endDayCount = endDate.getDate() // 月の末日
-        const lastMonthEndDate = new Date(year, month - 1, 0) // 前月の最後の日の情報
-        const lastMonthEndDayCount = lastMonthEndDate.getDate() // 前月の末日
-        const startDay = startDate.getDay() // 月の最初の日の曜日を取得
-        let dayCount = 1 // 日にちのカウント
-        let calendarHtml = '' // HTMLを組み立てる変数
-        var requrest = new XMLHttpRequest();
-        request.open('GET','reserve_confirm.php?M='+month+'&Y='+year,true);
-        request.responseType='json';
-        request.addEventListener('load',function(response){
-          let cntData = <?="this.response"?>;
-        });
-        request.send();
+        const startDate = new Date(year, month - 1, 1);
+        const endDate = new Date(year, month, 0);
+        const endDayCount = endDate.getDate();
+        const lastMonthEndDate = new Date(year, month - 1, 0);
+        const lastMonthEndDayCount = lastMonthEndDate.getDate();
+        const startDay = startDate.getDay();
+        let dayCount = 1;
+        let calendarHtml = '';
         calendarHtml += '<h1>' + year + '/' + month + '</h1>'
         calendarHtml += '<div class="center"><table>'
         for (let i = 0; i < weeks.length; i++) calendarHtml += '<td>' + weeks[i] + '</td>'
