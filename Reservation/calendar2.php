@@ -12,20 +12,25 @@
       <li><a href="http://shinolab.tech">篠宮研究室</a></li>
       <li><a href="http://teraylab.net/">寺島研究室</a></li>
     </ul>
-    <div class="move">
-      <button type="button">前の月</button>
-      <button type="button">今月</button>
-      <button type="button">次の月</button>
-    </div>
+    <?php
+    if($_GET['year']=="") $year = date("Y");
+    else $year = $_GET['year'];
+    if($_GET['month']=="") $month = date('n');
+    else $month = $_GET['month'];
+    ?>
+    <div class="title2"><?php print $year;?>年<?php print $month;?>月の空き状況</div>
+    <form name="move">
+      <input type="button" name="month" value="前月" onClick="before()">
+      <input type="button" name="month" value="今月" onClick="this_month()">
+      <input type="button" name="month" value="次月" onClick="next()">
+    </form>
     <div id="calendar">
     <script type="text/javascript">
     //variables for calendar
-      const weeks = ['日', '月', '火', '水', '木', '金', '土']
-      const date = new Date()
-      var year = date.getFullYear()
-      var month = date.getMonth() + 1
-      var ty = date.getFullYear()
-      var tm = date.getMonth() + 1
+      const weeks = ['日', '月', '火', '水', '木', '金', '土'];
+      const date = new Date();
+      var year = <?php print $year;?>;
+      var month = <?php print $month;?>;
       //Function for showing calendar
       function showCalendar(year, month) {
           const sec = document.createElement('section');
@@ -47,14 +52,12 @@
         const startDay = startDate.getDay();
         let dayCount = 1;
         let calendarHtml = '';
-        calendarHtml += '<h1>' + year + '/' + month + '</h1>'
-        calendarHtml += '<div class="center"><table>'
-        for (let i = 0; i < weeks.length; i++) calendarHtml += '<td>' + weeks[i] + '</td>'
+        calendarHtml += '<div class="center"><table>';
+        for (let i = 0; i < weeks.length; i++) calendarHtml += '<td>' + weeks[i] + '</td>';
         for (let w = 0; w < 6; w++) {
-          calendarHtml += '<tr>'
+          calendarHtml += '<tr>';
           for (let d = 0; d < 7; d++) {
             if (w == 0 && d < startDay) {
-              // 1行目で1日の曜日の前
               let num = lastMonthEndDayCount - startDay + d + 1
               calendarHtml += '<td class="is-disabled">' + num + '</td>'
             } else if (dayCount > endDayCount) {
@@ -122,9 +125,6 @@
         }
         showCalendar(year, month)
       }
-      document.querySelector('#prev').addEventListener('click', moveCalendar)
-      document.querySelector('#now').addEventListener('click', moveCalendar)
-      document.querySelector('#next').addEventListener('click', moveCalendar)
       document.addEventListener("click", function (e) {
       if (e.target.classList.contains("calendar_td")) {
         location.href="day_form.php?date="+e.target.dataset.date;
