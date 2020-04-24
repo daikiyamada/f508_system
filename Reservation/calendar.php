@@ -8,7 +8,7 @@
   <div id="back1"><hr id="line1"/><h1 id="title1">F508管理システム</h1></div>
     <ul id="menu">
       <li><a href="../index.html">Home</a></li>
-      <li><a href="User_Management/system_menu.html">ユーザ管理</a></li>
+      <li><a href="User_Management/system_menu.php">ユーザ管理</a></li>
       <li><a href="logout.php">ログアウト</a></li>
     </ul>
     <?php
