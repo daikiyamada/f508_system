@@ -112,11 +112,11 @@ table {
 }
 
 td {
-	font-size: 14pt;
+	font-size: 16pt;
 	border: 1px solid rgb(0, 0, 0);
 	padding: 20px;
 	/* text-align: left; */
-	height: 10px;
+	height: 8px;
 }
 
 td:first-child {
