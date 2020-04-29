@@ -5,11 +5,11 @@ $class = $_POST['class'];
 $purpose = $_POST['purpose'];
 $list = array();
 $j = 0;
+$year = (int)substr($_POST["date"],0,4);
+$month = (int)substr($_POST["date"],4,2);
+$day = (int)substr($_POST["date"],6);
   try{
     $db=connect();
-    $year = (int)substr($_POST["date"],0,4);
-    $month = (int)substr($_POST["date"],4,2);
-    $day = (int)substr($_POST["date"],6);
     for($i=0;$i<(int)$_POST['time'];$i++){
       $last = $year."-".$month;
       $last_date = date('d', strtotime('last day of ' . $last));
@@ -49,7 +49,7 @@ $j = 0;
   ?>
   <script type="text/javascript">
     var check = window.alert('予約完了しました。');
-  location.href="calendar.php?year="+<?php print $year;?>+"&month="<?php print $month;?>;
+  location.href="calendar.php?year="+<?php print $year;?>+"&month="+<?php print $month;?>;
   </script>
 <?php
  }
@@ -61,7 +61,7 @@ $j = 0;
    ?>
    <script type="text/javascript">
    window.alert("<?php print$result?>");
-   location.href="calendar.php?year="+<?php print $year;?>+"&month="<?php print $month;?>;
+   location.href="calendar.php?year="+<?php print $year;?>+"&month="+<?php print $month;?>;
    </script>
 <?php
  }
