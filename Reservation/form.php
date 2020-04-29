@@ -49,7 +49,7 @@ $j = 0;
   ?>
   <script type="text/javascript">
     var check = window.alert('予約完了しました。');
-  location.href="calendar.php";
+  location.href="calendar.php?year="+<?php print $year;?>+"&month="<?php print $month;?>;
   </script>
 <?php
  }
@@ -61,7 +61,7 @@ $j = 0;
    ?>
    <script type="text/javascript">
    window.alert("<?php print$result?>");
-   location.href="calendar.php";
+   location.href="calendar.php?year="+<?php print $year;?>+"&month="<?php print $month;?>;
    </script>
 <?php
  }
