@@ -1,4 +1,19 @@
-<!DOCTYPE html>
+<?php
+session_start();
+session_set_cookie_params(60 * 5);
+if(!$_SESSION['ID']){
+?>
+<script type ="text/javascript">
+window.alert("ログインしてください");
+location.href="/Reservation/login.php";
+</script>
+<?php
+}
+else{
+  $_SESSION['ID'] = $_SESSION['ID'];
+}
+ ?>
+ <!DOCTYPE html>
 <?xml version="1.0" encoding="utf-8"?>
 <?php
 require_once 'Manager.php'; //データベースへの接続

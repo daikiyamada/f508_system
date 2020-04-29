@@ -1,4 +1,19 @@
-<!DOCTYPE html>
+<?php
+session_start();
+session_set_cookie_params(60 * 5);
+if(!$_SESSION['ID']){
+?>
+<script type ="text/javascript">
+window.alert("ログインしてください");
+location.href="/Reservation/login.php";
+</script>
+<?php
+}
+else{
+  $_SESSION['ID'] = $_SESSION['ID'];
+}
+ ?>
+ <!DOCTYPE html>
 <?xml version="1.0" encoding="utf-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml="" lang="ja" lalng="ja" xml:lang="ja">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
