@@ -13,7 +13,7 @@
       ?>
       <script type='text/javascript'>
       window.alert('<?php print $usr['Name']?>さん、ログイン成功しました');
-      location.href = "/Reservation/calendar.php";
+      location.href = "/Reservation/calendar.php?year=".date('Y')."&month=".date('m');
       </script>
       <?php
       $db = NULL;
