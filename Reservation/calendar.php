@@ -19,7 +19,7 @@
     else $month = $_GET['month'];
     if($month==1){
       $before_year = $year-1;
-      $before_month = $month -1;
+      $before_month = 12;
       $next_year = $year;
       $next_month = $month+1;
     }
@@ -27,7 +27,7 @@
       $before_year = $year;
       $before_month = $month -1;
       $next_year = $year+1;
-      $next_month = $month+1;
+      $next_month = 1;
     }
     else{
       $before_year = $year;
@@ -71,13 +71,13 @@
     <div id="calendar">
     <script type="text/javascript">
     function before(){
-      location.href="calendar2.php?year="+<?php print $before_year;?>+"&month="+<?php print $before_month;?>;
+      location.href="calendar.php?year="+<?php print $before_year;?>+"&month="+<?php print $before_month;?>;
     }
     function this_month(){
-      location.href="calendar2.php?year="+<?php print date('Y');?>+"&month="+<?php print idate('n');?>;
+      location.href="calendar.php?year="+<?php print date('Y');?>+"&month="+<?php print idate('n');?>;
     }
     function next(){
-      location.href="calendar2.php?year="+<?php print $next_year;?>+"&month="+<?php print $next_month;?>;
+      location.href="calendar.php?year="+<?php print $next_year;?>+"&month="+<?php print $next_month;?>;
     }
     //variables for calendar
     var cntData = JSON.parse('<?php echo $CData; ?>' || "null");
